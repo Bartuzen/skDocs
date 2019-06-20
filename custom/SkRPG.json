@@ -1,0 +1,325 @@
+{
+  "effects": [
+    {
+      "patterns": "SkillAPI add %ExpSource% (to|from) %string%'s allowed exp[erience] sources",
+      "name": "Allow Exp Source",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI clear %player%'s data\nSkillAPI clear data of %player%",
+      "name": "Clear Player Data",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI remove %ExpSource% (to|from) %string%'s allowed exp[erience] sources",
+      "name": "Disallow Exp Source",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI add %integer% exp[erience] to %player% from exp source %ExpSource%",
+      "name": "SkillAPI add exp",
+      "description": "Adds an amount of experience to a player's class from a certain experience source.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "SkillAPI add %integer% level[s] to %player% from exp source %ExpSource%",
+      "name": "SkillAPI add levels",
+      "description": "Adds an amount of levels to a player's class from a certain experience source.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "SkillAPI add %integer% (sp|skillpoint[s]|skill point[s]) to %player% from exp source %ExpSource%",
+      "name": "SkillAPI add skill points",
+      "description": "adds skill points from a certain ExpSource to a player's SkillAPI class",
+      "since": "1.0"
+    },
+    {
+      "patterns": "SkillAPI clear %player%'s bonuses",
+      "name": "SkillAPI clear bonuses",
+      "description": "Clears all of a player's SkillAPI bonuses",
+      "since": "1.0"
+    },
+    {
+      "patterns": "SkillAPI make %player% cast skill %string%",
+      "name": "SkillAPI make player cast skill",
+      "since": "1.0"
+    },
+    {
+      "patterns": "SkillAPI open attr[ibute] menu (for|of) %player%",
+      "name": "SkillAPI open attribute menu",
+      "description": "Opens player's attribute menu",
+      "since": "1.0"
+    },
+    {
+      "patterns": "SkillAPI profess %player% into %string%",
+      "name": "SkillAPI profess",
+      "description": "Professes the player into another class. Only works if they meet the requirements of that class. ",
+      "since": "1.0"
+    },
+    {
+      "patterns": "SkillAPI refund %player%'s attribute points",
+      "name": "SkillAPI refund attribute points",
+      "description": "Refunds all the player's attribute points of his/her SkillAPI class",
+      "since": "1.0"
+    },
+    {
+      "patterns": "SkillAPI regen[erate] %player%'s mana",
+      "name": "SkillAPI regenerate mana",
+      "description": "Regenerates a player's class' mana",
+      "since": "1.0"
+    },
+    {
+      "patterns": "SkillAPI toggle %player%'s skillbar\nSkillAPI toggle skillbar of %player%",
+      "name": "Toggle Skillbar",
+      "since": "1.0.1"
+    }
+  ],
+  "types": [
+    {
+      "patterns": "MOB, BLOCK_BREAK, BLOCK_PLACE, CRAFT, COMMAND, SPECIAL, EXP_BOTTLE, SMELT and  QUEST",
+      "name": "ExpSource",
+      "description": "Used in a couple events and effects in SkRPG to add extra functionality.",
+      "since": "1.0"
+    }
+  ],
+  "conditions": [
+    {
+      "patterns": "SkillAPI %player% can profess",
+      "name": "Can Profess",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "if SkillAPI %player% can confess:",
+      "name": "SkillAPI can confess",
+      "description": "Checks if a player can profess into the next class. (Player has to meet the requirements set in the class' options).",
+      "since": "1.0"
+    },
+    {
+      "patterns": "if SkillAPI %player% has skill %string%:",
+      "name": "SkillAPI player has skill",
+      "description": "Checks if a player has a certain skill",
+      "since": "1.0"
+    },
+    {
+      "patterns": "SkillAPI %player% has skillbar enabled",
+      "name": "Skillbar Is Enabled",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI %player% skillbar is setup",
+      "name": "Skillbar Is Setup",
+      "since": "1.0.1"
+    }
+  ],
+  "expressions": [
+    {
+      "patterns": "SkillAPI attribute points of %player%\nSkillAPI %player%'s attribute points",
+      "name": "Attribute Points",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI skill casted",
+      "name": "Casted Skill",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI (chat colo[u]r|chatcolo[u]r) of %player%\nSkillAPI %player%'s (chat colo[u]r|chatcolo[u]r)",
+      "name": "Chat Colour",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI class group of %player%\nSkillAPI %player%'s class group",
+      "name": "Class Group",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI attacker",
+      "name": "Damager",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI ExpSource",
+      "name": "Exp Source",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI experience of %player%\nSkillAPI %player%'s experience",
+      "name": "Experience",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI Exp[erience] (Gained|Lost)",
+      "name": "Experience Given Lost",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI health scale of %player%\nSkillAPI %player%'s health scale",
+      "name": "Health Scale",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI level of %player%\nSkillAPI %player%'s level",
+      "name": "Level",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI levels gained",
+      "name": "Levels Gained",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI main class of %player%\nSkillAPI %player%'s main class",
+      "name": "Main Class",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI mana of %player%\nSkillAPI %player%'s mana",
+      "name": "Mana",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI mana (gained|Lost)",
+      "name": "Mana Given Lost",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI mana regen of %player%\nSkillAPI %player%'s mana regen",
+      "name": "Mana Regen",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI mana scale of %player%\nSkillAPI %player%'s mana scale",
+      "name": "Mana Scale",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI max health of %player%\nSkillAPI %player%'s max health",
+      "name": "Max Health",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI max level of %player%\nSkillAPI %player%'s max level",
+      "name": "Max Level",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI max mana of %player%\nSkillAPI %player%'s max mana",
+      "name": "Max Mana",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI new class base mana",
+      "name": "New Class Base Mana",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI new class group",
+      "name": "New Class Group",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI new class",
+      "name": "New Class Name",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI prev[ious] class base mana",
+      "name": "Previous Class Base Mana",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI prev[ious] class group",
+      "name": "Previous Class Group",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI prev[ious] class",
+      "name": "Previous Class Name",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI required exp[erience] of %player%\nSkillAPI %player%'s required exp[erience]",
+      "name": "Required Exp",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI total experience of %player%\nSkillAPI %player%'s total experience",
+      "name": "Total Experience",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI unlocked skill",
+      "name": "Unlocked Skill",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI victim",
+      "name": "Victim",
+      "since": "1.0.1"
+    }
+  ],
+  "events": [
+    {
+      "patterns": "SkillAPI class change",
+      "name": "Skill API class change",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI exp[erience] gain",
+      "name": "Skill API experience gain",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI exp[erience] loss",
+      "name": "Skill API experience loss",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI level up",
+      "name": "Skill API level up",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI mana gain",
+      "name": "Skill API mana gain",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI mana loss",
+      "name": "Skill API mana loss",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI skill cast",
+      "name": "Skill API skill cast",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI skill damage",
+      "name": "Skill API skill damage",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI skill heal",
+      "name": "Skill API skill heal",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "SkillAPI skill unlock",
+      "name": "Skill API skill unlock",
+      "since": "1.0.1"
+    },
+    {
+      "patterns": "On SkillAPI experience gain",
+      "name": "SkillAPI experience gain event",
+      "description": "Checks when a player gains experience for his SkillAPI class",
+      "since": "1.0"
+    },
+    {
+      "patterns": "On SkillAPI experience loss",
+      "name": "SkillAPI experience loss event",
+      "description": "Checks when a player loses experience from their SkillAPI class.",
+      "since": "1.0"
+    }
+  ]
+}

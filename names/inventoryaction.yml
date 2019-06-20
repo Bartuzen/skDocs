@@ -1,0 +1,59 @@
+﻿emote: 🖱
+color: 153, 170, 181
+column: 2
+names:
+- Clone Stack
+- Collect To Cursor
+- .Collect Items To Cursor
+- Drop All From Cursor
+- .Drop Stack From Cursor
+- .Drop Items From Cursor
+- .Drop Stack From Cursor
+- .Drop Cursor
+- .Drop Cursor Stack
+- Drop All From Slot
+- .Drop Stack From Slot
+- .Drop Items From Slot
+- .Drop Stack From Slot
+- .Drop Slot
+- .Drop Slot Stack
+- Drop One From Cursor
+- .Drop One Item From Cursor
+- .Drop Single Item From Cursor
+- .Drop Cursor Item
+- Drop One From Slot
+- .Drop One Item From Slot
+- .Drop Single Item From Slot
+- .Drop Slot Item
+- Hotbar Move And Readd
+- Instant Move
+- .Move To Other Inventory
+- .Shift Move
+- Nothing
+- .Do Nothing
+- Pickup All
+- .Pickup All Items
+- Pickup Half
+- .Pickup Half Stack
+- Pickup One Item
+- .Pickup Single Item
+- .Pickup Single
+- Pickup Some
+- .Pickup Some Items
+- Place All
+- .Place All Items
+- Place One
+- .Place One Item
+- Place Some
+- .Place Some Items
+- Swap With Cursor
+- .Swap Stack With Cursor
+- .Swap Cursor
+- .Swap Cursor Stack
+- Swap With Hotbar
+- .Swap Items With Hotbar
+- .Hotbar Swap
+- .Hotbar Swap Items
+- Unknown
+- .Unsupported
+- .Custom

@@ -1,0 +1,234 @@
+name: 'Türkçe'
+translator: 'Bartuzen#1957'
+errors:
+    title: 'Hata'
+    permission: 'Bu komutu kullanmak için yetkin yok.'
+docs:
+    emote: '📘'
+    title: 'Skript Dokümantasyonu'
+    info: 'Bilgi'
+    only-one: 'Sadece 1 sonuç bulundu, direkt olarak onun bilgileri gösteriliyor.'
+    everything: 'Her Şey'
+    query: 'Sorgu'
+    page: 'Sayfa'
+    type: 'Tür'
+    addon: 'Addon'
+    contains: 'İçeriyor'
+    link: 'Skript Hub Linki'
+    command-field: 'Komut'
+    code:
+        description: 'Açıklama'
+        patterns: 'Kalıplar'
+        event-values: 'Olay Değerleri'
+        examples: 'Örnekler'
+        type-usage: 'Kullanım'
+        return-type: 'Dönüş Türü'
+        version: 'Eklenen Sürüm'
+        changers: 'Değiştiriciler'
+        cancellable: 'İptal Edilebilir'
+        uncancellable: 'İptal Edilemez'
+        required-plugins: 'Gerekli Eklentiler'
+        random-code: 'Rastgele Oluşturulan Kod'
+    types:
+        event: 'Olay'
+        condition: 'Koşul'
+        effect: 'Etki'
+        expression: 'İfade'
+        type: 'Tip'
+        function: 'Fonksiyon'
+    types-plural:
+        events: 'Olaylar'
+        conditions: 'Koşullar'
+        effects: 'Etkiler'
+        expressions: 'İfadeler'
+        types: 'Tipler'
+        functions: 'Fonksiyonlar'
+    errors:
+        incorrect-arg: 'Hatalı argüman: **%error%**'
+        incorrect-usage: 'Hatalı kullanım!%nl%Kullanımı görmek için: **!sk yardım**'
+        no-page: '**%page%.** sayfa bulunamadı.'
+        no-with-args: 'Belirtilen argümanlarla hiçbir sonuç bulunamadı.'
+    commands:
+        main: '(skript)?doküman(tasyon(u)?|ları)'
+        type: '(skript|syntax)?(tür(ü)?|tip(i)?)'
+        addon: '(kaynak|eklenti)'
+        page: 'sayfa'
+        contains: 'içer(iyor)?'
+reload:
+    reloading:
+        title: 'Yenileniyor'
+        desc: '**skDocs** yenileniyor...'
+    reloaded:
+        title: 'Yenilendi'
+        successfully: '**skDocs** başarıyla yenilendi.'
+        error: '**skDocs** yenilenirken bir hatayla karşılaşıldı:'
+lang:
+    emote: '🌍'
+    langs: 'Diller'
+    successful: 'Başarılı'
+    set: 'Dil başarıyla değiştirildi.'
+    available-langs: 'Diller'
+    usage-text: 'Kullanım'
+    usage: '!sk lang <dil>'
+    translator: 'Çevirmen'
+    not-found: 'Böyle bir dil bulunamadı.'
+    only-in-guild: 'Bu komut sadece sunucularda kullanılabilir.'
+downloads:
+    emote: '⬇'
+    title: 'İndirmeler'
+    file-link: '%file% İçin İndirme Linki'
+    addons: 'Addonlar'
+    software: 'Sunucu Yazılımları'
+    latest: 'Son Sürüm'
+    too-long: 'Çok fazla argüman var.'
+    no-arg: 'Geçerli bir argüman bulunamadı.'
+    unknown-file: '**%file%** adında bir dosya bulunamadı.'
+    commands:
+        main: 'indir(me(ler)?)?'
+        addon: 'addon(lar)?'
+        software: '(yazılım|sunucu( )?yazılımı)'
+names:
+    args:
+        emote: '🔢'
+        title: 'Skript İsimler Listesi'
+        usage:
+            name: 'Kullanım'
+            text: '!sk isim <bölüm>'
+        sections: 'Bölümler'
+    command: '(isim(ler)?|ad(lar)?)'
+    sections:
+        biome:
+            title: 'Biyomlar Listesi'
+            command: 'biyom(lar)?(( )?liste(si)?)?'
+        chatstyle:
+            title: 'Sohbet Stilleri Listesi'
+            command: 'sohbet( )?stil(ler(i)?)?(( )?liste(si)?)?'
+        clicktype:
+            title: 'Tıklama Türü Listesi'
+            command: 'tıklama( )?tür(ler(i)?)?(( )?liste(si)?)?'
+        color:
+            title: 'Renkler Listesi'
+            command: 'renk(ler)?(( )?liste(si)?)?'
+        damagecause:
+            title: 'Hasar Sebepleri Listesi'
+            command: 'hasar( )?sebep(ler(i)?)?(( )?liste(si)?)?'
+        direction:
+            title: 'Yönler Listesi'
+            command: 'yön(ler)?(( )?liste(si)?)?'
+        ench:
+            title: 'Büyüler Listesi'
+            command: 'büyü(ler)?(( )?liste(si)?)?'
+        inventoryaction:
+            title: 'Envanter Eylemleri Listesi'
+            command: 'env(anter)?olay(lar(ı)?)?(( )?liste(si)?)?'
+        inventorytype:
+            title: 'Envanter Tipleri Listesi'
+            command: 'env(anter)?tip(ler(i)?)?(( )?liste(si)?)?'
+        potion:
+            title: 'İksir Etkileri Listesi'
+            command: 'iksir(etki(ler(i)?)?)?(( )?liste(si)?)?'
+        teleportcause:
+            title: 'Işınlanma Sebepleri Listesi'
+            command: 'ışınlanma( )?sebep(ler(i)?)?(( )?liste(si)?)?'
+        tree:
+            title: 'Ağaçlar Listesi'
+            command: 'ağaç(lar)?(( )?liste(si)?)?'
+        visualeffect:
+            title: 'Parçacık Listesi'
+            command: 'parçacık(lar)?(( )?liste(si)?)?'
+        weather:
+            title: 'Hava Durumları Listesi'
+            command: 'hava(( )?durum(u|lar(ı)?)?)?(( )?liste(si)?)?'
+        spawnreason:
+            title: 'Canlanma Sebepleri Listesi'
+            command: 'canlanma( )?sebep(ler(i)?)?(( )?liste(si)?)?'
+info:
+    command: '(bilgi|hakkında)'
+    title: 'skDocs Hakkında Bilgi'
+    version:
+        python: 'Python Sürümü'
+        discord.py: 'discord.py Sürümü'
+    uptime: 'Çalışma Süresi'
+    guilds: 'Sunucular'
+    developer: 'Geliştirici: %owner%'
+    ram: 'RAM'
+    invite: 'Davet'
+    time:
+        day: 'Gün'
+        hour: 'Saat'
+        minute: 'Dakika'
+        second: 'Saniye'
+    click: 'Tıkla'
+help:
+    sent-dm: 'Kullanım kılavuzum sana direkt mesaj olarak gönderildi, %user%!'
+    forbidden: 'Özel mesaj gönderilemedi.'
+    command: '(yardım|rehber)'
+    embeds:
+        1:  
+            title: '📘 Skript Dokümantasyonu'
+            description:
+            - '**Komutlar**:'
+            color: '0, 255, 255'
+            fields:
+                1:
+                    title: '!sk docs'
+                    content:
+                    - '**Açıklama:** Skript dökümantasyonunu gösteren, botun **ana** komutudur.'
+                    - '- Argümanlar:'
+                    - '```autohotkey'
+                    - 'addon:: sonuçları addona göre filtreler'
+                    - 'tür:: sonuçları kod kalıbı türüne göre filtreler'
+                    - 'içeriyor:: sonuçları girilen metne göre filtreler'
+                    - 'sayfa:: aramanın sayfalarını gösterir'
+                    - '❗ Not:: Filtrelerin başına ! koyarak onları olumsuz yapabilirsiniz.```'
+                    - '**Örnek Kullanım:**'
+                    - '!sk docs **bossbar** tür:**etki** addon:**skRayfall**'
+                    - '- **skRayFall** addonunda **etki** türünde ve adında **bossbar** geçen kod kalıplarını arar.'
+                    - ''
+                    - '!sk docs **bossbar** tür:**etki** addon:**skRayfall** id:**1**'
+                    - '- **skRayFall** addonunda **etki** türünde ve adında **bossbar** geçen kod kalıplarını arar ve 1. sonucu gösterir.'
+                    - ''
+                    - '!sk docs **bossbar** tür:**etki** addon:**skRayfall** sayfa:**2**'
+                    - '- **skRayFall** addonunda **etki** türünde olan kod kalıplarının **2.** sayfasını gösterir.'
+                2:
+                    title: '!sk indir'
+                    content:
+                    - '**Açıklama:** Skriptle ilgili olan indirmelerin linklerini gösterir.'
+                    - '- Argümanlar:'
+                    - '```autohotkey'
+                    - '*Yok*:: Bütün indirmeleri gösterir.'
+                    - '*İsim*:: Girilen isim(ler)deki indirmeleri sıralar.```'
+                    - '**Örnek Kullanım:**'
+                    - '!sk indir'
+                    - '- Bütün indirmeleri gösterir.'
+                    - ''
+                    - '!sk indir **Skript** **TuSKe**'
+                    - '- **Skript** ve **TuSKe** indirme linklerini gösterir.'
+                3:
+                    title: '!sk isim'
+                    content:
+                    - '**Açıklama:** Skriptte kullanabileceğiniz isimlerin listesini gösterir.'
+                    - '- Argümanlar:'
+                    - '```autohotkey'
+                    - '*Yok*:: Listesi olan isimleri gösterir.'
+                    - '*İsim Listesi*:: Girilen listedeki isimleri gösterir.```'
+                    - '**Örnek Kullanım:**'
+                    - '!sk isim'
+                    - '- Girilebilecek bütün isim listelerini gösterir.'
+                    - ''
+                    - '!sk isim **büyü**'
+                    - '- **Büyü**lerin isimlerini gösterir.'
+parse:
+    successful:
+        emote: '✅'
+        title: 'Başarılı'
+    too-long: 'Hata fazla uzun olduğu için gönderilemedi.'
+    unknown-website: 'Bilinmeyen site. Geçerli siteler:\n[GitHub](https://github.com/), [GitHub Gist](https://gist.github.com/) ve [Hastebin](https://hastebin.com/)'
+    cant-access: 'Girdiğiniz siteye ulaşılamıyor.'
+    yaml:
+        successful: '**YAML** dosyasında hata bulunamadı!'
+        error: '**YAML** dosyasında bir hata bulundu:'
+    json:
+        successful: '**JSON** dosyasında hata bulunamadı!'
+        error: '**JSON** dosyasında bir hata bulundu:'
+        beautified: 'Güzelleştirilmiş **JSON** dosyası:'

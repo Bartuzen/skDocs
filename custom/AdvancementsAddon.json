@@ -1,0 +1,102 @@
+{
+  "events": [
+	{
+      "name": "On Advancement Complete",
+	  "description": [
+        "Event called when a player finishs an advancement."
+      ],
+      "patterns": [
+        "[on] [player] advancement (award|get|complete)"
+      ],
+	  "event values": [
+	    "event-player",
+	    "event-key",
+	    "event-advancement"
+	  ]
+    }
+  ],
+  "effects": [
+    {
+      "name": "Give Advancement",
+	  "description": [
+        "Force the advancement to be awarded"
+      ],
+      "patterns": [
+        "(award|give) [all criteria of] advancement %advancement% to %player%"
+      ]
+    },
+    {
+      "name": "Create Advancement",
+	  "description": [
+        "Create an advancement for a world"
+      ],
+	  "examples": [
+		"command /award <player> <text> <text>:",
+		"\tusage: /award <player> <title> <description>",
+		"\ttrigger:",
+		"\t\tcreate advancement with name \"Example\" title \"%arg 2%\", desc \"%arg 3%\", icon \"minecraft:golden_apple\", trigger \"minecraft:consume_item\", background \"minecraft:textures/gui/advancements/backgrounds/stone.png\" world \"%player's world%\" and item golden apple:1"
+      ],
+      "patterns": [
+        "(make|create) [a[n]] advancement [[with] name[d]] %string%[[(,| and)] [with]] title %string%[[(,| and)] [with]] desc[ription] %string%[[(,| and)] [with]] icon %string%[[(,| and)] [with]] trigger %string%[[(,| and)] [with]] background %string%[[(,| and)] [for]] world %string%[[(,| and)] [with]] item %itemtype%"
+      ]
+    },
+    {
+      "name": "Revoke Advancement",
+	  "description": [
+        "Revoke access of this advancement"
+      ],
+      "patterns": [
+        "(revoke|take|remove) [all criteria of] advancement %advancement% from %player%"
+      ]
+    }
+  ],
+  "expressions": [
+    {
+      "name": "Advancement Criteria",
+	  "description": "Get the criteria of this string (more info [Advancements - Official Minecraft Wiki](http://minecraft.gamepedia.com/Advancements)",
+      "return type": "Text",
+      "patterns": [
+        "advancement criteria of %advancement%",
+        "%advancement%'s advancement criteria"
+      ]
+    },
+    {
+      "name": "Advancement Key",
+	  "description": "Get the NamespacedKey class of an advancement.\nInfo: If messages it will contain the namespace and the key",
+      "return type": "NamespacedKey",
+      "patterns": [
+        "advancement [name[ ]spaced] key of %advancement%",
+        "%advancement%'s advancement [name[ ]spaced] key"
+      ]
+    },
+    {
+      "name": "Advancement Progress",
+	  "description": "Return the AdvancementProgress class of an advancement for a player\nInfo: Still under working progress",
+      "return type": "Object",
+      "patterns": [
+        "advancement progress of %advancement% (for|of|from) %player%",
+        "%player%'s advancement progress for %advancement%"
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "Advancement",
+      "description": [
+        "A type that represents the Advancement class from Spigot."
+      ],
+      "patterns": [
+        "advancement[s]"
+      ]
+    },
+    {
+      "name": "NamespacedKey",
+      "description": [
+        "A type that represents the NamespacedKey class from Spigot."
+      ],
+      "patterns": [
+        "namespacedkey|key"
+      ]
+    }
+  ]
+}

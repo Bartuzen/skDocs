@@ -1,0 +1,1385 @@
+{
+  "events": [
+    {
+      "name": "On Anvil GUI",
+      "patterns": [
+        "[on] (close|confirm|done)[ a[n]] anvil gui [name[d] %string%]"
+      ],
+      "event values": [
+        "event-inventory",
+        "event-string",
+        "event-player"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On ASkyBlock Coop Join",
+      "patterns": [
+        "[on] asb coop join"
+      ]
+    },
+    {
+      "name": "On ASkyBlock Coop Leave",
+      "patterns": [
+        "[on] asb coop leave"
+      ]
+    },
+    {
+      "name": "On ASkyBlock Island Enter",
+      "patterns": [
+        "[on] asb [island] enter"
+      ]
+    },
+    {
+      "name": "On ASkyBlock Island Exit",
+      "patterns": [
+        "[on] asb [island] exit"
+      ]
+    },
+    {
+      "name": "On ASkyBlock Island Level Change",
+      "patterns": [
+        "[on] asb [island] level [change]"
+      ]
+    },
+    {
+      "name": "On ASkyBlock New Island",
+      "patterns": [
+        "[on] asb new [island]"
+      ]
+    },
+    {
+      "name": "On ASkyBlock Reset Island",
+      "patterns": [
+        "[on] asb reset [island]"
+      ]
+    },
+    {
+      "name": "On Essentials AFK Toggle",
+      "patterns": [
+        "[on] afk [status] (change|toggle)"
+      ],
+      "event values": [
+        "event-player"
+      ],
+      "cancellable": true
+    },
+    {
+      "name": "On Essentials User Balance Update",
+      "patterns": [
+        "[on] [user] (balance|money) (update|change))"
+      ],
+      "event values": [
+        "event-player",
+        "event-double"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On Arena Countdown Event",
+      "patterns": [
+        "[on] arena (countdown|timer)[ change]"
+      ],
+      "event values": [
+        "event-arena",
+        "event-integer",
+        "event-minigame"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On Arena Start Event",
+      "patterns": [
+        "[on] arena start"
+      ],
+      "event values": [
+        "event-arena",
+        "event-minigame"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On Arena Stop Event",
+      "patterns": [
+        "[on] arena stop"
+      ],
+      "event values": [
+        "event-arena",
+        "event-minigame"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On Player Join Arena Event",
+      "patterns": [
+        "[on] [player ]arena join"
+      ],
+      "event values": [
+        "event-player",
+        "event-arena",
+        "event-minigame"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On Player Leave Arena Event",
+      "patterns": [
+        "[on] [player ]arena leave"
+      ],
+      "event values": [
+        "event-player",
+        "event-arena",
+        "event-minigame"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On Vehicle Steer Backward",
+      "patterns": [
+        "[on] vehicle steer backward"
+      ],
+      "event values": [
+        "event-player"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On Vehicle Steer Forward",
+      "patterns": [
+        "[on] vehicle steer forward"
+      ],
+      "event values": [
+        "event-player"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On Vehicle Steer Jump",
+      "patterns": [
+        "[on] vehicle steer jump"
+      ],
+      "event values": [
+        "event-player"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On Vehicle Steer Left",
+      "patterns": [
+        "[on] vehicle steer left"
+      ],
+      "event values": [
+        "event-player"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On Vehicle Steer Right",
+      "patterns": [
+        "[on] vehicle steer right"
+      ],
+      "event values": [
+        "event-player"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On PVP Arena Death Event",
+      "patterns": [
+        "[on] (pa|pvparena) death"
+      ],
+      "event values": [
+        "event-player",
+        "event-pvparena"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On PVP Arena End Event",
+      "patterns": [
+        "[on] (pa|pvparena) end"
+      ],
+      "event values": [
+        "event-pvparena"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On PVP Arena Exit Event",
+      "patterns": [
+        "[on] (pa|pvparena) exit"
+      ],
+      "event values": [
+        "event-player",
+        "event-pvparena"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On PVP Arena Join Event",
+      "patterns": [
+        "[on] (pa|pvparena) join"
+      ],
+      "event values": [
+        "event-player",
+        "event-pvparena"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On PVP Arena Kill Event",
+      "patterns": [
+        "[on] (pa|pvparena) kill"
+      ],
+      "event values": [
+        "event-player",
+        "event-pvparena"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On PVP Arena Leave Event",
+      "patterns": [
+        "[on] (pa|pvparena) leave"
+      ],
+      "event values": [
+        "event-player",
+        "event-pvparena"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On PVP Arena Player Class Change Event",
+      "patterns": [
+        "[on] (pa|pvparena)[ player] class change"
+      ],
+      "event values": [
+        "event-player",
+        "event-pvparena",
+        "event-string"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On PVP Arena Start Event",
+      "patterns": [
+        "[on] (pa|pvparena) start"
+      ],
+      "event values": [
+        "event-pvparena"
+      ],
+      "cancellable": true
+    },
+    {
+      "name": "On PVP Arena Team Change Event",
+      "patterns": [
+        "[on] (pa|pvparena)[ player] team change"
+      ],
+      "event values": [
+        "event-player",
+        "event-pvparena",
+        "event-string"
+      ],
+      "cancellable": false
+    },
+    {
+      "name": "On PVP Arena Win Event",
+      "patterns": [
+        "[on] (pa|pvparena) win"
+      ],
+      "event values": [
+        "event-player",
+        "event-pvparena"
+      ],
+      "cancellable": false
+    }
+  ],
+  "conditions": [
+    {
+      "name": "ASkyBlock Has Island",
+      "patterns": [
+        "%player% has[ a[n]] (asb|askyblock) island",
+        "%player% has(n't| not)[ a[n]] (asb|askyblock) island"
+      ]
+    },
+    {
+      "name": "ASkyBlock Has Team",
+      "patterns": [
+        "%player% (has|is in)[ a[n]] (asb|askyblock) team",
+        "%player% (has(n't| not)|is(n't not) in)[ a[n]] (asb|askyblock) team"
+      ]
+    },
+    {
+      "name": "ASkyBlock Is Coop",
+      "patterns": [
+        "%player% is (asb|askyblock) coop",
+        "%player% is(n't| not) (asb|askyblock) coop"
+      ]
+    },
+    {
+      "name": "ASkyBlock Island At",
+      "patterns": [
+        "there is [a[n]] (asb|askyblock) island at %location%",
+        "there is(n't| not) [a[n]] (asb|askyblock) island at %location%"
+      ]
+    },
+    {
+      "name": "Cooldown Finished",
+      "patterns": [
+        "cooldown %string% is finish[ed]",
+        "cooldown %string% of %player% is finish[ed]",
+        "cooldown %string% is(n't| not) finish[ed]",
+        "cooldown %string% of %player% is(n't| not) finish[ed]"
+      ]
+    },
+    {
+      "name": "Essentials AFK",
+      "patterns": [
+        "%player% is afk",
+        "%player% is(n't| not) afk"
+      ]
+    },
+    {
+      "name": "Essentials Can Build",
+      "patterns": [
+        "essentials %player% can build",
+        "essentials %player% cannot build"
+      ]
+    },
+    {
+      "name": "Essentials Can Interact Vanish",
+      "patterns": [
+        "%player% can interact vanish",
+        "%player% cannot interact vanish"
+      ]
+    },
+    {
+      "name": "Essentials God Mode",
+      "patterns": [
+        "%player% is[ in] god[ mode]",
+        "%player% is(n't| not)[ in] god[ mode]"
+      ]
+    },
+    {
+      "name": "Essentials Has Home",
+      "patterns": [
+        "%player% ha(s|ve)[ a[n]] home",
+        "%player% does(n't| not) ha(s|ve)[ a[n]] home",
+        "%player% ha(s|ve)(n't| not)[ a[n]] home"
+      ]
+    },
+    {
+      "name": "Essentials Has Powertools",
+      "patterns": [
+        "%player% ha(s|ve) powertool[s]",
+        "%player% does(n't| not) ha(s|ve) powertool[s]",
+        "%player% ha(s|ve)(n't| not) powertool[s]"
+      ]
+    },
+    {
+      "name": "Essentials Ignore",
+      "patterns": [
+        "%player% (ignore|is ignoring) %player%",
+        "%player% does(n't| not) ignore %player%"
+      ]
+    },
+    {
+      "name": "Essentials IsJailed",
+      "patterns": [
+        "%player% is jail[ed]",
+        "%player% is(n't| not) jail[ed]"
+      ]
+    },
+    {
+      "name": "Essentials IsMuted",
+      "patterns": [
+        "%player% is mute[d]",
+        "%player% is(n't| not) muted"
+      ]
+    },
+    {
+      "name": "Essentials Powertools Enabled",
+      "patterns": [
+        "%player% ha(s|ve) powertool[s] enable[d]",
+        "%player% does(n't| not) ha(s|ve) powertool[s] enable[d]",
+        "%player% ha(s|ve)(n't| not) powertool[s] enable[d]"
+      ]
+    },
+    {
+      "name": "Essentials Social Spy Enabled",
+      "patterns": [
+        "%player% ha(s|ve) social spy[ enable[d]]",
+        "%player% does(n't| not) ha(s|ve) social spy[ enable[d]]",
+        "%player% ha(s|ve)(n't| not) social spy[ enable[d]]"
+      ]
+    },
+    {
+      "name": "Essentials Vanish",
+      "patterns": [
+        "%player% is vanish[ed]",
+        "%player% is(n't| not) vanish[ed]"
+      ]
+    },
+    {
+      "name": "Even",
+      "patterns": [
+        "%number% is even",
+        "%number% is(n't| not) even"
+      ]
+    },
+    {
+      "name": "Odd",
+      "patterns": [
+        "%number% is odd",
+        "%number% is(n't| not) odd"
+      ]
+    },
+    {
+      "name": "In Arena",
+      "patterns": [
+        "%player% is in %arena%",
+        "%player% is(n't| not) in %arena%"
+      ]
+    },
+    {
+      "name": "In Game",
+      "patterns": [
+        "%player% is in (a[n] arena|[a ]game)",
+        "%player% is(n't| not) in (a[n] arena|[a ]game)"
+      ]
+    },
+    {
+      "name": "Is Started",
+      "patterns": [
+        "%arena% is started",
+        "%arena% is(n't| not) started"
+      ]
+    }
+  ],
+  "effects": [
+    {
+      "name": "ASkyBlock Calculate Level",
+      "patterns": [
+        "asb calculate level of %player%"
+      ]
+    },
+    {
+      "name": "Arena Broadcast",
+      "patterns": [
+        "broadcast [message ]%string% in %arena%"
+      ]
+    },
+    {
+      "name": "Call Method With Params",
+      "patterns": [
+        "call (function|method) %string% with param[meter][s] %objects% in class[ named] %string%"
+      ]
+    },
+    {
+      "name": "Call Method Without Params",
+      "patterns": [
+        "call (function|method) %string% [without param[meter][s]] in class[ named] %string%"
+      ]
+    },
+    {
+      "name": "Create Arena",
+      "patterns": [
+        "create[ a[n]] arena[ named] %string% with min[imum][ player[s]] %integer%(,| and) max[imum][ player[s]] %integer% (for|in) %minigame%"
+      ]
+    },
+    {
+      "name": "Create Cooldown",
+      "patterns": [
+        "create cooldown %string% for %timespan%",
+        "create cooldown %string% (for|of) %player% for %timespan%"
+      ]
+    },
+    {
+      "name": "Delete Cooldown",
+      "patterns": [
+        "delete cooldown %string%",
+        "delete cooldown %string% (for|of) %player%"
+      ]
+    },
+    {
+      "name": "Create Minigame",
+      "patterns": [
+        "create[ a] (minigame|mg)[ named] %string% with (command|cmd) %string% and prefix %string%"
+      ]
+    },
+    {
+      "name": "Essentials Delete Home",
+      "patterns": [
+        "delete home %string% of %player%"
+      ]
+    },
+    {
+      "name": "Essentials Make Player Become AFK",
+      "patterns": [
+        "make %player% become afk",
+        "make %player% become (no afk|active)"
+      ]
+    },
+    {
+      "name": "Essentials Make Player God",
+      "patterns": [
+        "make %player% become god",
+        "disable god[ mode] for %player%"
+      ]
+    },
+    {
+      "name": "Essentials Make Player Ignore",
+      "patterns": [
+        "make %player% ignore %player%",
+        "make %player% (doesn't ignore|unignore) %player%"
+      ]
+    },
+    {
+      "name": "Essentials Make Player Jailed",
+      "patterns": [
+        "jail %player%",
+        "unjail %player%"
+      ]
+    },
+    {
+      "name": "Essentials Make Player Muted",
+      "patterns": [
+        "mute %player%",
+        "unmute %player%"
+      ]
+    },
+    {
+      "name": "Essentials Make Social Spy",
+      "patterns": [
+        "enable social spy for %player%",
+        "disable social spy for %player%"
+      ]
+    },
+    {
+      "name": "Essentials Make Vanish",
+      "patterns": [
+        "vanish %player%",
+        "unvanish %player%"
+      ]
+    },
+    {
+      "name": "Essentials Send Mail",
+      "patterns": [
+        "send mail %string% to %player%"
+      ]
+    },
+    {
+      "name": "Make Join Arena",
+      "patterns": [
+        "make %player% join %arena%"
+      ]
+    },
+    {
+      "name": "Make Leave Arena",
+      "patterns": [
+        "make %player% leave[ current] arena"
+      ]
+    },
+    {
+      "name": "Open Anvil GUI",
+      "patterns": [
+        "open[ a[n]] anvil gui name[d] %string% to %player%",
+        "open[ a[n]] anvil gui name[d] %string% to %player% with[ default] text %string%",
+        "open[ a[n]] anvil gui name[d] %string% to %player% with item %itemstack%",
+        "open[ a[n]] anvil gui name[d] %string% to %player% with[ default] text %string% and [with ]item %itemstack%"
+      ]
+    },
+    {
+      "name": "Spectate",
+      "patterns": [
+        "wolvsk make %player% spectate %entity%"
+      ]
+    },
+    {
+      "name": "Start Arena",
+      "patterns": [
+        "start %arena%"
+      ]
+    },
+    {
+      "name": "Stop Arena",
+      "patterns": [
+        "stop %arena%"
+      ]
+    },
+    {
+      "name": "Unspectate",
+      "patterns": [
+        "wolvsk make %player% stop spectating"
+      ]
+    },
+    {
+      "name": "PVP Arena Remove Arena",
+      "patterns": [
+        "remove (pvp[ ]arena|pa) %arena%"
+      ]
+    }
+  ],
+  "expressions": [
+    {
+      "name": "ASkyBlock Coop Islands",
+      "return type": "Location",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(asb|askyblock) coop island[s] of %player%",
+        "(asb|askyblock) %player%['s] coop island[s]"
+      ]
+    },
+    {
+      "name": "ASkyBlock Home Location",
+      "return type": "Location",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(asb|askyblock) island[ location] of %player%",
+        "(asb|askyblock) %player%['s] island[ location]"
+      ]
+    },
+    {
+      "name": "ASkyBlock Home Location",
+      "return type": "Location",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(asb|askyblock) home[ location] of %player%",
+        "(asb|askyblock) %player%['s] home[ location]"
+      ]
+    },
+    {
+      "name": "ASkyBlock Island Count",
+      "return type": "integer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(asb|askyblock) island count"
+      ]
+    },
+    {
+      "name": "ASkyBlock Island Level",
+      "return type": "long",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(asb|askyblock) [island ]level of %player%",
+        "(asb|askyblock) %player%['s] [island ]level"
+      ]
+    },
+    {
+      "name": "ASkyBlock Island Name",
+      "return type": "Text",
+      "changers": [
+        "set"
+      ],
+      "patterns": [
+        "(asb|askyblock) island name of %player%",
+        "(asb|askyblock) %player%['s] island name"
+      ]
+    },
+    {
+      "name": "ASkyBlock Island World",
+      "return type": "World",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(asb|askyblock)[ island] world"
+      ]
+    },
+    {
+      "name": "ASkyBlock Owner",
+      "return type": "Offlineplayer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(asb|askyblock) owner of island at %location%",
+        "(asb|askyblock) island at %location% owner"
+      ]
+    },
+    {
+      "name": "ASkyBlock Team Leader",
+      "return type": "Offlineplayer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(asb|askyblock)[ team] leader of team of %player%",
+        "(asb|askyblock) %player%['s][ team] leader"
+      ]
+    },
+    {
+      "name": "ASkyBlock Team Members",
+      "return type": "Offlineplayer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(asb|askyblock)[ team] members of team of %player%",
+        "(asb|askyblock) %player%['s] team members"
+      ]
+    },
+    {
+      "name": "ASkyBlock Top Ten",
+      "return type": "Offlineplayer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(asb|askyblock) top (ten|10)"
+      ]
+    },
+    {
+      "name": "ASkyBlock Warp",
+      "return type": "Location",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(asb|askyblock) warp of %player%",
+        "(asb|askyblock) %player%['s] warp"
+      ]
+    },
+    {
+      "name": "All Arenas",
+      "return type": "arena",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "[all ]arenas of %minigame%",
+        "%minigame%['s] arenas"
+      ]
+    },
+    {
+      "name": "All Minigames",
+      "return type": "minigame",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "[all ]minigames"
+      ]
+    },
+    {
+      "name": "Anvil GUI Input Text",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "[input ]text of anvil( |-)gui"
+      ]
+    },
+    {
+      "name": "Anvil GUI Name",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "name of anvil( |-)gui"
+      ]
+    },
+    {
+      "name": "Arena By Name",
+      "return type": "arena",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "arena %string% in %minigame%",
+        "%minigame%['s] arena %string%"
+      ]
+    },
+    {
+      "name": "Arena Count",
+      "return type": "integer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "([player ]count|number of player[s]) of %arena%",
+        "%arena%['s] ([player ]count|number of player[s])"
+      ]
+    },
+    {
+      "name": "Arena Current Countdown",
+      "return type": "integer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "countdown of %arena%",
+        "%arena%['s] countdown"
+      ]
+    },
+    {
+      "name": "Arena Lobby",
+      "return type": "Location",
+      "changers": [
+        "set",
+        "remove",
+        "reset"
+      ],
+      "patterns": [
+        "lobby of %arena%",
+        "%arena%['s] lobby"
+      ]
+    },
+    {
+      "name": "Arena Max",
+      "return type": "integer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "max[imum][ of player[s]] of %arena%",
+        "%arena%['s] max[imum][ of player[s]]"
+      ]
+    },
+    {
+      "name": "Arena Min",
+      "return type": "integer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "min[imum][ of player[s]] of %arena%",
+        "%arena%['s] min[imum][ of player[s]]"
+      ]
+    },
+    {
+      "name": "Arena Name",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "name of arena %arena%",
+        "arena %arena%['s] name"
+      ]
+    },
+    {
+      "name": "Arena Of Player",
+      "return type": "arena",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "[current ]arena of %player%",
+        "%player%['s] [current ]arena"
+      ]
+    },
+    {
+      "name": "Arena Players",
+      "return type": "Player",
+      "changers": [
+        "add",
+        "remove",
+        "remove all"
+      ],
+      "patterns": [
+        "[all ]players (in|of) %arena%"
+      ]
+    },
+    {
+      "name": "Arena Timer",
+      "return type": "integer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "default (timer|countdown) of %arena%",
+        "%arena%['s] default (timer|countdown)"
+      ]
+    },
+    {
+      "name": "Block Power",
+      "return type": "integer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "power of %block%",
+        "%block%['s] power"
+      ]
+    },
+    {
+      "name": "Client Version",
+      "return type": "integer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(minecraft|mc) version of %player%"
+      ]
+    },
+    {
+      "name": "Cooldown Left Time",
+      "return type": "Timespan",
+      "changers": [
+        "add",
+        "set",
+        "remove",
+        "reset"
+      ],
+      "patterns": [
+        "cooldown[ left][ time] %string%",
+        "cooldown[ left][ time] %string% of %player%"
+      ]
+    },
+    {
+      "name": "Count Server",
+      "return type": "integer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(number of player[s]|player[s] count) (on|in|of) server[ with ip] %string%"
+      ]
+    },
+    {
+      "name": "Country",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "country of ip %string%",
+        "country of %player%",
+        "country code of ip %string%",
+        "country code of %player%",
+        "ip %string%['s] country",
+        "%player%['s] country",
+        "ip %string%['s] country code",
+        "%player%['s] country code"
+      ]
+    },
+    {
+      "name": "Essentials Home",
+      "return type": "Location",
+      "changers": [
+        "set",
+        "remove"
+      ],
+      "patterns": [
+        "home [%string%] of %player%",
+        "%player%['s] home [%string%]"
+      ]
+    },
+    {
+      "name": "Essentials Homes",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "homes of %player%",
+        "%player%['s] homes"
+      ]
+    },
+    {
+      "name": "Essentials Jail",
+      "return type": "Text",
+      "changers": [
+        "set"
+      ],
+      "patterns": [
+        "jail of %player%",
+        "%player%['s] jail"
+      ]
+    },
+    {
+      "name": "Essentials Jail Timeout",
+      "return type": "long",
+      "changers": [
+        "set"
+      ],
+      "patterns": [
+        "jail timeout of %player%",
+        "%player%['s] jail timeout"
+      ]
+    },
+    {
+      "name": "Essentials Last Account Name",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "last account name of %player%",
+        "%player%['s] last account name"
+      ]
+    },
+    {
+      "name": "Essentials Last Login Address",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "last login address of %player%",
+        "%player%['s] last login address"
+      ]
+    },
+    {
+      "name": "Essentials Logout Location",
+      "return type": "Location",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "log[ ]out[ location] of %player%",
+        "%player%['s] log[ ]out[ location]"
+      ]
+    },
+    {
+      "name": "Essentials Mute Timeout",
+      "return type": "long",
+      "changers": [
+        "set"
+      ],
+      "patterns": [
+        "mute timeout of %player%",
+        "%player%['s] mute timeout"
+      ]
+    },
+    {
+      "name": "Essentials Nickname",
+      "return type": "Text",
+      "changers": [
+        "set"
+      ],
+      "patterns": [
+        "essential[s] nick[ ]name %player%",
+        "%player%['s] essential[s] nick[ ]name"
+      ]
+    },
+    {
+      "name": "List Sort",
+      "return type": "Object",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "%objects% (sorted|in order)"
+      ]
+    },
+    {
+      "name": "Maths Absolute Value",
+      "return type": "double",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "abs[olute] [value of ]%number%"
+      ]
+    },
+    {
+      "name": "Maths Cube Root",
+      "return type": "double",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "cube root of %number%",
+        "cbrt[ of] %number%"
+      ]
+    },
+    {
+      "name": "Maths Degrees To Rad",
+      "return type": "double",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "%number% deg[ree[s]][ converted] (to|in) rad[ian[s]]"
+      ]
+    },
+    {
+      "name": "Maths Rad To Degrees",
+      "return type": "double",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "%number% rad[ian[s]][ converted] (to|in) deg[ree[s]]"
+      ]
+    },
+    {
+      "name": "Maths Exp",
+      "return type": "double",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "exp[onential][ of] %number%"
+      ]
+    },
+    {
+      "name": "Maths Exp Base",
+      "return type": "double",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "exp[onential] %number% in base %number%",
+        "exp[onential] in base %number% of %number%"
+      ]
+    },
+    {
+      "name": "Maths Log Base",
+      "return type": "double",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "log[arithm] %number% in base %number%",
+        "log[arithm] in base %number% of %number%"
+      ]
+    },
+    {
+      "name": "Maths Pi",
+      "return type": "double",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "pi",
+        "speed of[ the] light",
+        "light['s] speed"
+      ]
+    },
+    {
+      "name": "Maths Stats Average",
+      "return type": "double",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "average of %numbers%"
+      ]
+    },
+    {
+      "name": "Maths Stats Median",
+      "return type": "double",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "median of %numbers%"
+      ]
+    },
+    {
+      "name": "Minigame By Name",
+      "return type": "minigame",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "minigame %string%"
+      ]
+    },
+    {
+      "name": "Minigame Chat Format",
+      "return type": "Text",
+      "changers": [
+        "set"
+      ],
+      "patterns": [
+        "chat format of minigames"
+      ]
+    },
+    {
+      "name": "Minigame Command",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "command of %minigame%",
+        "%minigame%['s] command"
+      ]
+    },
+    {
+      "name": "Minigame Message Format",
+      "return type": "Text",
+      "changers": [
+        "set"
+      ],
+      "patterns": [
+        "message format of minigames"
+      ]
+    },
+    {
+      "name": "Minigame Of Arena",
+      "return type": "minigame",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "minigame of %arena%",
+        "%arena%['s] minigame"
+      ]
+    },
+    {
+      "name": "Minigame Player",
+      "return type": "minigame",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "[current ]minigame of %player%",
+        "%player%['s] [current ]minigame"
+      ]
+    },
+    {
+      "name": "Minigame Prefix",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "prefix of %minigame%",
+        "%minigame%['s] prefix"
+      ]
+    },
+    {
+      "name": "Name Of Minigame",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "name of (minigame|mg) %minigame%",
+        "(minigame|mg) %minigame%['s] name"
+      ]
+    },
+    {
+      "name": "Random Alpha Numeric String",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "[a ]random alpha[ ]numeric[al] (text|string) of length %integer%"
+      ]
+    },
+    {
+      "name": "Random Licence Code",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "[a ]random license code"
+      ]
+    },
+    {
+      "name": "Random UUID",
+      "return type": "uuid",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "[a ]random uuid"
+      ]
+    },
+    {
+      "name": "Return Of Method With Params",
+      "return type": "Object",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "return of (function|method) %string% with param[meter][s] %objects% in class[ named] %string%"
+      ]
+    },
+    {
+      "name": "Return Of Method Without Params",
+      "return type": "Object",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "return of (function|method) %string% [without param[meter][s]] in class[ named] %string%"
+      ]
+    },
+    {
+      "name": "Server MOTD",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "motd (of|for) server[ with ip] %string%"
+      ]
+    },
+    {
+      "name": "Server Max Players",
+      "return type": "integer",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "max[imum][ of] player[s] (on|in|of|for) server[ with ip] %string%"
+      ]
+    },
+    {
+      "name": "Server Version",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "version (of|for) server[ with ip] %string%"
+      ]
+    },
+    {
+      "name": "PVP Arena Arena",
+      "return type": "PVPArena",
+      "patterns": [
+        "(pvp[ ]arena|pa) %string%"
+      ]
+    },
+    {
+      "name": "PVP Arena Player Arena",
+      "return type": "PVPArena",
+      "patterns": [
+        "(pvp[ ]arena|pa) of %player%",
+        "%player%['s] (pvp[ ]arena|pa)"
+      ]
+    }
+  ],
+  "types": [
+    {
+      "name": "arena",
+      "patterns": [
+        "arena"
+      ]
+    },
+    {
+      "name": "minigame",
+      "patterns": [
+        "minigame"
+      ]
+    },
+    {
+      "name": "pvparena",
+      "patterns": [
+        "pvparena"
+      ]
+    }
+  ]
+}

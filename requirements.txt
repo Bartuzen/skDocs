@@ -1,0 +1,7 @@
+requests
+discord.py
+aioconsole
+ruamel.yaml
+sre_yield
+parse
+psutil

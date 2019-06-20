@@ -1,0 +1,244 @@
+﻿name: 'English'
+translator: 'Bartuzen#1957'
+errors:
+    title: 'Error'
+    permission: 'You don''t have permission to use this command.'
+docs:
+    emote: '📘'
+    title: 'Skript Documantation'
+    info: 'Info'
+    only-one: 'Only 1 result could be found, showing it''s results.'
+    everything: 'Everything'
+    query: 'Query'
+    page: 'Page'
+    type: 'Type'
+    addon: 'Addon'
+    contains: 'Contains'
+    link: 'Skript Hub Link'
+    command-field: 'Command'
+    code:
+        description: 'Description'
+        patterns: 'Patterns'
+        event-values: 'Event Values'
+        examples: 'Examples'
+        type-usage: 'Type Usage'
+        return-type: 'Return Type'
+        version: 'Added Version'
+        changers: 'Changers'
+        cancellable: 'Cancellable'
+        uncancellable: 'Uncancellable'
+        required-plugins: 'Required Plugins'
+        random-code: 'Random Generated Code'
+    types:
+        event: 'Event'
+        condition: 'Condition'
+        effect: 'Effect'
+        expression: 'Expression'
+        type: 'Type'
+        function: 'Function'
+    types-plural:
+        events: 'Events'
+        conditions: 'Conditions'
+        effects: 'Effects'
+        expressions: 'Expressions'
+        types: 'Types'
+        functions: 'Functions'
+    errors:
+        incorrect-arg: 'Incorrect argument: **%error%**'
+        incorrect-usage: 'Wrong usage!%nl%To see usage, type: **!sk help**'
+        no-page: '**%page%.** page could not be found.'
+        no-with-args: 'No results could be found with specified arguments.'
+    commands:
+        main: '(skript)?doc(s|umentation)?'
+        id: 'id'
+        type: '((skript|syntax)?type(s)?|sec(tion)?)'
+        addon: '(a(ddon)?|source)'
+        page: 'p(age)?'
+        contains: 'contain(s)?'
+        command-field:
+            main: '!sk docs'
+            id: 'id'
+            type: 'type'
+            addon: 'addon'
+            page: 'page'
+            contains: 'contains'
+reload:
+    reloading:
+        title: 'Reloading'
+        desc: 'Reloading **skDocs**...'
+    reloaded:
+        title: 'Reloaded'
+        successfully: 'Reloaded **skDocs** successfully.'
+        error: 'Encountered an error while reloading **skDocs**:'
+lang:
+    emote: '🌍'
+    langs: 'Languages'
+    successful: 'Successful'
+    set: 'Language has been changed successfully.'
+    available-langs: 'Available Languages'
+    usage-text: 'Usage'
+    usage: '!sk lang <lang>'
+    translator: 'Translator'
+    not-found: 'No language with this name could be found.'
+    only-in-guild: 'This command is only usable in guilds.'
+names:
+    args:
+        emote: '🔢'
+        title: 'Skript Names List'
+        usage:
+            name: 'Usage'
+            text: '!sk name <section>'
+        sections: 'Sections'
+    sections:
+        biome:
+            title: 'Biomes List'
+            command: 'biome(s)?(( )?list)?'
+        chatstyle:
+            title: 'Chat Styles List'
+            command: 'chat( )?style(s)?(( )?list)?'
+        clicktype:
+            title: 'Click Types List'
+            command: 'click?( )?type(s)?(( )?list)?'
+        color:
+            title: 'Colors List'
+            command: 'colo(u)?r(s)?(( )?list)?'
+        damagecause:
+            title: 'Damage Causes List'
+            command: 'damage( )?cause(s)?(( )?list)?'
+        direction:
+            title: 'Directions List'
+            command: 'direction(s)?(( )?list)?'
+        ench:
+            title: 'Enchantments List'
+            command: 'ench((s|ant(s|ment(s)?)?))?(( )?list)?'
+        inventoryaction:
+            title: 'Inventory Actions List'
+            command: 'inv(entory)?( )?action(s)?(( )?list)?'
+        inventorytype:
+            title: 'Inventory Types List'
+            command: 'inv(entory)?( )?type(s)?(( )?list)?'
+        potion:
+            title: 'Potion Effects List'
+            command: 'potion( )?effect(s)?(( )?list)?'
+        teleportcause:
+            title: 'Click Types List'
+            command: 'teleport?( )?cause(s)?(( )?list)?'
+        tree:
+            title: 'Trees List'
+            command: 'tree(s)?(( )?list)?'
+        visualeffect:
+            title: 'Visual Effects List'
+            command: 'visual( )?effect(s)?(( )?list)?'
+        weather:
+            title: 'Weathers Listesi'
+            command: 'weather(s)?(( )?list)?'
+        spawnreason:
+            title: 'Canlanma Sebepleri Listesi'
+            command: 'spawn?( )?reason(s)?(( )?list)?'
+    command: 'name(s)?'
+downloads:
+    emote: '⬇'
+    title: 'Downloads'
+    file-link: 'Download Link for %file%'
+    addons: 'Addons'
+    software: 'Server Softwares'
+    latest: 'Latest'
+    too-long: 'Too many arguments.'
+    no-arg: 'No available argument could be found.'
+    unknown-file: 'No file named %file% could be found.'
+    commands:
+        main: 'down(load(s)?)?'
+        addon: 'addon(s)?'
+        skript: 's(k(r(i(p(t)?)?)?)?)?'
+        aliases: 'al(iase(s)?)?'
+        software: 'software'
+info:
+    command: '(i(nfo)?|about)'
+    title: 'Info About skDocs'
+    version:
+        python: 'Python Version'
+        discord.py: 'discord.py Version'
+    uptime: 'Uptime'
+    guilds: 'Guilds'
+    developer: 'Developer: %owner%'
+    ram: 'RAM'
+    invite: 'Invite'
+    time:
+        day: 'Day'
+        hour: 'Hour'
+        minute: 'Minute'
+        second: 'Second'
+    click: 'Click'
+help:
+    sent-dm: 'My guide has been directly messaged to you, %user%!'
+    forbidden: 'Couldn''t send direct message.'
+    command: '(help|guide)'
+    embeds:
+        1:
+            title: '📘 Skript Documantation'
+            description:
+            - '**Commands**:'
+            color: '0, 255, 255'
+            fields:
+                1:
+                    title: '!sk docs'
+                    content:    
+                    - '**Description:** **Main** command of bot that shows Skript documentation.'
+                    - '- Arguments:'
+                    - '```autohotkey'
+                    - 'addon:: filters results by addon'
+                    - 'type:: filters results by syntax type'
+                    - 'contains:: filters results by typex text'
+                    - 'page:: shows pages of search'
+                    - '❗ Note:: You can make filters negative by putting ! before them.```'
+                    - '**Example Usage:**'
+                    - '!sk docs **bossbar** type:**effect** addon:**skRayfall**'
+                    - '- Searchs **bossbar** in **skRayFall** addon with **effect** type.'
+                    - ''
+                    - '!sk docs **bossbar** type:**effect** addon:**skRayfall** id:**1**'
+                    - '- Searchs **bossbar** in **skRayFall** addon with **effect** type and shows first result.'
+                    - ''
+                    - '!sk docs **bossbar** type:**effect** addon:**skRayfall** page:**2**'
+                    - '- Shows **2.** page of **skRayFall** addon''s **effect** type.'
+                2:
+                    title: '!sk download'
+                    content:
+                    - '**Description:** Shows links of downloads about Skript.'
+                    - '- Arguments:'
+                    - '```autohotkey'
+                    - '*None*:: Shows all downloads.'
+                    - '*Name*:: Shows downlaods with specifiec name(s).```'
+                    - '**Example Usage:**'
+                    - '!sk download'
+                    - '- Shows all downloads.'
+                    - ''
+                    - '!sk download **Skript** **TuSKe**'
+                    - '- Shows download links of **Skript** and **TuSKe**.'
+                3:
+                    title: '!sk name'
+                    content:
+                    - '**Description:** Shows name lists that can be used in Skript.'
+                    - '- Arguments:'
+                    - '```autohotkey'
+                    - '*None*:: Shows list of name lists.'
+                    - '*Name List*:: Shows names in specified list.```'
+                    - '**Example Usage:**'
+                    - '!sk name'
+                    - '- Shows all names'' lists.'
+                    - ''
+                    - '!sk name **ench**'
+                    - '- Shows **ench** names.'
+parse:
+    successful:
+        emote: '✅'
+        title: 'Successful'
+    too-long: 'Error is too long.'
+    unknown-website: 'Unknown website. Available websites:\n[GitHub](https://github.com/), [GitHub Gist](https://gist.github.com/) and [Hastebin](https://hastebin.com/)'
+    cant-access: 'Can''t reach website..'
+    yaml:
+        successful: 'No errors could be found in **YAML** file!'
+        error: 'Found an error in **YAML** file:'
+    json:
+        successful: 'No errors could be found in **JSON** file!'
+        error: 'Found an error in **JSON** file:'
+        beautified: 'Beautified **JSON** file:'

@@ -1,0 +1,24 @@
+token: ''
+status: '!sk help'
+skripthub:
+  token: ''
+  blacklisted_addons:
+    - 'skpermissionsex'
+    - 'playermention'
+    - 'hypersk'
+    - 'holographicdisplaysaddon'
+mainlang: 'english'
+developer: 184720162472198144
+admins:
+  - 184720162472198144
+github: 'https://github.com/Bartuzen/skDocs'
+embed-colors:
+  error: '255, 0, 0'
+  docs: '0, 255, 255'
+  reload: '0, 255, 255'
+  info: '0, 255, 255'
+  downloads: '0, 255, 255'
+  lang: '0, 255, 255'
+  names: '0, 255, 255'
+  parse-success: '0, 255, 0'
+  repo: '0, 255, 255'

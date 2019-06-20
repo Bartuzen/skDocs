@@ -1,0 +1,39 @@
+﻿emote: 🖱
+color: 153, 170, 181
+column: 2
+names:
+- Creative Action
+- Double Click Using Mouse
+- .Double Click
+- Drop Key With Control
+- .Drop Stack
+- .Ctrl+Q
+- Drop Key
+- .Drop Item
+- .Q
+- Left Mouse Button With Shift
+- .Left Mouse With Shift
+- .Shift+RMB
+- Left Mouse Button
+- .Left Mouse
+- .LMB
+- Middle Mouse Button
+- .Middle Mouse
+- .MMB
+- Number Key
+- .0-9
+- Right Mouse Button With Shift
+- .Right Mouse With Shift
+- .Shift+RMB
+- Right Mouse Button
+- .Right Mouse
+- .RMB
+- Unknown
+- .Unsupported
+- .Custom
+- Window Border Using Left Mouse Button
+- .Window Border Using Right Mouse
+- .Border Using RMB
+- Window Border Using Right Mouse Button
+- .Window Border Using Right Mouse
+- .Border Using LMB

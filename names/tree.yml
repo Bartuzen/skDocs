@@ -1,0 +1,25 @@
+﻿emote: 🌴
+color: 92, 145, 59
+column: 1
+names:
+- '(big|large) (regular tree|normal tree|oak)[s]'
+- '(big|tall) (fir|pine|spruce|redwood)[s]'
+- '(big|tall) birch[es]'
+- '(big|tall|huge|giant|large) jungle tree[s]'
+- '(huge|giant|large|big) brown mushroom[s]'
+- '(huge|giant|large|big) red mushroom[s]'
+- '(mega|giant) (fir|pine|spruce|redwood)[s]'
+- '[any ](fir|pine|spruce|redwood)[s]'
+- '[any ](huge|giant|large|big) mushroom[s]'
+- '[any ](regular tree|normal tree|oak)[s]'
+- '[any ]jungle tree[s]'
+- '[any ]tree[s]'
+- '[jungle ]bush[es]'
+- 'acacia[s]'
+- 'birch[es]'
+- 'cocoa tree[s]'
+- 'dark oak[s]'
+- 'small (fir|pine|spruce|redwood)[s]'
+- 'small (regular tree|normal tree|oak)[s]'
+- 'small jungle tree[s]'
+- 'swamp tree[s]'

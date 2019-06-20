@@ -1,0 +1,34 @@
+emote: ✏️
+color: 255, 204, 77
+column: 3
+names:
+- bold
+- .b
+- change page
+- insertion
+- .insert
+- .ins
+- italic
+- .italics
+- .i
+- link
+- .open url
+- .url
+- magic
+- .obfuscated
+- reset
+- .r
+- run command
+- .command
+- .cmd
+- strikethrough
+- .strike
+- .s
+- suggest command
+- .sgt
+- tooltip
+- .show text
+- .ttp
+- underlined
+- .underline
+- .u

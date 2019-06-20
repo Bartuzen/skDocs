@@ -1,0 +1,31 @@
+downloads:
+    Skript:
+        latest: https://github.com/SkriptLang/Skript/releases
+        2.4-alpha3_(1.9-1.14): https://github.com/SkriptLang/Skript/releases/tag/2.4-alpha3
+        2.3.6_(1.9-1.13): https://github.com/SkriptLang/Skript/releases/tag/2.3.6
+        dev37c_(1.8-1.12): https://github.com/SkriptLang/Skript/releases/tag/dev37c
+    addons:
+        Skript: https://github.com/SkriptLang/Skript/releases
+        AdvancementsAddon: https://forums.skunity.com/resources/advancementsaddon.226/
+        IdkSk: https://github.com/Nicofisi/IdkSk/releases
+        Vixio: https://github.com/iBlitzkriegi/Vixio/releases
+        SkQuery: https://forums.skunity.com/resources/unofficial-skquery-fork-1-6-1-12.68/
+        TuSKe: https://github.com/Pikachu920/TuSKe/releases
+        mmSkriptAddon: https://github.com/BerndiVader/mmSkriptAddon
+        SkRPG: https://forums.skunity.com/resources/skrpg-fork.341/
+        SkStuff: https://github.com/Tuke-Nuke/SkStuff/releases
+        WolvSK: https://github.com/Nashoba24/WolvSK/releases
+        MundoSK: https://github.com/MundoSK/MundoSK/blob/master/MundoSK.jar
+        SkWaze: https://github.com/Weefle/SkWaze/releases
+        skBossBarAPI: https://github.com/Bartuzen/skBossBarAPI
+        Sk-NBeeT: https://github.com/ShaneBeee/Sk-NBeeT/releases
+        skript-nms: https://cdn.discordapp.com/attachments/483376091885469696/538094049215774740/skript-nms.jar
+    aliases:
+        1.12: https://github.com/tim740/skAliases/releases/tag/v2.0.8
+        1.11: https://github.com/tim740/skAliases/releases/tag/v2.0.5
+        '1.10': https://github.com/tim740/skAliases/releases/tag/v1.9.8
+        1.9: https://github.com/tim740/skAliases/releases/tag/v1.9.3
+        1.8: https://drive.google.com/file/d/0B-hk5uuAupCAQ1FSdHdjUENYWXM/view
+    software:
+        Spigot: https://getbukkit.org/download/spigot
+        Paper: https://papermc.io/downloads

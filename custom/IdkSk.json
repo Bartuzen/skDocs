@@ -1,0 +1,60 @@
+{
+  "effects": [
+    {
+      "id": "EffPassToScriptEngine",
+      "name": "Pass to Script Engine",
+      "patterns": [
+        "(pass|add) [(arg[ument]|param[eter]|var[iable]|obj[ect])] %objects% (named|with name) %string% to [script[ ]engine] %scriptengine%"
+      ]
+    }
+  ],
+  "expressions": [
+    {
+      "id": "ExprEvalScriptEngine",
+      "name": "Eval Script Engine",
+      "return type": "Object",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "(eval|run|execute|exec|evaluate) [code] %strings% (using|with) [script[ ]engine] %scriptengine% [and (get|return) [the] result]"
+      ]
+    },
+    {
+      "id": "ExprNewScriptEngine",
+      "name": "New Script Engine",
+      "return type": "script engine",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "new %string% script[ing] engine",
+        "new script[ing] engine (of|with|using) lang[uage] %string%"
+      ]
+    },
+    {
+      "id": "ExprStackTraceOfSEE",
+      "name": "Stack Trace of SEE",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "stack[ ]trace of %scriptexception%",
+        "%scriptexception%'s stack[ ]trace"
+      ]
+    },
+    {
+      "id": "ExprTitleLineSEE",
+      "name": "Title Line SEE",
+      "return type": "Text",
+      "changers": [
+        "none"
+      ],
+      "patterns": [
+        "title line of [stack[ ]trace] %scriptexception%",
+        " [stack[ ]trace] %scriptexception%'s title line"
+      ]
+    }
+  ]
+}
