@@ -1,8 +1,8 @@
 downloads:
     Skript:
         latest: https://github.com/SkriptLang/Skript/releases
-        2.4-alpha3_(1.9-1.14): https://github.com/SkriptLang/Skript/releases/tag/2.4-alpha3
-        2.3.6_(1.9-1.13): https://github.com/SkriptLang/Skript/releases/tag/2.3.6
+        2.4-alpha4_(1.9-1.14): https://github.com/SkriptLang/Skript/releases/tag/2.4-alpha4
+        2.3.7_(1.9-1.13): https://github.com/SkriptLang/Skript/releases/tag/2.3.7
         dev37c_(1.8-1.12): https://github.com/SkriptLang/Skript/releases/tag/dev37c
     addons:
         Skript: https://github.com/SkriptLang/Skript/releases
@@ -19,7 +19,7 @@ downloads:
         SkWaze: https://github.com/Weefle/SkWaze/releases
         skBossBarAPI: https://github.com/Bartuzen/skBossBarAPI
         Sk-NBeeT: https://github.com/ShaneBeee/Sk-NBeeT/releases
-        skript-nms: https://cdn.discordapp.com/attachments/483376091885469696/538094049215774740/skript-nms.jar
+        skript-nms: https://github.com/FurkannM/skript-nms/releases
     aliases:
         1.12: https://github.com/tim740/skAliases/releases/tag/v2.0.8
         1.11: https://github.com/tim740/skAliases/releases/tag/v2.0.5
