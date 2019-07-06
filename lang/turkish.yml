@@ -1,5 +1,6 @@
 name: 'Türkçe'
 translator: 'Bartuzen#1957'
+emote: '🇹🇷'
 errors:
     title: 'Hata'
     permission: 'Bu komutu kullanmak için yetkin yok.'

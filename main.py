@@ -39,6 +39,7 @@ print("Starting skDocs...")
 yaml = YAML()
 bot = discord.ext.commands.Bot(command_prefix="")
 bot.remove_command("help")
+bot.messages = {}
 print("Loading cogs...")
 for each in ["admin",
              "docs",
