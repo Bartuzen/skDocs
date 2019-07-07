@@ -1,6 +1,10 @@
 # skDocs
 A Discord bot made to show documentation of Skript and it's addons.
 
+➕ **Invtitation Link:** https://discordapp.com/oauth2/authorize?client_id=487688501018624041&scope=bot&permissions=8192  
+**Note:** skDocs needs `Manage Messages` permission for emote buttons.
+
+
 ## Setup
 
 ### `1.` Install Python
@@ -24,4 +28,4 @@ A Discord bot made to show documentation of Skript and it's addons.
 * Double click to `main.py` inside skDocs folder or run `python main.py` from command line.
 
 ### `6.` Add Bot to Your Server
-* Change `CLIENTID` with your bot's client id in `https://discordapp.com/oauth2/authorize?client_id=CLIENTID&scope=bot` and go to website.
+* Change `CLIENTID` with your bot's client id in `https://discordapp.com/oauth2/authorize?client_id=CLIENTID&scope=bot&permissions=8192` and go to website.
