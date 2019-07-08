@@ -1,5 +1,5 @@
 # skDocs
-A Discord bot made to show documentation of Skript and its addons.
+A Discord bot made to show documentation of [Skript](https://github.com/SkriptLang/Skript) and its addons.
 
 ➕ **Invite Link:** [Click to Invite](https://discordapp.com/oauth2/authorize?client_id=487688501018624041&scope=bot&permissions=8192)  
 **Note:** skDocs needs `Manage Messages` permission for emote buttons.
