@@ -1,1 +1,558 @@
-{"effects":[{"patterns":"add pathfind[er] goal [[with] priority %integer%] (GOAL, see link in description) to %living entity%","name":"Add Pathfinder Goals","description":"Adds a goal to an entity. The list of goals can be found [here](http://pastebin.com/XdnZYM8i).","since":"1.0"},{"patterns":"(clear|delete) [all] pathfind[er] goals (of|from) %livingentities%","name":"Clear Path Goals","since":"1.6.4.1"},{"patterns":"(clear|delete) [all] pathfind[er] goals (of|from) %livingentity%","name":"Clear Pathfinder Goals of an entity","description":"This effect basically makes the mob have no AI. It will still be pushable, however.","since":"1.0"},{"patterns":"create [a] gzip[ped] file [at] [path] %text%","name":"Create a GZip file","description":"This effect was added only if someone wanted to use the NBT of file expression to store information. Keep in mind that NBT can only store numbers, texts, compounds and arrays (lists).","since":"1.0"},{"patterns":"(create|make) [a[n]] hollow (ellipsoid|sphere) [centered] at %location% [with] radius [of] %number%,[ ]%number%(,[ ]| and )%number% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%\r\n(create|make) [a[n]] [(no(n|t)(-| )hollow|filled|)] (ellipsoid|sphere) [centered] at %location% [with] radius [of] %number%,[ ]%number%(,[ ]| and )%number% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%","name":"Create a WorldEdit ellipsoid","description":"Creates an ellipsoid at the specified Location.","since":"1.0"},{"patterns":"(create|make) [a[n]] [(no(n|t)(-| )hollow|filled)] pyramid at %location% [with] radius [of] %integer% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%\n(create|make) [a[n]] hollow pyramid at %location% [with] radius [of] %integer% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%","name":"Create a WorldEdit pyramid","description":"Creates a pyramid at the specified Location.","since":"1.0"},{"patterns":"(create|make) [a[n]] hollow cylinder at %location% [with] radius [of] %number%,[ ]%integer%(,[ ]| and )%number% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%\n(create|make) [a[n]] [(no(n|t)(-| )hollow|filled)] cylinder at %location% [with] radius [of] %number%,[ ]%integer%(,[ ]| and )%number% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%","name":"Create cylinder using WorldEdit","description":"Creates a cylinder at the specified Location with the specific radius. The height (second radius argument) can be negative to make it go down.","since":"1.0"},{"patterns":"(create|make) wall[s] from %location% to %location% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%","name":"Create WorldEdit walls","description":"Creates a cuboid wall from one point to another.","since":"1.0"},{"patterns":"(drain|remove) [all] liquid[s] at %location% (in|within) [a] radius [of] %number% (using|with) [edit[ ]session] %editsession%","name":"Drain liquid using WorldEdit","description":"Removes all liquid blocks (lava or water) in a radius of the specified Location.","since":"1.0"},{"patterns":"(create|draw|make) [a[n]] [(no(n|t)(-| )hollow|filled)] line from %location% to %location% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items% [with] thick[ness] %number%\n(create|draw|make) [a[n]] hollow line from %location% to %location% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items% [with] thick[ness] %number%","name":"Draw hollow/filled line","description":"Draws a line from a Location to another using the specified EditSession.","since":"1.0"},{"patterns":"(create|draw|make) [a[n]] (0?(no(n|t)(-| )hollow|filled|)|1?hollow) line from %location% to %location% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %itemstacks% [with] thick[ness] %double%","name":"Draw Line W E","since":"1.6.4.1"},{"patterns":"create [a] gzip[ped] file [at] [path] %string%","name":"G Zip File","since":"1.6.4.1"},{"patterns":"(simulate snow at|place snow over) %location% (in|within) [a] radius [of] %number% (using|with) [edit[ ]session] %editsession%\r\nmake %location% snowy (in|within) [a] radius [of] %number% (using|with) [edit[ ]session] %editsession%","name":"Make a location snowy with WorldEdit","description":"Simulates snow in a specific radius of a Location, overlaying it with snow, and if water is present it gets replaced with ice (just like it would happen in a snow biome while snowing).","since":"1.0"},{"patterns":"(create|make) [a[n]] (0?(no(n|t)(-| )hollow|filled|)|1?hollow) cylinder at %location% [with] radius [of] %double%,[ ]%integer%(,[ ]| and )%double% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %itemstacks%","name":"Make Cylinder","since":"1.6.4.1"},{"patterns":"make %livingentities% jump\nforce %livingentities% to jump","name":"Make Jump","since":"1.6.4.1"},{"patterns":"make %player% (remember|be able to undo) changes (of|from) [edit[ ]session] %editsession%","name":"Make player remember changes from edit session","description":"Makes the specified Player be able to use //undo on the edits made artificially with the WorldEdit effects.","since":"1.0"},{"patterns":"(create|make) [a[n]] (0?(no(n|t)(-| )hollow|filled|)|1?hollow) pyramid at %location% [with] radius [of] %integer% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %itemstacks%","name":"Make Pyramid","since":"1.6.4.1"},{"patterns":"(create|make) [a[n]] (0?(no(n|t)(-| )hollow|filled|)|1?hollow) (ellipsoid|sphere) [centered] at %location% [with] radius [of] %double%,[ ]%double%(,[ ]| and )%double% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %itemstacks%","name":"Make Sphere","since":"1.6.4.1"},{"patterns":"(create|make) wall[s] from %location% to %location% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %itemstacks%","name":"Make Walls","since":"1.6.4.1"},{"patterns":"naturalize ([cuboid] region|[all] blocks) (from|between) %location% (to|and) %location% (using|with) [edit[ ]session] %editsession%","name":"Naturalize area with WorldEdit","description":"Naturalizes an area by placing grass on the topmost layer, then 3 layers of dirt below and then stone below everything in the area.","since":"1.0"},{"patterns":"paste schem[atic] %text% at %location% using [edit[ ]session] %editsession% [(ignor(e|ing)|without|[with] no) air]","name":"Paste Schematic","description":"Pastes a schematic using a specified edit session. You can also optionally make it paste no air.","since":"1.0"},{"patterns":"([dis]play|show) entity effect (firework[s] explo(de|sion)|hurt|[[iron] golem] (give|offer) (rose|poppy)|[sheep] eat grass|wolf shake) at %entity%","name":"Play entity animation/effect","description":"Plays an animation or effect on an entity.\r\n• Fireworks explosion\n - makes a firework rocket explode\r\n• hurt\n - makes the mob glow in red like when it's hurt\r\n• iron golem offer rose\n - plays the animation when golems are giving a flower to a villager child;\r\n• sheep eat grass\n - plays the sheep grass-eating animation\r\n• wolf shake\n - plays the shaking animation when wolves get out of water.\r\n\r\nIf an entity is incompatible with the animation/effect, it will not do anything.","since":"1.0"},{"patterns":"remove pathfind[er] goal (0?(avoid|run away from) entit(y|ies)|1?break door[s]|2?breed|3?eat grass|4?(flee from the sun|seek shad(e|ow))|5?float (in[side]|on) water|6?follow (owner|tamer)|7?follow (adult|parent)[s]|8?(fight back|react to|target) (damager|attacker)|9?o(c|z)elot jump on blocks|10?leap at target|11?look at entit(y|ies)|12?melee attack entit(y|ies)|13?move to[wards] target|14?target nearest entity|15?o(c|z)elot attack [chicken[s]]|16?open door[s]|17?(panic|flee)|18?look around randomly|19?(walk around randomly|wander)|20?sit|21?[creeper] (explode|inflate|swell)|22?squid (swim|wander)|23?shoot fireball[s]|24?[silverfish] hide (in[side]|on) block[s]|25?(wake other silverfish[es]|[silverfish] call (help|reinforcement|other [hidden] silverfish[es]))|26?[enderm(a|e)n] pick[[ ]up] block[s]|27?[enderm(a|e)n] place block[s]|28?[enderman] attack player (staring|looking) [at eye[s]]|29?ghast move to[wards] target|30?ghast (idle move[ment]|wander|random fl(ight|y[ing]))|31?(tempt to|follow players (holding|with)) [a[n]] item|32?target [random] entity (if|when) (not tamed|untamed)|33?guardian attack [entity]|34?[z[ombie[ ]]pig[man]] attack [player[s]] (if|when) angry|35?[z[ombie[ ]]pig[man]] (react to|fight back|target) (attacker|damager) (if|when) angry|36?[rabbit] eat carrot crops|37?[killer] rabbit [melee] attack|38?slime [random] jump|39?slime change (direction|facing) randomly|40?slime (idle move[ment]|wander)|41?follow [entity]|42?bow shoot) from %livingentities%","name":"Remove Path Goal","since":"1.6.4.1"},{"patterns":"remove pathfind[er] goal (GOAL, see link in description) from %living entity%","name":"Remove Pathfinder Goal","description":"Removes all pathfinder goals of a specific type from an entity.\r\n[List of goals](http://pastebin.com/XdnZYM8).\r\nUse them without the arguments.","since":"1.0"},{"patterns":"replace [all] %items% (from|between) %location% (to|and) %location% with %items% (using|with) [edit[ ]session] %editsession%","name":"Replace blocks using WorldEdit","description":"Replaces all specified blocks from one point to another with the other specified blocks.","since":"1.0"},{"patterns":"replace [all] %itemstacks% (from|between) %location% (to|and) %location% with %itemstacks% (using|with) [edit[ ]session] %editsession%","name":"Replace Blocks W E","since":"1.6.4.1"},{"patterns":"play [raw] [([resource[ ]]pack)] sound %string% (for|to) %players% at %location% [[with] volume %-number%[[(,| and)] pitch %-number%]],play [raw] [([resource[ ]]pack)] sound %string% for %players% at %location% [[with] pitch %-number%[[(,| and)] volume %-number%]]","name":"Resource Sound","since":"1.6.4.1"},{"patterns":"set [all] blocks (from|between) %location% (to|and) %location% to %itemstacks% (using|with) [edit[ ]session] %editsession%","name":"Set Blocks W E","since":"1.6.4.1"},{"patterns":"set [all] blocks (from|between) %location% (to|and) %location% to %items% (using|with) [edit[ ]session] %editsession%","name":"Set blocks within a location using WorldEdit","description":"Sets all blocks from a specified point to another. Can have multiple blocks.","since":"1.0"},{"patterns":"add pathfind[er] goal [[with] priority %-integer%] (0?(avoid|run away from) %*entitydatas%[,radius %-number%[,speed %-number%[,speed (if|when) (close|near) %-number%]]]|1?break door[s]|2?breed[,[move[ment]] speed %-number%]|3?eat grass|4?(flee from the sun|seek shad(e|ow))[,[move[ment]] speed %-number%]|5?(float (in[side]|on) water|swim)|6?follow (owner|tamer)[,speed %-number%[,min[imum] distance %-number%[,max[imum] distance %-number%]]]|7?follow (adult|parent)[s][,[move[ment]] speed %-number%]|8?(fight back|react to|target) (damager|attacker) [[of] type] %*entitydatas%[,call ([for] help|reinforcement) %-boolean%]|9?o(c|z)elot jump on blocks[,[move[ment]] speed %-number%]|10?leap at target[,[leap] height %-number%]|11?look at %*entitydatas%[,(radius|max[imum] distance) %-number%]|12?melee attack %*entitydatas%[,[move[ment]] speed %-number%[,(memorize|do('nt| not) forget) target [for [a] long[er] time] %-boolean%]]|13?move to[wards] target[,[move[ment]] speed %-number%[,(radius|max[imum] distance) %-number%]]|14?target nearest [entity [of] type] %*entitydatas%[,check sight %-boolean%]|15?o(c|z)elot attack|16?open door[s]|17?(panic|flee)[,[move[ment]] speed %-number%]|18?look around randomly|19?(walk around randomly|wander)[,[move[ment]] speed %-number%[,min[imum] [of] %-timespan% between mov(e[ment][s]|ing)]]|20?sit|21?[creeper] (explode|inflate|swell)|22?squid (swim around|wander)|23?shoot fireball[s]|24?[silverfish] hide (in[side]|on) block[s]|25?((call|summon|wake) [other] [hidden] silverfish[es])|26?[enderman] pick[[ ]up] block[s]|27?[enderman] place block[s]|28?[enderman] attack player (staring|looking) at [their] eye[s]]|29?ghast move to[wards] target|30?ghast (idle move[ment]|wander|random fl(ight|y[ing]))|31?(tempt to|follow players (holding|with)) %-itemstack%[,[move[ment]] speed %number%[,scared of player movement %-boolean%]]|32?target [random] %*entitydatas% (if|when) (not |un)tamed|33?guardian attack [entities]|34?[z[ombie[ ]]pig[man]] attack [player[s]] (if|when) angry|35?[z[ombie[ ]]pig[man]] (react to|fight back|target) (attacker|damager) (if|when) angry|36?[rabbit] eat carrot crops|37?[killer] rabbit [melee] attack|38?slime [random] jump|39?slime change (direction|facing) randomly|40?slime (idle move[ment]|wander)|41?follow %*entitydatas%[,radius %-number%[,speed %-number%[,[custom[ ]]name[d] %-string%]]]|42?bow shoot[,[move[ment]] speed %-number%[,unk[nown] param[eter] %-number%[,follow range %-number%]]])) to %livingentities%","name":"Set Path Goal","since":"1.6.4.1"},{"patterns":"(display|play|show) entity effect (0?firework[s] explo(de|sion)|1?hurt|2?[[iron] golem] (give|offer) (rose|poppy)|3?[sheep] eat grass|4?wolf shake) at %entity%","name":"Show Entityect","since":"1.6.4.1"},{"patterns":"(simulate snow at|place snow over) %location% (in|within) [a] radius [of] %double% (using|with) [edit[ ]session] %editsession%\nmake %location% snowy (in|within) [a] radius [of] %double% (using|with) [edit[ ]session] %editsession%","name":"Simulate Snow","since":"1.6.4.1"},{"patterns":"toggle vanish (state|mode) of %player% [(silently|quietly)]\r\ntoggle %player%'s vanish (state|mode) [(silently|quietly)]","name":"Toggle vanish with VanishNoPacket","description":"Toggles the vanish state of the specified Player.\r\n\r\nAdding silently or quietly at the end of the effect makes no message appear in the players chat and also makes no effects (such as bats/lightning) appear.","since":"1.0"},{"patterns":"(0?undo|1?redo) (change|edit)s (of|from) [edit[ ]session] %editsession%","name":"Undo Redo Session","since":"1.6.4.1"},{"patterns":"undo (change|edit)s (of|from) [edit[ ]session] %editsession%\nredo (change|edit)s (of|from) [edit[ ]session] %editsession%","name":"Undo/Redo changes from edit session","description":"Undoes or redoes all the changes made with the specified EditSession.","since":"1.0"}],"types":[{"patterns":"[nbt[ ]tag] compound[s]","name":"Compound","description":"An NBT compound. The format used is the Mojangson notation, the same used on vanilla commands that manipulate NBT.","since":"1.0"},{"patterns":"edit[ ]session[s]","name":"Edit Session","description":"An edit session, which is used to execute WorldEdit operations such as drawing a line from a point to another.","since":"1.0"},{"patterns":"nbt[ ]list[[ ]tag]","name":"NBT List","description":"A NBT List tag. Note that a list tag can only contain values of the same type.","since":"1.0"}],"conditions":[{"patterns":"[(world[ ]edit|we)] selection of %player% (contains|has) %location%\n%player%'s [(world[ ]edit|we)] selection (contains|has) %location%\n[(world[ ]edit|we)] selection of %player% does(n't| not) (contain|have) %location%\n%player%'s [(world[ ]edit|we)] selection does(n't| not) (contain|have) %location%","name":"Selection Contains","since":"1.6.4.1"}],"expressions":[{"patterns":"area of schem[atic] [from] %text%","name":"Area of schematic","description":"Returns the area of the specified schematic.","since":"1.0"},{"patterns":"area of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we)] selection area","name":"Area of WorldEdit selection","description":"Returns the area of the WorldEdit of a Player.","since":"1.0"},{"patterns":"blocks that %entity% can (carry|hold|grab|steal)","name":"Blocks that enderman can carry","description":"List of blocks which an enderman can carry. Currently cannot be modified, but will be in a future update.","since":"1.0"},{"patterns":"(first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %text% [converted] to (cap[ital]s|upper[ ]case) [ignoring [other] upper[ ]case [(char[acter]s|letters)]]\r\nconvert (first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %text% to (cap[ital]s|upper[ ]case) [ignoring [other] upper[ ]case [(char[acter]s|letters)]]\r\ncapitalize (first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %text% [ignoring [other] upper[ ]case [(char[acter]s|letters)]]","name":"Capitalize first char of each word","description":"Expression used to capitalize each word of a Text.","since":"1.0"},{"patterns":"number of [all] changed blocks (in|of) [edit[ ]session] %editsession%","name":"Changed Blocks Session","since":"1.6.4.1"},{"patterns":"[skstuff] clicked inventory","name":"Clicked inventory","description":"Expression to be used in the on inventory click event (either from Umbaska or SkQuery). Gets the inventory which the player clicked.\r\nUseful to determine whether a player clicked their inventory or a container inventory.","since":"1.0"},{"patterns":"%text% [converted] to [all] (cap[ital]s|upper[ ]case)\r\nconvert %text% to [all] (cap[ital]s|upper[ ]case)\r\ncapitalize [all] [char[acter]s (of|in)] %text%","name":"Convert string to uppercase","description":"Expression used to convert a Text to all uppercase.","since":"1.0"},{"patterns":"%text% [converted] to [all] lower[ ]case\r\nconvert %text% to [all] lower[ ]case\r\nun[( |-)]capitalize [all] [char[acter]s (of|in)] %text%","name":"Convert text to all lowercase","description":"Expression used to convert a Text to lowercase.","since":"1.0"},{"patterns":"[block] limit [change] of [edit[ ]session] %editsession%","name":"Edit Session Limit","since":"1.6.4.1"},{"patterns":"nbt[[ ]tag[s]] from [file] %string%","name":"File NBR","since":"1.6.4.1"},{"patterns":"fire[ ]proof (state|mode) of %entities%\n%entities%'s fire[ ]proof (state|mode)","name":"Fire Proof","since":"1.6.4.1"},{"patterns":"fire[ ]proof (state|mode) of %entity%\n%entity%'s fire[ ]proof (state|mode)","name":"Fireproof state of entity","description":"Sets or gets the fireproof state of an entity.\n\nYou can set the fireproof state of entities that have it true by default (zombie pigmans, blazes, etc.) back to false, but the flames will not appear in their body.","since":"1.0"},{"patterns":"[(world[ ]guard|wg)] flag %wgflag% of %wgregion%","name":"Flag Of W G Region","since":"1.6.4.1"},{"patterns":"[(all|the)] [(world[ ]guard|wg)] flags of %wgregion%","name":"Flags Of W G Region","since":"1.6.4.1"},{"patterns":"elytra (fl(y|ight)|glid(e|ing)) state of %livingentity%\n%livingentity%'s elytra (fl(y|ight)|glid(e|ing)) state","name":"Glide State","since":"1.6.4.1"},{"patterns":"(y( |-)size|height) of schem[atic] [from] %text%","name":"Height of schematic","description":"Returns the height of the specified schematic.","since":"1.0"},{"patterns":"(y( |-)size|height) of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we) ]selection (y( |-)size|height)","name":"Height of WorldEdit selection","description":"Returns the height of the WorldEdit selection of a Player.","since":"1.0"},{"patterns":"[inventory] (owner|holder) of %inventory%\n%inventory%'s [inventory] (owner|holder)","name":"Inventory Owner","since":"1.6.4.1"},{"patterns":"%itemstack% with [custom] nbt[[ ]tag[s]] %string%","name":"Item NBR","since":"1.6.4.1"},{"patterns":"%item% with [custom] nbt[[ ]tag[s]] %text%","name":"Item with custom NBT","description":"Used to give a Player/Entity an ItemStack with custom NBT without having to manually add it. This expression can also be used to set an ItemStack to another item with custom NBT.","since":"1.0"},{"patterns":"[the] (last|past|former) location of %entity%\n%entity%'s (last|past|former) location\n[the] location of %entity% (1|one) tick before\n%entity%'s location (1|one) tick before","name":"Last Location","since":"1.6.4.1"},{"patterns":"(z( |-)size|length) of schem[atic] [from] %text%","name":"Length of schematic","description":"Returns the length of the specified schematic.","since":"1.0"},{"patterns":"(z( |-)size|length) of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we) ]selection (z( |-)size|length)","name":"Length of WorldEdit selection","description":"Returns the length (z-size) of the WorldEdit selection of a Player.","since":"1.0"},{"patterns":"(mc|minecraft) [(string|native)] id of %itemtype%\n%itemtype%'s minecraft [(string|native)] id","name":"MC Id Of","since":"1.6.4.1"},{"patterns":"item[[ ](stack|type)] (of|from) (mc|minecraft) [(string|native)] id %string%","name":"MC Id To Item","since":"1.6.4.1"},{"patterns":"[all] contents (of|from) [nbt[ ]list] %nbtlist%\n[nbt[ ]list] %nbtlist% contents","name":"NBR List Contents","since":"1.6.4.1"},{"patterns":"[nbt[ ]list] %nbtlist% index %number%","name":"NBR List Index","since":"1.6.4.1"},{"patterns":"nbt[[ ]tag[s]] of %~object%\n%~object%'s nbt[[ ]tag[s]]","name":"NBR Of","since":"1.6.4.1"},{"patterns":"nbt[[ ]tag[s]] from [file] %text%","name":"NBT from file","description":"Gets the raw NBT of a file in a Mojangson notation.\n\nPlease note that the file can get corrupted if the file is being used (e.g an online player file or the level.dat).","since":"1.0"},{"patterns":"[all] contents (of|from) [nbt[ ]list] %nbt list%\r\n[nbt[ ]list] %nbt list% contents","name":"NBT List contents","description":"The contents on a NBT List.","since":"1.0"},{"patterns":"[nbt[ ]list] %nbt list% index %integer%","name":"NBT List index","description":"The specified index of a NBT List. Null if out of bounds.\r\nKeep in mind that these lists are zero indexed, so 0 is the first value, 1 is the second value, etc.","since":"1.0"},{"patterns":"nbt[[ ]tag[s]] of %entity/block/item%\n%entity/block/item%'s nbt[[ ]tag[s]]","name":"NBT of an entity, block or item","description":"Returns the Compound root of the NBT of an Entity, Block or ItemStack in a Mojangson notation (the ones used for vanilla commands, such as /entitydata). \nNBT tags can be also added or removed.","since":"1.0"},{"patterns":"[new] edit[ ]session in [world] %world% [with] [max[imum]] [block] limit [change] [of] %integer%","name":"New edit session","description":"Creates a new EditSession} which is used to execute WorldEdit operations such as drawing a line. \nKeep in mind that you will need to save it in a variable to be able to use it to create something.","since":"1.0"},{"patterns":"no[( |-)]clip (state|mode) of %entity%\r\n%entity%'s no[( |-)]clip (state|mode)","name":"No Clip state of entity","description":"Gets or sets the no clip state of an entity.\r\n\r\nPlease note that setting this for a player does not take effect.","since":"1.0"},{"patterns":"no gravity (state|mode) of %entities%\n%entities%'s no gravity (state|mode)","name":"No Gravity State","since":"1.6.4.1"},{"patterns":"[(world[ ]edit|we)] po(s|int)[ ]1 of %player%\r\n%player%'s [(world[ ]edit|we)] po(s|int)[ ]1","name":"Point 1 of WorldEdit selection","description":"Returns the pos1 of the WorldEdit selection of a Player.\r\nCan be set to any location","since":"1.0"},{"patterns":"[(world[ ]edit|we)] po(s|int)[ ]2 of %player%\r\n%player%'s [(world[ ]edit|we)] po(s|int)[ ]2","name":"Point 2 of WorldEdit selection","description":"Returns the pos2 of the WorldEdit selection of a Player.\r\nCan be set to any location.","since":"1.0"},{"patterns":"(0?volume|1?(x( |-)size|width)|2?(y( |-)size|height)|3?(z( |-)size|length)|4?area) of schem[atic] [from] %string%","name":"Schematic Area","since":"1.6.4.1"},{"patterns":"(0?volume|1?(x( |-)size|width)|2?(y( |-)size|height)|3?(z( |-)size|length)|4?area) of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we)] selection (0?volume|1?(x( |-)size|width)|2?(y( |-)size|height)|3?(z( |-)size|length)|4?area)","name":"Selection Area","since":"1.6.4.1"},{"patterns":"[(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we)] selection","name":"Selection Of Player","since":"1.6.4.1"},{"patterns":"[(world[ ]edit|we)] po(s|int)[ ](0?1|1?2) of %player%\n%player%'s [(world[ ]edit|we)] po(s|int)[ ](0?1|1?2)","name":"Selection Pos","since":"1.6.4.1"},{"patterns":"[the] step length of %entity%\n%entity%'s step length","name":"Step Length","since":"1.6.4.1"},{"patterns":"[(world[ ]edit|we)] super[ ]pick[axe] (state|mode) of %players%\n%players%'s [(world[ ]edit|we)] super[ ]pick[axe] (state|mode)","name":"Super Pickaxe","since":"1.6.4.1"},{"patterns":"[nbt[ ]]tag %text% of [[nbt] compound] %compound%","name":"Tag of compound","description":"Returns the value of the specified tag of a Compound.\nPlease note that if the value in the tag is a Number, you will still need to save the value to a variable before being able to do math operations, for example.","since":"1.0"},{"patterns":"%timespan% [converted] [in]to (ticks|sec[ond]s|min[ute]s|hours|days)","name":"Timespan converted into units","description":"Transforms a timespan into digits, specifying whether if it's counted in ticks, seconds, minutes, hours or days.","since":"1.0"},{"patterns":"%timespan% [converted] [in]to (0?ticks|1?sec[ond]s|2?min[ute]s|3?hours|4?days)","name":"Timespan To Number","since":"1.6.4.1"},{"patterns":"%string% [converted] to [all] lower[ ]case\nconvert %string% to [all] lower[ ]case\nun[( |-)]capitalize [all] [char[acter]s (of|in)] %string%","name":"To Lower Case","since":"1.6.4.1"},{"patterns":"%string% [converted] to [all] (cap[ital]s|upper[ ]case)\nconvert %string% to [all] (cap[ital]s|upper[ ]case)\ncapitalize [all] [char[acter]s (of|in)] %string%","name":"To Upper Case","since":"1.6.4.1"},{"patterns":"vanish (state|mode) of %player%\r\n%player%'s vanish (state|mode)","name":"VanishNoPacket vanish state of player","description":"Gets the vanish state of the specified Player.\r\n\r\nCannot be set. [Toggle vanish state] instead.","since":"1.0"},{"patterns":"volume of schem[atic] [from] %text%","name":"Volume of schematic","description":"Returns the volume of the specified schematic.","since":"1.0"},{"patterns":"volume of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we)] selection volume","name":"Volume of WorldEdit selection","description":"Returns the volume of the WorldEdit selection of a Player.","since":"1.0"},{"patterns":"[the] (0?members|1?owner[s]) of [[the] (world[ ]guard|wg) region] %wgregion%","name":"W G Member Owner","since":"1.6.4.1"},{"patterns":"(x( |-)size|width) of schem[atic] [from] %text%","name":"Width of schematic","description":"Returns the width of the specified schematic.","since":"1.0"},{"patterns":"(x( |-)size|width) of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we)] selection (x( |-)size|width)","name":"Width of WorldEdit selection","description":"Returns the width (x-size) of the WorldEdit selection of a Player.","since":"1.0"},{"patterns":"(first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %string% [converted] to (cap[ital]s|upper[ ]case) (0?|1?ignoring [other] upper[ ]case [(char[acter]s|letters)])\nconvert (first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %string% to (cap[ital]s|upper[ ]case) (0?|1?ignoring [other] upper[ ]case [(char[acter]s|letters)])\ncapitalize (first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %string% (0?|1?ignoring [other] upper[ ]case [(char[acter]s|letters)])","name":"Words To Upper Case","since":"1.6.4.1"},{"patterns":"[(world[ ]edit|we)] selection of %player%\r\n%player%'s [(world[ ]edit|we)] selection","name":"WorldEdit selection","description":"The two points of the WorldEdit selection of a Player. If you want to save it in a variable it needs to be in a list variable, because it returns two Location, which are the edges of the selection.\r\nCan be deleted/cleared.","since":"1.0"},{"patterns":"[all] [the] regions (containing|within|inside) %location%","name":"Regions Within Location","since":"1.6.4.1"}],"events":[{"patterns":"[entity] elytra (fl(y|ight)|glid(e|ing)) toggl(e|ing)\n[entity] toggle elytra (fl(y|ight)|glid(e|ing))","name":"Elytra glide toggle","since":"1.6.4.1"},{"patterns":"[player] vanish [(state|mode)] (chang|toggl)(e|ing)","name":"Vanish toggle event","since":"1.6.4.1"},{"patterns":"world[ ]edit [block] (chang(e|ing)|edit[ing])","name":"World Edit block change","since":"1.6.4.1"}]}
+{
+  "effects": [
+    {
+      "patterns": "add pathfind[er] goal [[with] priority %integer%] (GOAL, see link in description) to %living entity%",
+      "name": "Add Pathfinder Goals",
+      "description": "Adds a goal to an entity. The list of goals can be found [here](http://pastebin.com/XdnZYM8i).",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(clear|delete) [all] pathfind[er] goals (of|from) %livingentities%",
+      "name": "Clear Path Goals",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "(clear|delete) [all] pathfind[er] goals (of|from) %livingentity%",
+      "name": "Clear Pathfinder Goals of an entity",
+      "description": "This effect basically makes the mob have no AI. It will still be pushable, however.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "create [a] gzip[ped] file [at] [path] %text%",
+      "name": "Create a GZip file",
+      "description": "This effect was added only if someone wanted to use the NBT of file expression to store information. Keep in mind that NBT can only store numbers, texts, compounds and arrays (lists).",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(create|make) [a[n]] hollow (ellipsoid|sphere) [centered] at %location% [with] radius [of] %number%,[ ]%number%(,[ ]| and )%number% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%\r\n(create|make) [a[n]] [(no(n|t)(-| )hollow|filled|)] (ellipsoid|sphere) [centered] at %location% [with] radius [of] %number%,[ ]%number%(,[ ]| and )%number% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%",
+      "name": "Create a WorldEdit ellipsoid",
+      "description": "Creates an ellipsoid at the specified Location.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(create|make) [a[n]] [(no(n|t)(-| )hollow|filled)] pyramid at %location% [with] radius [of] %integer% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%\n(create|make) [a[n]] hollow pyramid at %location% [with] radius [of] %integer% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%",
+      "name": "Create a WorldEdit pyramid",
+      "description": "Creates a pyramid at the specified Location.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(create|make) [a[n]] hollow cylinder at %location% [with] radius [of] %number%,[ ]%integer%(,[ ]| and )%number% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%\n(create|make) [a[n]] [(no(n|t)(-| )hollow|filled)] cylinder at %location% [with] radius [of] %number%,[ ]%integer%(,[ ]| and )%number% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%",
+      "name": "Create cylinder using WorldEdit",
+      "description": "Creates a cylinder at the specified Location with the specific radius. The height (second radius argument) can be negative to make it go down.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(create|make) wall[s] from %location% to %location% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items%",
+      "name": "Create WorldEdit walls",
+      "description": "Creates a cuboid wall from one point to another.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(drain|remove) [all] liquid[s] at %location% (in|within) [a] radius [of] %number% (using|with) [edit[ ]session] %editsession%",
+      "name": "Drain liquid using WorldEdit",
+      "description": "Removes all liquid blocks (lava or water) in a radius of the specified Location.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(create|draw|make) [a[n]] [(no(n|t)(-| )hollow|filled)] line from %location% to %location% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items% [with] thick[ness] %number%\n(create|draw|make) [a[n]] hollow line from %location% to %location% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %items% [with] thick[ness] %number%",
+      "name": "Draw hollow/filled line",
+      "description": "Draws a line from a Location to another using the specified EditSession.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(create|draw|make) [a[n]] (0?(no(n|t)(-| )hollow|filled|)|1?hollow) line from %location% to %location% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %itemstacks% [with] thick[ness] %double%",
+      "name": "Draw Line W E",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "create [a] gzip[ped] file [at] [path] %string%",
+      "name": "G Zip File",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "(simulate snow at|place snow over) %location% (in|within) [a] radius [of] %number% (using|with) [edit[ ]session] %editsession%\r\nmake %location% snowy (in|within) [a] radius [of] %number% (using|with) [edit[ ]session] %editsession%",
+      "name": "Make a location snowy with WorldEdit",
+      "description": "Simulates snow in a specific radius of a Location, overlaying it with snow, and if water is present it gets replaced with ice (just like it would happen in a snow biome while snowing).",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(create|make) [a[n]] (0?(no(n|t)(-| )hollow|filled|)|1?hollow) cylinder at %location% [with] radius [of] %double%,[ ]%integer%(,[ ]| and )%double% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %itemstacks%",
+      "name": "Make Cylinder",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "make %livingentities% jump\nforce %livingentities% to jump",
+      "name": "Make Jump",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "make %player% (remember|be able to undo) changes (of|from) [edit[ ]session] %editsession%",
+      "name": "Make player remember changes from edit session",
+      "description": "Makes the specified Player be able to use //undo on the edits made artificially with the WorldEdit effects.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(create|make) [a[n]] (0?(no(n|t)(-| )hollow|filled|)|1?hollow) pyramid at %location% [with] radius [of] %integer% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %itemstacks%",
+      "name": "Make Pyramid",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "(create|make) [a[n]] (0?(no(n|t)(-| )hollow|filled|)|1?hollow) (ellipsoid|sphere) [centered] at %location% [with] radius [of] %double%,[ ]%double%(,[ ]| and )%double% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %itemstacks%",
+      "name": "Make Sphere",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "(create|make) wall[s] from %location% to %location% (using|with) [edit[ ]session] %editsession% (using|with) [block[s]] %itemstacks%",
+      "name": "Make Walls",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "naturalize ([cuboid] region|[all] blocks) (from|between) %location% (to|and) %location% (using|with) [edit[ ]session] %editsession%",
+      "name": "Naturalize area with WorldEdit",
+      "description": "Naturalizes an area by placing grass on the topmost layer, then 3 layers of dirt below and then stone below everything in the area.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "paste schem[atic] %text% at %location% using [edit[ ]session] %editsession% [(ignor(e|ing)|without|[with] no) air]",
+      "name": "Paste Schematic",
+      "description": "Pastes a schematic using a specified edit session. You can also optionally make it paste no air.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "([dis]play|show) entity effect (firework[s] explo(de|sion)|hurt|[[iron] golem] (give|offer) (rose|poppy)|[sheep] eat grass|wolf shake) at %entity%",
+      "name": "Play entity animation/effect",
+      "description": "Plays an animation or effect on an entity.\r\n• Fireworks explosion\n - makes a firework rocket explode\r\n• hurt\n - makes the mob glow in red like when it's hurt\r\n• iron golem offer rose\n - plays the animation when golems are giving a flower to a villager child;\r\n• sheep eat grass\n - plays the sheep grass-eating animation\r\n• wolf shake\n - plays the shaking animation when wolves get out of water.\r\n\r\nIf an entity is incompatible with the animation/effect, it will not do anything.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "remove pathfind[er] goal (0?(avoid|run away from) entit(y|ies)|1?break door[s]|2?breed|3?eat grass|4?(flee from the sun|seek shad(e|ow))|5?float (in[side]|on) water|6?follow (owner|tamer)|7?follow (adult|parent)[s]|8?(fight back|react to|target) (damager|attacker)|9?o(c|z)elot jump on blocks|10?leap at target|11?look at entit(y|ies)|12?melee attack entit(y|ies)|13?move to[wards] target|14?target nearest entity|15?o(c|z)elot attack [chicken[s]]|16?open door[s]|17?(panic|flee)|18?look around randomly|19?(walk around randomly|wander)|20?sit|21?[creeper] (explode|inflate|swell)|22?squid (swim|wander)|23?shoot fireball[s]|24?[silverfish] hide (in[side]|on) block[s]|25?(wake other silverfish[es]|[silverfish] call (help|reinforcement|other [hidden] silverfish[es]))|26?[enderm(a|e)n] pick[[ ]up] block[s]|27?[enderm(a|e)n] place block[s]|28?[enderman] attack player (staring|looking) [at eye[s]]|29?ghast move to[wards] target|30?ghast (idle move[ment]|wander|random fl(ight|y[ing]))|31?(tempt to|follow players (holding|with)) [a[n]] item|32?target [random] entity (if|when) (not tamed|untamed)|33?guardian attack [entity]|34?[z[ombie[ ]]pig[man]] attack [player[s]] (if|when) angry|35?[z[ombie[ ]]pig[man]] (react to|fight back|target) (attacker|damager) (if|when) angry|36?[rabbit] eat carrot crops|37?[killer] rabbit [melee] attack|38?slime [random] jump|39?slime change (direction|facing) randomly|40?slime (idle move[ment]|wander)|41?follow [entity]|42?bow shoot) from %livingentities%",
+      "name": "Remove Path Goal",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "remove pathfind[er] goal (GOAL, see link in description) from %living entity%",
+      "name": "Remove Pathfinder Goal",
+      "description": "Removes all pathfinder goals of a specific type from an entity.\r\n[List of goals](http://pastebin.com/XdnZYM8).\r\nUse them without the arguments.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "replace [all] %items% (from|between) %location% (to|and) %location% with %items% (using|with) [edit[ ]session] %editsession%",
+      "name": "Replace blocks using WorldEdit",
+      "description": "Replaces all specified blocks from one point to another with the other specified blocks.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "replace [all] %itemstacks% (from|between) %location% (to|and) %location% with %itemstacks% (using|with) [edit[ ]session] %editsession%",
+      "name": "Replace Blocks W E",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "play [raw] [([resource[ ]]pack)] sound %string% (for|to) %players% at %location% [[with] volume %-number%[[(,| and)] pitch %-number%]],play [raw] [([resource[ ]]pack)] sound %string% for %players% at %location% [[with] pitch %-number%[[(,| and)] volume %-number%]]",
+      "name": "Resource Sound",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "set [all] blocks (from|between) %location% (to|and) %location% to %itemstacks% (using|with) [edit[ ]session] %editsession%",
+      "name": "Set Blocks W E",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "set [all] blocks (from|between) %location% (to|and) %location% to %items% (using|with) [edit[ ]session] %editsession%",
+      "name": "Set blocks within a location using WorldEdit",
+      "description": "Sets all blocks from a specified point to another. Can have multiple blocks.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "add pathfind[er] goal [[with] priority %-integer%] (0?(avoid|run away from) %*entitydatas%[,radius %-number%[,speed %-number%[,speed (if|when) (close|near) %-number%]]]|1?break door[s]|2?breed[,[move[ment]] speed %-number%]|3?eat grass|4?(flee from the sun|seek shad(e|ow))[,[move[ment]] speed %-number%]|5?(float (in[side]|on) water|swim)|6?follow (owner|tamer)[,speed %-number%[,min[imum] distance %-number%[,max[imum] distance %-number%]]]|7?follow (adult|parent)[s][,[move[ment]] speed %-number%]|8?(fight back|react to|target) (damager|attacker) [[of] type] %*entitydatas%[,call ([for] help|reinforcement) %-boolean%]|9?o(c|z)elot jump on blocks[,[move[ment]] speed %-number%]|10?leap at target[,[leap] height %-number%]|11?look at %*entitydatas%[,(radius|max[imum] distance) %-number%]|12?melee attack %*entitydatas%[,[move[ment]] speed %-number%[,(memorize|do('nt| not) forget) target [for [a] long[er] time] %-boolean%]]|13?move to[wards] target[,[move[ment]] speed %-number%[,(radius|max[imum] distance) %-number%]]|14?target nearest [entity [of] type] %*entitydatas%[,check sight %-boolean%]|15?o(c|z)elot attack|16?open door[s]|17?(panic|flee)[,[move[ment]] speed %-number%]|18?look around randomly|19?(walk around randomly|wander)[,[move[ment]] speed %-number%[,min[imum] [of] %-timespan% between mov(e[ment][s]|ing)]]|20?sit|21?[creeper] (explode|inflate|swell)|22?squid (swim around|wander)|23?shoot fireball[s]|24?[silverfish] hide (in[side]|on) block[s]|25?((call|summon|wake) [other] [hidden] silverfish[es])|26?[enderman] pick[[ ]up] block[s]|27?[enderman] place block[s]|28?[enderman] attack player (staring|looking) at [their] eye[s]]|29?ghast move to[wards] target|30?ghast (idle move[ment]|wander|random fl(ight|y[ing]))|31?(tempt to|follow players (holding|with)) %-itemstack%[,[move[ment]] speed %number%[,scared of player movement %-boolean%]]|32?target [random] %*entitydatas% (if|when) (not |un)tamed|33?guardian attack [entities]|34?[z[ombie[ ]]pig[man]] attack [player[s]] (if|when) angry|35?[z[ombie[ ]]pig[man]] (react to|fight back|target) (attacker|damager) (if|when) angry|36?[rabbit] eat carrot crops|37?[killer] rabbit [melee] attack|38?slime [random] jump|39?slime change (direction|facing) randomly|40?slime (idle move[ment]|wander)|41?follow %*entitydatas%[,radius %-number%[,speed %-number%[,[custom[ ]]name[d] %-string%]]]|42?bow shoot[,[move[ment]] speed %-number%[,unk[nown] param[eter] %-number%[,follow range %-number%]]])) to %livingentities%",
+      "name": "Set Path Goal",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "(display|play|show) entity effect (0?firework[s] explo(de|sion)|1?hurt|2?[[iron] golem] (give|offer) (rose|poppy)|3?[sheep] eat grass|4?wolf shake) at %entity%",
+      "name": "Show Entityect",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "(simulate snow at|place snow over) %location% (in|within) [a] radius [of] %double% (using|with) [edit[ ]session] %editsession%\nmake %location% snowy (in|within) [a] radius [of] %double% (using|with) [edit[ ]session] %editsession%",
+      "name": "Simulate Snow",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "toggle vanish (state|mode) of %player% [(silently|quietly)]\r\ntoggle %player%'s vanish (state|mode) [(silently|quietly)]",
+      "name": "Toggle vanish with VanishNoPacket",
+      "description": "Toggles the vanish state of the specified Player.\r\n\r\nAdding silently or quietly at the end of the effect makes no message appear in the players chat and also makes no effects (such as bats/lightning) appear.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(0?undo|1?redo) (change|edit)s (of|from) [edit[ ]session] %editsession%",
+      "name": "Undo Redo Session",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "undo (change|edit)s (of|from) [edit[ ]session] %editsession%\nredo (change|edit)s (of|from) [edit[ ]session] %editsession%",
+      "name": "Undo/Redo changes from edit session",
+      "description": "Undoes or redoes all the changes made with the specified EditSession.",
+      "since": "1.0"
+    }
+  ],
+  "types": [
+    {
+      "patterns": "[nbt[ ]tag] compound[s]",
+      "name": "Compound",
+      "description": "An NBT compound. The format used is the Mojangson notation, the same used on vanilla commands that manipulate NBT.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "edit[ ]session[s]",
+      "name": "Edit Session",
+      "description": "An edit session, which is used to execute WorldEdit operations such as drawing a line from a point to another.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "nbt[ ]list[[ ]tag]",
+      "name": "NBT List",
+      "description": "A NBT List tag. Note that a list tag can only contain values of the same type.",
+      "since": "1.0"
+    }
+  ],
+  "conditions": [
+    {
+      "patterns": "[(world[ ]edit|we)] selection of %player% (contains|has) %location%\n%player%'s [(world[ ]edit|we)] selection (contains|has) %location%\n[(world[ ]edit|we)] selection of %player% does(n't| not) (contain|have) %location%\n%player%'s [(world[ ]edit|we)] selection does(n't| not) (contain|have) %location%",
+      "name": "Selection Contains",
+      "since": "1.6.4.1"
+    }
+  ],
+  "expressions": [
+    {
+      "patterns": "area of schem[atic] [from] %text%",
+      "name": "Area of schematic",
+      "description": "Returns the area of the specified schematic.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "area of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we)] selection area",
+      "name": "Area of WorldEdit selection",
+      "description": "Returns the area of the WorldEdit of a Player.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "blocks that %entity% can (carry|hold|grab|steal)",
+      "name": "Blocks that enderman can carry",
+      "description": "List of blocks which an enderman can carry. Currently cannot be modified, but will be in a future update.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %text% [converted] to (cap[ital]s|upper[ ]case) [ignoring [other] upper[ ]case [(char[acter]s|letters)]]\r\nconvert (first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %text% to (cap[ital]s|upper[ ]case) [ignoring [other] upper[ ]case [(char[acter]s|letters)]]\r\ncapitalize (first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %text% [ignoring [other] upper[ ]case [(char[acter]s|letters)]]",
+      "name": "Capitalize first char of each word",
+      "description": "Expression used to capitalize each word of a Text.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "number of [all] changed blocks (in|of) [edit[ ]session] %editsession%",
+      "name": "Changed Blocks Session",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[skstuff] clicked inventory",
+      "name": "Clicked inventory",
+      "description": "Expression to be used in the on inventory click event (either from Umbaska or SkQuery). Gets the inventory which the player clicked.\r\nUseful to determine whether a player clicked their inventory or a container inventory.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "%text% [converted] to [all] (cap[ital]s|upper[ ]case)\r\nconvert %text% to [all] (cap[ital]s|upper[ ]case)\r\ncapitalize [all] [char[acter]s (of|in)] %text%",
+      "name": "Convert string to uppercase",
+      "description": "Expression used to convert a Text to all uppercase.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "%text% [converted] to [all] lower[ ]case\r\nconvert %text% to [all] lower[ ]case\r\nun[( |-)]capitalize [all] [char[acter]s (of|in)] %text%",
+      "name": "Convert text to all lowercase",
+      "description": "Expression used to convert a Text to lowercase.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "[block] limit [change] of [edit[ ]session] %editsession%",
+      "name": "Edit Session Limit",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "nbt[[ ]tag[s]] from [file] %string%",
+      "name": "File NBR",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "fire[ ]proof (state|mode) of %entities%\n%entities%'s fire[ ]proof (state|mode)",
+      "name": "Fire Proof",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "fire[ ]proof (state|mode) of %entity%\n%entity%'s fire[ ]proof (state|mode)",
+      "name": "Fireproof state of entity",
+      "description": "Sets or gets the fireproof state of an entity.\n\nYou can set the fireproof state of entities that have it true by default (zombie pigmans, blazes, etc.) back to false, but the flames will not appear in their body.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "[(world[ ]guard|wg)] flag %wgflag% of %wgregion%",
+      "name": "Flag Of W G Region",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[(all|the)] [(world[ ]guard|wg)] flags of %wgregion%",
+      "name": "Flags Of W G Region",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "elytra (fl(y|ight)|glid(e|ing)) state of %livingentity%\n%livingentity%'s elytra (fl(y|ight)|glid(e|ing)) state",
+      "name": "Glide State",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "(y( |-)size|height) of schem[atic] [from] %text%",
+      "name": "Height of schematic",
+      "description": "Returns the height of the specified schematic.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(y( |-)size|height) of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we) ]selection (y( |-)size|height)",
+      "name": "Height of WorldEdit selection",
+      "description": "Returns the height of the WorldEdit selection of a Player.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "[inventory] (owner|holder) of %inventory%\n%inventory%'s [inventory] (owner|holder)",
+      "name": "Inventory Owner",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "%itemstack% with [custom] nbt[[ ]tag[s]] %string%",
+      "name": "Item NBR",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "%item% with [custom] nbt[[ ]tag[s]] %text%",
+      "name": "Item with custom NBT",
+      "description": "Used to give a Player/Entity an ItemStack with custom NBT without having to manually add it. This expression can also be used to set an ItemStack to another item with custom NBT.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "[the] (last|past|former) location of %entity%\n%entity%'s (last|past|former) location\n[the] location of %entity% (1|one) tick before\n%entity%'s location (1|one) tick before",
+      "name": "Last Location",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "(z( |-)size|length) of schem[atic] [from] %text%",
+      "name": "Length of schematic",
+      "description": "Returns the length of the specified schematic.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(z( |-)size|length) of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we) ]selection (z( |-)size|length)",
+      "name": "Length of WorldEdit selection",
+      "description": "Returns the length (z-size) of the WorldEdit selection of a Player.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(mc|minecraft) [(string|native)] id of %itemtype%\n%itemtype%'s minecraft [(string|native)] id",
+      "name": "MC Id Of",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "item[[ ](stack|type)] (of|from) (mc|minecraft) [(string|native)] id %string%",
+      "name": "MC Id To Item",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[all] contents (of|from) [nbt[ ]list] %nbtlist%\n[nbt[ ]list] %nbtlist% contents",
+      "name": "NBR List Contents",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[nbt[ ]list] %nbtlist% index %number%",
+      "name": "NBR List Index",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "nbt[[ ]tag[s]] of %~object%\n%~object%'s nbt[[ ]tag[s]]",
+      "name": "NBR Of",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "nbt[[ ]tag[s]] from [file] %text%",
+      "name": "NBT from file",
+      "description": "Gets the raw NBT of a file in a Mojangson notation.\n\nPlease note that the file can get corrupted if the file is being used (e.g an online player file or the level.dat).",
+      "since": "1.0"
+    },
+    {
+      "patterns": "[all] contents (of|from) [nbt[ ]list] %nbt list%\r\n[nbt[ ]list] %nbt list% contents",
+      "name": "NBT List contents",
+      "description": "The contents on a NBT List.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "[nbt[ ]list] %nbt list% index %integer%",
+      "name": "NBT List index",
+      "description": "The specified index of a NBT List. Null if out of bounds.\r\nKeep in mind that these lists are zero indexed, so 0 is the first value, 1 is the second value, etc.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "nbt[[ ]tag[s]] of %entity/block/item%\n%entity/block/item%'s nbt[[ ]tag[s]]",
+      "name": "NBT of an entity, block or item",
+      "description": "Returns the Compound root of the NBT of an Entity, Block or ItemStack in a Mojangson notation (the ones used for vanilla commands, such as /entitydata). \nNBT tags can be also added or removed.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "[new] edit[ ]session in [world] %world% [with] [max[imum]] [block] limit [change] [of] %integer%",
+      "name": "New edit session",
+      "description": "Creates a new EditSession} which is used to execute WorldEdit operations such as drawing a line. \nKeep in mind that you will need to save it in a variable to be able to use it to create something.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "no[( |-)]clip (state|mode) of %entity%\r\n%entity%'s no[( |-)]clip (state|mode)",
+      "name": "No Clip state of entity",
+      "description": "Gets or sets the no clip state of an entity.\r\n\r\nPlease note that setting this for a player does not take effect.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "no gravity (state|mode) of %entities%\n%entities%'s no gravity (state|mode)",
+      "name": "No Gravity State",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[(world[ ]edit|we)] po(s|int)[ ]1 of %player%\r\n%player%'s [(world[ ]edit|we)] po(s|int)[ ]1",
+      "name": "Point 1 of WorldEdit selection",
+      "description": "Returns the pos1 of the WorldEdit selection of a Player.\r\nCan be set to any location",
+      "since": "1.0"
+    },
+    {
+      "patterns": "[(world[ ]edit|we)] po(s|int)[ ]2 of %player%\r\n%player%'s [(world[ ]edit|we)] po(s|int)[ ]2",
+      "name": "Point 2 of WorldEdit selection",
+      "description": "Returns the pos2 of the WorldEdit selection of a Player.\r\nCan be set to any location.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(0?volume|1?(x( |-)size|width)|2?(y( |-)size|height)|3?(z( |-)size|length)|4?area) of schem[atic] [from] %string%",
+      "name": "Schematic Area",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "(0?volume|1?(x( |-)size|width)|2?(y( |-)size|height)|3?(z( |-)size|length)|4?area) of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we)] selection (0?volume|1?(x( |-)size|width)|2?(y( |-)size|height)|3?(z( |-)size|length)|4?area)",
+      "name": "Selection Area",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we)] selection",
+      "name": "Selection Of Player",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[(world[ ]edit|we)] po(s|int)[ ](0?1|1?2) of %player%\n%player%'s [(world[ ]edit|we)] po(s|int)[ ](0?1|1?2)",
+      "name": "Selection Pos",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[the] step length of %entity%\n%entity%'s step length",
+      "name": "Step Length",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[(world[ ]edit|we)] super[ ]pick[axe] (state|mode) of %players%\n%players%'s [(world[ ]edit|we)] super[ ]pick[axe] (state|mode)",
+      "name": "Super Pickaxe",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[nbt[ ]]tag %text% of [[nbt] compound] %compound%",
+      "name": "Tag of compound",
+      "description": "Returns the value of the specified tag of a Compound.\nPlease note that if the value in the tag is a Number, you will still need to save the value to a variable before being able to do math operations, for example.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "%timespan% [converted] [in]to (ticks|sec[ond]s|min[ute]s|hours|days)",
+      "name": "Timespan converted into units",
+      "description": "Transforms a timespan into digits, specifying whether if it's counted in ticks, seconds, minutes, hours or days.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "%timespan% [converted] [in]to (0?ticks|1?sec[ond]s|2?min[ute]s|3?hours|4?days)",
+      "name": "Timespan To Number",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "%string% [converted] to [all] lower[ ]case\nconvert %string% to [all] lower[ ]case\nun[( |-)]capitalize [all] [char[acter]s (of|in)] %string%",
+      "name": "To Lower Case",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "%string% [converted] to [all] (cap[ital]s|upper[ ]case)\nconvert %string% to [all] (cap[ital]s|upper[ ]case)\ncapitalize [all] [char[acter]s (of|in)] %string%",
+      "name": "To Upper Case",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "vanish (state|mode) of %player%\r\n%player%'s vanish (state|mode)",
+      "name": "VanishNoPacket vanish state of player",
+      "description": "Gets the vanish state of the specified Player.\r\n\r\nCannot be set. [Toggle vanish state] instead.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "volume of schem[atic] [from] %text%",
+      "name": "Volume of schematic",
+      "description": "Returns the volume of the specified schematic.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "volume of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we)] selection volume",
+      "name": "Volume of WorldEdit selection",
+      "description": "Returns the volume of the WorldEdit selection of a Player.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "[the] (0?members|1?owner[s]) of [[the] (world[ ]guard|wg) region] %wgregion%",
+      "name": "W G Member Owner",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "(x( |-)size|width) of schem[atic] [from] %text%",
+      "name": "Width of schematic",
+      "description": "Returns the width of the specified schematic.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(x( |-)size|width) of [(world[ ]edit|we)] selection of %player%\n%player%'s [(world[ ]edit|we)] selection (x( |-)size|width)",
+      "name": "Width of WorldEdit selection",
+      "description": "Returns the width (x-size) of the WorldEdit selection of a Player.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "(first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %string% [converted] to (cap[ital]s|upper[ ]case) (0?|1?ignoring [other] upper[ ]case [(char[acter]s|letters)])\nconvert (first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %string% to (cap[ital]s|upper[ ]case) (0?|1?ignoring [other] upper[ ]case [(char[acter]s|letters)])\ncapitalize (first|1st) (letter|char[acter]) (of|in) (each word|[all] words) (of|in) %string% (0?|1?ignoring [other] upper[ ]case [(char[acter]s|letters)])",
+      "name": "Words To Upper Case",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[(world[ ]edit|we)] selection of %player%\r\n%player%'s [(world[ ]edit|we)] selection",
+      "name": "WorldEdit selection",
+      "description": "The two points of the WorldEdit selection of a Player. If you want to save it in a variable it needs to be in a list variable, because it returns two Location, which are the edges of the selection.\r\nCan be deleted/cleared.",
+      "since": "1.0"
+    },
+    {
+      "patterns": "[all] [the] regions (containing|within|inside) %location%",
+      "name": "Regions Within Location",
+      "since": "1.6.4.1"
+    }
+  ],
+  "events": [
+    {
+      "patterns": "[entity] elytra (fl(y|ight)|glid(e|ing)) toggl(e|ing)\n[entity] toggle elytra (fl(y|ight)|glid(e|ing))",
+      "name": "Elytra glide toggle",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "[player] vanish [(state|mode)] (chang|toggl)(e|ing)",
+      "name": "Vanish toggle event",
+      "since": "1.6.4.1"
+    },
+    {
+      "patterns": "world[ ]edit [block] (chang(e|ing)|edit[ing])",
+      "name": "World Edit block change",
+      "since": "1.6.4.1"
+    }
+  ]
+}

@@ -1,1 +1,482 @@
-{"effects":[{"patterns":"activate mythicspawner %mythicspawner%\ndeactivate mythicspawner %mythicspawner%","name":"Activate Mythic Spawner"},{"patterns":"add item %itemstack% to mobdrop %mobdrop%","name":"Add Item To Mob Drop"},{"patterns":"attach activemob %activemob% to mythicspawner %mythicspawner%","name":"Attach Mob To Spawner"},{"patterns":"set material of mobitem %mobitem% to %string%","name":"Change Material Of Mob Item"},{"patterns":"clear threattable of activemob %activemob%","name":"Clear Threat Table"},{"patterns":"set cooldown of mythicspawner %mythicspawner% to %number%\nset remainingcooldown of mythicspawner %mythicspawner% to %number%","name":"Cooldown Mythic Spawner"},{"patterns":"dropcombat for activemob %activemob%","name":"Drop Combat"},{"patterns":"make activemob %activemob% cast skill %string% with trigger %entity% at target %entity%\nmake activemob %activemob% cast skill %string% with trigger %entity% at location %location%","name":"Make Mob Cast Skill"},{"patterns":"make player %entity% cast skill %string% with trigger %entity% at entity %entity% with delay %number% and repeat %number%\nmake player %entity% cast skill %string% with trigger %entity% at location %location% with delay %number% and repeat %number%\nmake player %entity% cast skill %string% with trigger %entity% at self with delay %number% and repeat %number%","name":"Make Player Cast Skill"},{"patterns":"make mythicspawner %mythicspawner% spawn","name":"Make Spawner Spawn"},{"patterns":"inc threat of %entity% by %number% from activemob %activemob%\ndec threat of %entity by %number% from activemob %activemob%","name":"Mod Threatof Entity"},{"patterns":"remove activemob %activemob%","name":"Remove Mob"},{"patterns":"remove mobitem %mobitem% from mobdrop %mobdrop%\nclear mobdrop %mobdrop%","name":"Remove Mob Item"},{"patterns":"remove mythic from activemob %activemob%","name":"Remove Mythic From Entity"},{"patterns":"remove threat of %entity% from activemob %activemob%","name":"Remove Threat Entity"},{"patterns":"send signal %string% to activemob %activemob% with trigger %entity%","name":"Send Signal"},{"patterns":"set armor of activemob %activemob% to %number%","name":"Set Armor"},{"patterns":"set attackspeed of activemob %activemob% to %number%","name":"Set Attack Speed"},{"patterns":"set condition meet to %boolean%","name":"Set Condition Meet"},{"patterns":"set damage of activemob %activemob% to %number%","name":"Set Damage"},{"patterns":"set faction of activemob %activemob% to %string%","name":"Set Faction"},{"patterns":"set followrange of activemob %activemob% to %number%","name":"Set Follow Range"},{"patterns":"set health of activemob %activemob% to %number%","name":"Set Health"},{"patterns":"set knockbackresist of activemob %activemob% to %number%","name":"Set Knockback Resist"},{"patterns":"set lastaggro of activemob %activemob% to %entity%","name":"Set Last Aggro Cause"},{"patterns":"set level of activemob %activemob% to %number%","name":"Set Level"},{"patterns":"set maxhealth of activemob %activemob% to %number%","name":"Set Max Health"},{"patterns":"set mobtype of mythicspawner %mythicspawner% to %string%","name":"Set Mob Type Of Spawner"},{"patterns":"set moblevel of mythicspawner %mythicspawner% to %number%","name":"Set Mov Levelof Spawner"},{"patterns":"set owner of activemob %activemob% to %entity%\nset owner of activemob %activemob% to %string% by uuid","name":"Set Owner"},{"patterns":"set kills of activemob %activemob% to %number%","name":"Set Player Kills"},{"patterns":"set speed of activemob %activemob% to %number%","name":"Set Speed"},{"patterns":"set stance of activemob %activemob% to %string%","name":"Set Stance"},{"patterns":"set %entity% to new target of activemob %activemob%","name":"Set Target"},{"patterns":"trigger %string% for activemob %activemob%\ntrigger %string% for activemob %activemob% with triggerentity %entity%","name":"Trigger Skill"},{"patterns":"set warmup of mythicspawner %mythicspawner% to %number%\nset remainingwarmup of mythicspawner %mythicspawner% to %number%","name":"Warmup Mythic Spawner"}],"types":[{"patterns":"activemob","name":"activemob"},{"patterns":"mobdrop","name":"mobdrop"},{"patterns":"mobitem","name":"mobitem"},{"patterns":"mythicmob","name":"mythicmob"},{"patterns":"mythicspawner","name":"mythicspawner"},{"patterns":"skilltargeter","name":"skilltargeter"}],"conditions":[{"patterns":"activemob %activemob% has immunitytable","name":"Active Mob Has Immunity Table"},{"patterns":"activemob %activemob% isdead","name":"Active Mob Is Dead"},{"patterns":"activemob %activemob% has mythicspawner","name":"Condition Am Has Custom Spawner"},{"patterns":"%entity% [is ]instanceof activemob","name":"Condition Entity Is Active Mob"},{"patterns":"mythicspawner %mythicspawner% contains activemob %activemob%","name":"Condition Spawner Contains Mob"},{"patterns":"activemob %activemob% has threattable","name":"Has Threat Table"}],"expressions":[{"patterns":"condition-activemob","name":"Condition Active Mob","return type":"activemob"},{"patterns":"condition-args","name":"Condition Args","return type":"Text"},{"patterns":"condition-entity","name":"Condition Entity","return type":"Entity"},{"patterns":"condition-location","name":"Condition Location","return type":"Location"},{"patterns":"condition-name","name":"Condition Name","return type":"Text"},{"patterns":"condition-targetentity","name":"Condition Target Entity","return type":"Entity"},{"patterns":"condition-targetlocation","name":"Condition Target Location","return type":"Location"},{"patterns":"convert %entity% into mythicmob %string% with level %number%","name":"Convert To Mythic Mob","return type":"activemob"},{"patterns":"event-killer","name":"Death Event Attacker","return type":"Entity"},{"patterns":"skill-args","name":"Event Skill Args","return type":"Text"},{"patterns":"skill-name","name":"Event Skill Name","return type":"Text"},{"patterns":"skill-target","name":"Event Target","return type":"Entity"},{"patterns":"skill-trigger","name":"Event Trigger","return type":"Entity"},{"patterns":"activemob of %entity%\nactivemob instance %entity%","name":"Get Active Mob","return type":"activemob"},{"patterns":"all activemobs in world %string%\nall activemobs","name":"Get Active Mobs","return type":"activemob"},{"patterns":"displayname of activemob %activemob%","name":"Get Display Name","return type":"Text"},{"patterns":"entity of activemob %activemob%","name":"Get Entity Of Mob","return type":"Entity"},{"patterns":"faction of activemob %activemob%","name":"Get Faction","return type":"Text"},{"patterns":"health of activemob %activemob%","name":"Get Health","return type":"Number"},{"patterns":"lastaggro of activemob %activemob%","name":"Get Last Aggro","return type":"Entity"},{"patterns":"level of activemob %activemob%","name":"Get Level","return type":"Number"},{"patterns":"location of activemob %activemob%","name":"Get Location","return type":"Location"},{"patterns":"maxhealth of activemob %activemob%","name":"Get Max Health","return type":"Number"},{"patterns":"activemob by uuid %string%","name":"Get Mob ByUUID","return type":"activemob"},{"patterns":"mobtype of activemob %activemob%","name":"Get Mob Type","return type":"Text"},{"patterns":"mlc %string% of activemob %activemob%","name":"Get Mythic Mob Config","return type":"Text"},{"patterns":"mythicspawner of activemob %activemob%","name":"Get Mythic Spawner","return type":"mythicspawner"},{"patterns":"owner of activemob %activemob%","name":"Get Owner","return type":"Entity"},{"patterns":"playerkills of activemob %activemob%","name":"Get Pks","return type":"Number"},{"patterns":"lastsignal of activemob %activemob%","name":"Get Signal","return type":"Text"},{"patterns":"stance of activemob %activemob%","name":"Get Stance","return type":"Text"},{"patterns":"get threattable of activemob %activemob%","name":"Get Threat Table","return type":"Entity"},{"patterns":"get threatvalue of %entity% from activemob %activemob%","name":"Get Threat Value Of","return type":"Number"},{"patterns":"toptarget of activemob %activemob%","name":"Get Top Threat","return type":"Entity"},{"patterns":"uuid of activemob %activemob%","name":"GetUUID","return type":"Text"},{"patterns":"world of activemob %activemob%","name":"Get World","return type":"World"},{"patterns":"all items of mobdrop %mobdrop%","name":"Get All Drops","return type":"mobitem"},{"patterns":"all activemobs of mythicspawner %mythicspawner%","name":"Get All Mobs From Spawner","return type":"activemob"},{"patterns":"all mythicmob types","name":"Get All Mythic Mobs","return type":"mythicmob"},{"patterns":"entitytype of mythicmob %mythicmob%","name":"Get Entity Type","return type":"Object"},{"patterns":"number of activemobs from mythicspawner %mythicspawner%\nnumber of maxmobs from mythicspawner %mythicspawner%","name":"Get Max Mobs From Spawner","return type":"Number"},{"patterns":"moblevel of mythicspawner %mythicspawner%","name":"Get Mov Level Of Spawner","return type":"Number"},{"patterns":"mythicmob with name %string%","name":"Get Mythic Mob By Name","return type":"mythicmob"},{"patterns":"all mythicspawners in world %string%\nall mythicspawners","name":"Get Mythic Spawners","return type":"mythicspawner"},{"patterns":"world of mythicspawner %mythicspawner%","name":"Get Spawner World","return type":"World"},{"patterns":"condition-meet","name":"Meet Condtion","return type":"Boolean"},{"patterns":"mobtype of mythicspawner %mythicspawner%","name":"Mobtype Of Spawner","return type":"Text"},{"patterns":"spawn mythicmob %string% at location %location% in world %object%","name":"Spawn Mythic Mob","return type":"activemob"},{"patterns":"cooldown of mythicspawner %mythicspawner%\nremainingcooldown of mythicspawner %mythicspawner%","name":"Spawner Cooldown","return type":"Number"},{"patterns":"location of mythicspawner %mythicspawner%","name":"Spawner Location","return type":"Location"},{"patterns":"name of mythicspawner %mythicspawner%","name":"Spawner Name","return type":"Text"},{"patterns":"warmup of mythicspawner %mythicspawner%\nremainingwarmup of mythicspawner %mythicspawner%","name":"Spawner Warmup","return type":"Number"},{"patterns":"skill-targettype","name":"Target Type","return type":"Text"},{"patterns":"targetentities of %entity% for targeter %skilltargeter%","name":"get Entities From Selector","return type":"Entity"},{"patterns":"targetlocations of %entity% for targeter %skilltargeter%","name":"get Locations From Selector","return type":"Location"},{"patterns":"mythicmobs targeter %string%","name":"get Target Selector","return type":"skilltargeter"}]}
+{
+  "effects": [
+    {
+      "patterns": "activate mythicspawner %mythicspawner%\ndeactivate mythicspawner %mythicspawner%",
+      "name": "Activate Mythic Spawner"
+    },
+    {
+      "patterns": "add item %itemstack% to mobdrop %mobdrop%",
+      "name": "Add Item To Mob Drop"
+    },
+    {
+      "patterns": "attach activemob %activemob% to mythicspawner %mythicspawner%",
+      "name": "Attach Mob To Spawner"
+    },
+    {
+      "patterns": "set material of mobitem %mobitem% to %string%",
+      "name": "Change Material Of Mob Item"
+    },
+    {
+      "patterns": "clear threattable of activemob %activemob%",
+      "name": "Clear Threat Table"
+    },
+    {
+      "patterns": "set cooldown of mythicspawner %mythicspawner% to %number%\nset remainingcooldown of mythicspawner %mythicspawner% to %number%",
+      "name": "Cooldown Mythic Spawner"
+    },
+    {
+      "patterns": "dropcombat for activemob %activemob%",
+      "name": "Drop Combat"
+    },
+    {
+      "patterns": "make activemob %activemob% cast skill %string% with trigger %entity% at target %entity%\nmake activemob %activemob% cast skill %string% with trigger %entity% at location %location%",
+      "name": "Make Mob Cast Skill"
+    },
+    {
+      "patterns": "make player %entity% cast skill %string% with trigger %entity% at entity %entity% with delay %number% and repeat %number%\nmake player %entity% cast skill %string% with trigger %entity% at location %location% with delay %number% and repeat %number%\nmake player %entity% cast skill %string% with trigger %entity% at self with delay %number% and repeat %number%",
+      "name": "Make Player Cast Skill"
+    },
+    {
+      "patterns": "make mythicspawner %mythicspawner% spawn",
+      "name": "Make Spawner Spawn"
+    },
+    {
+      "patterns": "inc threat of %entity% by %number% from activemob %activemob%\ndec threat of %entity by %number% from activemob %activemob%",
+      "name": "Mod Threatof Entity"
+    },
+    {
+      "patterns": "remove activemob %activemob%",
+      "name": "Remove Mob"
+    },
+    {
+      "patterns": "remove mobitem %mobitem% from mobdrop %mobdrop%\nclear mobdrop %mobdrop%",
+      "name": "Remove Mob Item"
+    },
+    {
+      "patterns": "remove mythic from activemob %activemob%",
+      "name": "Remove Mythic From Entity"
+    },
+    {
+      "patterns": "remove threat of %entity% from activemob %activemob%",
+      "name": "Remove Threat Entity"
+    },
+    {
+      "patterns": "send signal %string% to activemob %activemob% with trigger %entity%",
+      "name": "Send Signal"
+    },
+    {
+      "patterns": "set armor of activemob %activemob% to %number%",
+      "name": "Set Armor"
+    },
+    {
+      "patterns": "set attackspeed of activemob %activemob% to %number%",
+      "name": "Set Attack Speed"
+    },
+    {
+      "patterns": "set condition meet to %boolean%",
+      "name": "Set Condition Meet"
+    },
+    {
+      "patterns": "set damage of activemob %activemob% to %number%",
+      "name": "Set Damage"
+    },
+    {
+      "patterns": "set faction of activemob %activemob% to %string%",
+      "name": "Set Faction"
+    },
+    {
+      "patterns": "set followrange of activemob %activemob% to %number%",
+      "name": "Set Follow Range"
+    },
+    {
+      "patterns": "set health of activemob %activemob% to %number%",
+      "name": "Set Health"
+    },
+    {
+      "patterns": "set knockbackresist of activemob %activemob% to %number%",
+      "name": "Set Knockback Resist"
+    },
+    {
+      "patterns": "set lastaggro of activemob %activemob% to %entity%",
+      "name": "Set Last Aggro Cause"
+    },
+    {
+      "patterns": "set level of activemob %activemob% to %number%",
+      "name": "Set Level"
+    },
+    {
+      "patterns": "set maxhealth of activemob %activemob% to %number%",
+      "name": "Set Max Health"
+    },
+    {
+      "patterns": "set mobtype of mythicspawner %mythicspawner% to %string%",
+      "name": "Set Mob Type Of Spawner"
+    },
+    {
+      "patterns": "set moblevel of mythicspawner %mythicspawner% to %number%",
+      "name": "Set Mov Levelof Spawner"
+    },
+    {
+      "patterns": "set owner of activemob %activemob% to %entity%\nset owner of activemob %activemob% to %string% by uuid",
+      "name": "Set Owner"
+    },
+    {
+      "patterns": "set kills of activemob %activemob% to %number%",
+      "name": "Set Player Kills"
+    },
+    {
+      "patterns": "set speed of activemob %activemob% to %number%",
+      "name": "Set Speed"
+    },
+    {
+      "patterns": "set stance of activemob %activemob% to %string%",
+      "name": "Set Stance"
+    },
+    {
+      "patterns": "set %entity% to new target of activemob %activemob%",
+      "name": "Set Target"
+    },
+    {
+      "patterns": "trigger %string% for activemob %activemob%\ntrigger %string% for activemob %activemob% with triggerentity %entity%",
+      "name": "Trigger Skill"
+    },
+    {
+      "patterns": "set warmup of mythicspawner %mythicspawner% to %number%\nset remainingwarmup of mythicspawner %mythicspawner% to %number%",
+      "name": "Warmup Mythic Spawner"
+    }
+  ],
+  "types": [
+    {
+      "patterns": "activemob",
+      "name": "activemob"
+    },
+    {
+      "patterns": "mobdrop",
+      "name": "mobdrop"
+    },
+    {
+      "patterns": "mobitem",
+      "name": "mobitem"
+    },
+    {
+      "patterns": "mythicmob",
+      "name": "mythicmob"
+    },
+    {
+      "patterns": "mythicspawner",
+      "name": "mythicspawner"
+    },
+    {
+      "patterns": "skilltargeter",
+      "name": "skilltargeter"
+    }
+  ],
+  "conditions": [
+    {
+      "patterns": "activemob %activemob% has immunitytable",
+      "name": "Active Mob Has Immunity Table"
+    },
+    {
+      "patterns": "activemob %activemob% isdead",
+      "name": "Active Mob Is Dead"
+    },
+    {
+      "patterns": "activemob %activemob% has mythicspawner",
+      "name": "Condition Am Has Custom Spawner"
+    },
+    {
+      "patterns": "%entity% [is ]instanceof activemob",
+      "name": "Condition Entity Is Active Mob"
+    },
+    {
+      "patterns": "mythicspawner %mythicspawner% contains activemob %activemob%",
+      "name": "Condition Spawner Contains Mob"
+    },
+    {
+      "patterns": "activemob %activemob% has threattable",
+      "name": "Has Threat Table"
+    }
+  ],
+  "expressions": [
+    {
+      "patterns": "condition-activemob",
+      "name": "Condition Active Mob",
+      "return type": "activemob"
+    },
+    {
+      "patterns": "condition-args",
+      "name": "Condition Args",
+      "return type": "Text"
+    },
+    {
+      "patterns": "condition-entity",
+      "name": "Condition Entity",
+      "return type": "Entity"
+    },
+    {
+      "patterns": "condition-location",
+      "name": "Condition Location",
+      "return type": "Location"
+    },
+    {
+      "patterns": "condition-name",
+      "name": "Condition Name",
+      "return type": "Text"
+    },
+    {
+      "patterns": "condition-targetentity",
+      "name": "Condition Target Entity",
+      "return type": "Entity"
+    },
+    {
+      "patterns": "condition-targetlocation",
+      "name": "Condition Target Location",
+      "return type": "Location"
+    },
+    {
+      "patterns": "convert %entity% into mythicmob %string% with level %number%",
+      "name": "Convert To Mythic Mob",
+      "return type": "activemob"
+    },
+    {
+      "patterns": "event-killer",
+      "name": "Death Event Attacker",
+      "return type": "Entity"
+    },
+    {
+      "patterns": "skill-args",
+      "name": "Event Skill Args",
+      "return type": "Text"
+    },
+    {
+      "patterns": "skill-name",
+      "name": "Event Skill Name",
+      "return type": "Text"
+    },
+    {
+      "patterns": "skill-target",
+      "name": "Event Target",
+      "return type": "Entity"
+    },
+    {
+      "patterns": "skill-trigger",
+      "name": "Event Trigger",
+      "return type": "Entity"
+    },
+    {
+      "patterns": "activemob of %entity%\nactivemob instance %entity%",
+      "name": "Get Active Mob",
+      "return type": "activemob"
+    },
+    {
+      "patterns": "all activemobs in world %string%\nall activemobs",
+      "name": "Get Active Mobs",
+      "return type": "activemob"
+    },
+    {
+      "patterns": "displayname of activemob %activemob%",
+      "name": "Get Display Name",
+      "return type": "Text"
+    },
+    {
+      "patterns": "entity of activemob %activemob%",
+      "name": "Get Entity Of Mob",
+      "return type": "Entity"
+    },
+    {
+      "patterns": "faction of activemob %activemob%",
+      "name": "Get Faction",
+      "return type": "Text"
+    },
+    {
+      "patterns": "health of activemob %activemob%",
+      "name": "Get Health",
+      "return type": "Number"
+    },
+    {
+      "patterns": "lastaggro of activemob %activemob%",
+      "name": "Get Last Aggro",
+      "return type": "Entity"
+    },
+    {
+      "patterns": "level of activemob %activemob%",
+      "name": "Get Level",
+      "return type": "Number"
+    },
+    {
+      "patterns": "location of activemob %activemob%",
+      "name": "Get Location",
+      "return type": "Location"
+    },
+    {
+      "patterns": "maxhealth of activemob %activemob%",
+      "name": "Get Max Health",
+      "return type": "Number"
+    },
+    {
+      "patterns": "activemob by uuid %string%",
+      "name": "Get Mob ByUUID",
+      "return type": "activemob"
+    },
+    {
+      "patterns": "mobtype of activemob %activemob%",
+      "name": "Get Mob Type",
+      "return type": "Text"
+    },
+    {
+      "patterns": "mlc %string% of activemob %activemob%",
+      "name": "Get Mythic Mob Config",
+      "return type": "Text"
+    },
+    {
+      "patterns": "mythicspawner of activemob %activemob%",
+      "name": "Get Mythic Spawner",
+      "return type": "mythicspawner"
+    },
+    {
+      "patterns": "owner of activemob %activemob%",
+      "name": "Get Owner",
+      "return type": "Entity"
+    },
+    {
+      "patterns": "playerkills of activemob %activemob%",
+      "name": "Get Pks",
+      "return type": "Number"
+    },
+    {
+      "patterns": "lastsignal of activemob %activemob%",
+      "name": "Get Signal",
+      "return type": "Text"
+    },
+    {
+      "patterns": "stance of activemob %activemob%",
+      "name": "Get Stance",
+      "return type": "Text"
+    },
+    {
+      "patterns": "get threattable of activemob %activemob%",
+      "name": "Get Threat Table",
+      "return type": "Entity"
+    },
+    {
+      "patterns": "get threatvalue of %entity% from activemob %activemob%",
+      "name": "Get Threat Value Of",
+      "return type": "Number"
+    },
+    {
+      "patterns": "toptarget of activemob %activemob%",
+      "name": "Get Top Threat",
+      "return type": "Entity"
+    },
+    {
+      "patterns": "uuid of activemob %activemob%",
+      "name": "GetUUID",
+      "return type": "Text"
+    },
+    {
+      "patterns": "world of activemob %activemob%",
+      "name": "Get World",
+      "return type": "World"
+    },
+    {
+      "patterns": "all items of mobdrop %mobdrop%",
+      "name": "Get All Drops",
+      "return type": "mobitem"
+    },
+    {
+      "patterns": "all activemobs of mythicspawner %mythicspawner%",
+      "name": "Get All Mobs From Spawner",
+      "return type": "activemob"
+    },
+    {
+      "patterns": "all mythicmob types",
+      "name": "Get All Mythic Mobs",
+      "return type": "mythicmob"
+    },
+    {
+      "patterns": "entitytype of mythicmob %mythicmob%",
+      "name": "Get Entity Type",
+      "return type": "Object"
+    },
+    {
+      "patterns": "number of activemobs from mythicspawner %mythicspawner%\nnumber of maxmobs from mythicspawner %mythicspawner%",
+      "name": "Get Max Mobs From Spawner",
+      "return type": "Number"
+    },
+    {
+      "patterns": "moblevel of mythicspawner %mythicspawner%",
+      "name": "Get Mov Level Of Spawner",
+      "return type": "Number"
+    },
+    {
+      "patterns": "mythicmob with name %string%",
+      "name": "Get Mythic Mob By Name",
+      "return type": "mythicmob"
+    },
+    {
+      "patterns": "all mythicspawners in world %string%\nall mythicspawners",
+      "name": "Get Mythic Spawners",
+      "return type": "mythicspawner"
+    },
+    {
+      "patterns": "world of mythicspawner %mythicspawner%",
+      "name": "Get Spawner World",
+      "return type": "World"
+    },
+    {
+      "patterns": "condition-meet",
+      "name": "Meet Condtion",
+      "return type": "Boolean"
+    },
+    {
+      "patterns": "mobtype of mythicspawner %mythicspawner%",
+      "name": "Mobtype Of Spawner",
+      "return type": "Text"
+    },
+    {
+      "patterns": "spawn mythicmob %string% at location %location% in world %object%",
+      "name": "Spawn Mythic Mob",
+      "return type": "activemob"
+    },
+    {
+      "patterns": "cooldown of mythicspawner %mythicspawner%\nremainingcooldown of mythicspawner %mythicspawner%",
+      "name": "Spawner Cooldown",
+      "return type": "Number"
+    },
+    {
+      "patterns": "location of mythicspawner %mythicspawner%",
+      "name": "Spawner Location",
+      "return type": "Location"
+    },
+    {
+      "patterns": "name of mythicspawner %mythicspawner%",
+      "name": "Spawner Name",
+      "return type": "Text"
+    },
+    {
+      "patterns": "warmup of mythicspawner %mythicspawner%\nremainingwarmup of mythicspawner %mythicspawner%",
+      "name": "Spawner Warmup",
+      "return type": "Number"
+    },
+    {
+      "patterns": "skill-targettype",
+      "name": "Target Type",
+      "return type": "Text"
+    },
+    {
+      "patterns": "targetentities of %entity% for targeter %skilltargeter%",
+      "name": "get Entities From Selector",
+      "return type": "Entity"
+    },
+    {
+      "patterns": "targetlocations of %entity% for targeter %skilltargeter%",
+      "name": "get Locations From Selector",
+      "return type": "Location"
+    },
+    {
+      "patterns": "mythicmobs targeter %string%",
+      "name": "get Target Selector",
+      "return type": "skilltargeter"
+    }
+  ]
+}

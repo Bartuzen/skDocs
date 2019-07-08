@@ -18,7 +18,7 @@
         "* Get",
         "* Set"
       ],
-	  "return_type": "String",
+      "return_type": "String",
       "patterns": [
         "[skbossbarapi] (title|header|text|string|name) of [boss[ ]]bar %variable%",
         "[skbossbarapi] [boss[ ]]bar %variable%'[s] (title|header|text|string|name)"
@@ -34,7 +34,7 @@
         "Available Colors:",
         "```vb\n\"blue\", \"green\", \"pink\", \"purple\", \"red\", \"white\", \"yellow\"```"
       ],
-	  "return_type": "String",
+      "return_type": "String",
       "patterns": [
         "[skbossbarapi] colo[u]r of [boss[ ]]bar %variable%",
         "[skbossbarapi] [boss[ ]]bar %variable%'[s] colo[u]r"
@@ -50,7 +50,7 @@
         "Usable Styles:",
         "```vb\n\"solid\", \"segmented 6\", \"segmented 10\", \"segmented 12\", \"segmented 20\"```"
       ],
-	  "return_type": "String",
+      "return_type": "String",
       "patterns": [
         "[skbossbarapi] style of [boss[ ]]bar %variable%",
         "[skbossbarapi] [boss[ ]]bar %variable%'[s] style"
@@ -65,7 +65,7 @@
         "* Set",
         "Max value is `100`."
       ],
-	  "return_type": "Number",
+      "return_type": "Number",
       "patterns": [
         "[skbossbarapi] progress of [boss[ ]]bar %variable%",
         "[skbossbarapi] [boss[ ]]bar %variable%'[s] progress"
@@ -81,7 +81,7 @@
         "* Remove",
         "* Reset"
       ],
-	  "return_type": "Players",
+      "return_type": "Players",
       "patterns": [
         "[skbossbarapi] players of [boss[ ]]bar %variable%",
         "[skbossbarapi] [boss[ ]]bar %variable%'[s] players"
@@ -95,7 +95,7 @@
         "* Get",
         "* Set"
       ],
-	  "return_type": "Players",
+      "return_type": "Players",
       "patterns": [
         "[skbossbarapi] flags of [boss[ ]]bar %variable%",
         "[skbossbarapi] [boss[ ]]bar %variable%'[s] flags"
@@ -110,7 +110,7 @@
         "* Add",
         "* Remove"
       ],
-	  "return_type": "Boolean",
+      "return_type": "Boolean",
       "patterns": [
         "[skbossbarapi] [boss[ ]]bar %variable%'[s] visib(ility|le state)",
         "[skbossbarapi] visib(ility|le state) of [boss[ ]]bar %variable%"
