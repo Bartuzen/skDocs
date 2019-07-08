@@ -30,11 +30,11 @@ class Lang(discord.ext.commands.Cog):
                     embed.add_field(name=lang["lang"]["available-langs"], value="\n".join(langs), inline=False)
                     embed.add_field(name=lang["lang"]["usage-text"], value=lang["lang"]["usage"], inline=False)
                     msg = await ctx.channel.send(embed=embed)
-                    self.bot.messages.update({msg.id: None})
+                    self.bot.messages.update({msg.id: {"command": self}})
                     try:
                         for each in emotes:
                             await msg.add_reaction(each)
-                    except discord.errors.Forbidden:
+                    except (discord.errors.Forbidden, discord.errors.NotFound):
                         pass
             else:
                 await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["errors"]["permission"], color=self.bot.get_cog("Main").get_color("error"))))
@@ -51,13 +51,13 @@ class Lang(discord.ext.commands.Cog):
     @discord.ext.commands.Cog.listener()
     async def on_reaction_add(self, reaction, user):
         msg = reaction.message
-        if (msg.author != self.bot.user) or (user == self.bot.user):
+        if msg.author != self.bot.user or user == self.bot.user or msg.id not in self.bot.messages or self.bot.messages[msg.id]["command"] != self:
             return
         try:
-            await reaction.message.remove_reaction(reaction, user)
-        except discord.errors.Forbidden:
+            await msg.remove_reaction(reaction, user)
+        except (discord.errors.Forbidden, discord.errors.NotFound):
             pass
-        if msg.channel.permissions_for(user).manage_guild and msg.id in self.bot.messages:
+        if msg.channel.permissions_for(user).manage_guild:
             embed = self.set_lang(msg.guild, str(reaction))
             if embed is not None:
                 await msg.edit(embed=embed)

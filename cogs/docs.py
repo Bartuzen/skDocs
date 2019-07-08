@@ -91,16 +91,13 @@ class Docs(discord.ext.commands.Cog):
                     embed = Docs.get_docs(self, param, lang)
                     if embed is not None:
                         msg = await ctx.channel.send(embed=embed["embed"], content=(embed["msg"] if "msg" in embed else None))
-                        global messages
-                        if "messages" not in globals():
-                            messages = {}
-                        messages.update({msg.id: {"user": ctx.author.id, "message": ctx.id, "type": embed["type"], "previous": list()}})
+                        self.bot.messages.update({msg.id: {"command": self, "user": ctx.author.id, "message": ctx.id, "type": embed["type"], "previous": list()}})
                         if "emotes" in embed:
                             for each in embed["emotes"]:
-                                if messages[msg.id]["type"] == embed["type"]:
+                                if self.bot.messages[msg.id]["type"] == embed["type"]:
                                     try:
                                         await msg.add_reaction(each)
-                                    except discord.errors.Forbidden:
+                                    except (discord.errors.Forbidden, discord.errors.NotFound):
                                         break
                     else:
                         await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["no-with-args"], color=self.bot.get_cog("Main").get_color("error"))))
@@ -419,32 +416,37 @@ class Docs(discord.ext.commands.Cog):
 
     @discord.ext.commands.Cog.listener()
     async def on_reaction_add(self, reaction, user):
-        if reaction.message.guild:
-            lang = self.bot.lang[self.bot.guildLangs[reaction.message.guild.id]] if reaction.message.guild.id in self.bot.guildLangs else self.bot.lang[self.bot.config["mainlang"]]
+        msg = reaction.message
+        messages = self.bot.messages
+
+        if msg.author != self.bot.user or user == self.bot.user or msg.id not in messages or messages[msg.id]["command"] != self:
+            return
+
+        if msg.guild:
+            lang = self.bot.lang[self.bot.guildLangs[msg.guild.id]] if msg.guild.id in self.bot.guildLangs else self.bot.lang[self.bot.config["mainlang"]]
         else:
             lang = self.bot.lang[self.bot.config["mainlang"]]
-        global messages
-        if (reaction.message.author != self.bot.user) or (user == self.bot.user):
-            return
+
         try:
-            await reaction.message.remove_reaction(reaction, user)
-        except discord.errors.Forbidden:
+            await msg.remove_reaction(reaction, user)
+        except (discord.errors.Forbidden, discord.errors.NotFound):
             pass
-        if (not user.bot) and ("messages" in globals()) and (reaction.message.id in messages) and ((messages[reaction.message.id]["user"] == user.id) or reaction.message.channel.permissions_for(user).manage_guild):
+
+        if not user.bot and messages[msg.id]["command"] == self and (messages[msg.id]["user"] == user.id or msg.channel.permissions_for(user).manage_guild):
             if str(reaction) == "❌":
                 try:
-                    msg = await reaction.message.channel.fetch_message(messages[reaction.message.id]["message"])
-                    await msg.delete()
-                except discord.errors.Forbidden:
+                    delete_msg = await msg.channel.fetch_message(messages[msg.id]["message"])
+                    await delete_msg.delete()
+                except (discord.errors.Forbidden, discord.errors.NotFound):
                     pass
                 try:
-                    await reaction.message.delete()
-                except discord.errors.Forbidden:
+                    await msg.delete()
+                except (discord.errors.Forbidden, discord.errors.NotFound):
                     pass
-                messages.pop(reaction.message.id)
+                messages.pop(msg.id)
                 return
             param = {"type": list(), "addon": list(), "contains": list(), "!type": list(), "!addon": list(), "!contains": list()}
-            for each in reaction.message.embeds[0].description.split("\n"):
+            for each in msg.embeds[0].description.split("\n"):
                 if each.startswith("**{}:** ".format(lang["docs"]["query"])):
                     if each[len(lang["docs"]["query"]) + 6:] == "\\*{}\\*".format(lang["docs"]["everything"]):
                         param.update({"query": "*"})
@@ -475,7 +477,7 @@ class Docs(discord.ext.commands.Cog):
                     for loop in each[len(lang["docs"]["contains"]) + 7:].split(" - "):
                         param["!contains"].append(loop)
             param_raw = param.copy()
-            if messages[reaction.message.id]["type"] == 1:
+            if messages[msg.id]["type"] == 1:
                 if str(reaction) == "\U0001f1e6":
                     param.update({"char": 1})
                 elif str(reaction) == "\U0001f1e7":
@@ -488,7 +490,7 @@ class Docs(discord.ext.commands.Cog):
                     param.update({"char": 5})
                 elif str(reaction) == "\U0001f1eb":
                     param.update({"char": 6})
-            if messages[reaction.message.id]["type"] == 2:
+            if messages[msg.id]["type"] == 2:
                 if str(reaction) == "\U000023EE":
                     param.update({"page": 1})
                 elif str(reaction) == "\U000025C0":
@@ -518,32 +520,32 @@ class Docs(discord.ext.commands.Cog):
                 elif str(reaction) == "\U0001f51f":
                     param.update({"id": param["page"] * 10})
             if str(reaction) == "\U000021a9":
-                if len(messages[reaction.message.id]["previous"]) == 0:
+                if len(messages[msg.id]["previous"]) == 0:
                     return
-                param = messages[reaction.message.id]["previous"][-1]
-                messages[reaction.message.id].update({"previous": messages[reaction.message.id]["previous"][:-1]})
+                param = messages[msg.id]["previous"][-1]
+                messages[msg.id].update({"previous": messages[msg.id]["previous"][:-1]})
             if param != param_raw:
                 embed = Docs.get_docs(self, param, lang)
                 if embed is not None:
-                    await reaction.message.edit(embed=embed["embed"])
-                    if embed["type"] != messages[reaction.message.id]["type"]:
-                        messages[reaction.message.id].update({"type": embed["type"]})
+                    await msg.edit(embed=embed["embed"])
+                    if embed["type"] != messages[msg.id]["type"]:
+                        messages[msg.id].update({"type": embed["type"]})
                         try:
-                            await reaction.message.clear_reactions()
-                        except discord.errors.Forbidden:
+                            await msg.clear_reactions()
+                        except (discord.errors.Forbidden, discord.errors.NotFound):
                             pass
                         if str(reaction) != "\U000021a9":
-                            messages[reaction.message.id]["previous"].append(param_raw)
-                        if len(messages[reaction.message.id]["previous"]) != 0:
+                            messages[msg.id]["previous"].append(param_raw)
+                        if len(messages[msg.id]["previous"]) != 0:
                             try:
-                                await reaction.message.add_reaction("\U000021a9")
-                            except discord.errors.Forbidden:
+                                await msg.add_reaction("\U000021a9")
+                            except (discord.errors.Forbidden, discord.errors.NotFound):
                                 pass
                         for each in embed["emotes"]:
-                            if messages[reaction.message.id]["type"] == embed["type"]:
+                            if messages[msg.id]["type"] == embed["type"]:
                                 try:
-                                    await reaction.message.add_reaction(each)
-                                except discord.errors.Forbidden:
+                                    await msg.add_reaction(each)
+                                except (discord.errors.Forbidden, discord.errors.NotFound):
                                     break
 
     def gen_random(self, syntax):

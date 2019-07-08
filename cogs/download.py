@@ -1,6 +1,5 @@
 import re
 import discord
-down_msg = {}
 
 
 class Download(discord.ext.commands.Cog):
@@ -14,7 +13,6 @@ class Download(discord.ext.commands.Cog):
             lang = self.bot.lang[self.bot.config["mainlang"]]
         mainlang = self.bot.lang[self.bot.config["mainlang"]]
         addons = []
-        global down_msg
         if len(args) == 0:
             down = ["skript", "addon", "aliases", "software"]
         else:
@@ -42,15 +40,15 @@ class Download(discord.ext.commands.Cog):
                                     addons.append("{}||{}".format(loop, self.bot.addonj[loop]["url"]))
                     if ok == 0:
                         msg = await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["downloads"]["unknown-file"].replace("%file%", each), color=self.bot.get_cog("Main").get_color("error"))))
-                        down_msg.update({msg.id: {"user": ctx.author.id, "message": ctx.id}})
+                        self.bot.messages.update({msg.id: {"command": self, "user": ctx.author.id, "message": ctx.id}})
                         try:
                             await msg.add_reaction("❌")
-                        except:
+                        except (discord.errors.Forbidden, discord.errors.NotFound):
                             pass
                         return
         embed = discord.Embed(title="{} {}".format(lang["downloads"]["emote"], lang["downloads"]["title"]), color=self.bot.get_cog("Main").get_color("downloads"))
-        if len(down)+len(addons) <= 20:
-            if len(down)+len(addons) >= 1:
+        if len(down) + len(addons) <= 20:
+            if len(down) + len(addons) >= 1:
                 if "skript" in down:
                     skript = []
                     for each in self.bot.downs["downloads"]["Skript"]:
@@ -68,7 +66,7 @@ class Download(discord.ext.commands.Cog):
                         if each.casefold() != "skript":
                             addon.append("[{}]({})".format(each, self.bot.addonj[each]["url"]))
                     addon.sort()
-                    perfield = int(len(addon)/6)+(0 if (len(addon)/6).is_integer() else 1)
+                    perfield = int(len(addon) / 6) + (0 if (len(addon) / 6).is_integer() else 1)
                     add = []
                     count = 0
                     for each in addon:
@@ -101,25 +99,33 @@ class Download(discord.ext.commands.Cog):
                 msg = await ctx.channel.send(embed=discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["downloads"]["no-arg"], color=self.bot.get_cog("Main").get_color("error")))
         else:
             msg = await ctx.channel.send(embed=discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["downloads"]["too-long"], color=self.bot.get_cog("Main").get_color("error")))
-        down_msg.update({msg.id: {"user": ctx.author.id, "message": ctx.id}})
+        self.bot.messages.update({msg.id: {"command": self, "user": ctx.author.id, "message": ctx.id}})
         try:
             await msg.add_reaction("❌")
-        except:
+        except (discord.errors.Forbidden, discord.errors.NotFound):
             pass
 
     @discord.ext.commands.Cog.listener()
     async def on_reaction_add(self, reaction, user):
-        global down_msg
-        if (reaction.message.author != self.bot.user) or (user == self.bot.user):
+        msg = reaction.message
+        messages = self.bot.messages
+
+        if msg.author != self.bot.user or user == self.bot.user or msg.id not in messages or messages[msg.id]["command"] != self:
             return
-        if (not user.bot) and (reaction.message.id in down_msg) and ((down_msg[reaction.message.id]["user"] == user.id) or reaction.message.channel.permissions_for(user).manage_guild) and (str(reaction) == "❌"):
+
+        try:
+            await msg.remove_reaction(reaction, user)
+        except (discord.errors.Forbidden, discord.errors.NotFound):
+            pass
+
+        if not user.bot and ((messages[msg.id]["user"] == user.id) or reaction.message.channel.permissions_for(user).manage_guild) and (str(reaction) == "❌"):
             try:
-                msg = await reaction.message.channel.get_message(down_msg[reaction.message.id]["message"])
-                await msg.delete()
-            except:
+                delete_msg = await reaction.message.channel.get_message(messages[msg.id]["message"])
+                await delete_msg.delete()
+            except (discord.errors.Forbidden, discord.errors.NotFound):
                 pass
             await reaction.message.delete()
-            down_msg.pop(reaction.message.id)
+            messages.pop(reaction.message.id)
 
 
 def setup(bot):
