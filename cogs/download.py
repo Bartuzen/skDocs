@@ -120,7 +120,7 @@ class Download(discord.ext.commands.Cog):
 
         if not user.bot and ((messages[msg.id]["user"] == user.id) or reaction.message.channel.permissions_for(user).manage_guild) and (str(reaction) == "❌"):
             try:
-                delete_msg = await reaction.message.channel.get_message(messages[msg.id]["message"])
+                delete_msg = await reaction.message.channel.fetch_message(messages[msg.id]["message"])
                 await delete_msg.delete()
             except (discord.errors.Forbidden, discord.errors.NotFound):
                 pass

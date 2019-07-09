@@ -30,7 +30,7 @@ class Docs(discord.ext.commands.Cog):
                             t += 1
                     if t == 2:
                         if len(each.split(":")) >= 3:
-                            await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error"))))
+                            await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
                             return
                         elif ":" in each:
                             filters.append(each)
@@ -45,7 +45,7 @@ class Docs(discord.ext.commands.Cog):
                                 param["type"].append(loop.casefold())
                                 allow = 1
                         if allow == 0:
-                            await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error"))))
+                            await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
                             return
                     elif (each.startswith("!")) and ("type" in lang["docs"]["commands"] and re.fullmatch(lang["docs"]["commands"]["type"], each.split(":")[0][1:]) is not None or re.fullmatch(mainlang["docs"]["commands"]["type"], each.split(":")[0][1:]) is not None):
                         allow = 0
@@ -54,7 +54,7 @@ class Docs(discord.ext.commands.Cog):
                                 param["!type"].append(loop.casefold())
                                 allow = 1
                         if allow == 0:
-                            await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error"))))
+                            await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
                             return
                     elif "addon" in lang["docs"]["commands"] and re.fullmatch(lang["docs"]["commands"]["addon"], each.split(":")[0]) is not None or re.fullmatch(mainlang["docs"]["commands"]["addon"], each.split(":")[0]):
                         param["addon"].append(each.split(":")[1])
@@ -68,16 +68,17 @@ class Docs(discord.ext.commands.Cog):
                         if each.split(":")[1].isdigit():
                             param.update({"page": int(each.split(":")[1])})
                         else:
-                            await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error"))))
+                            await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
                             return
                     elif "id" in lang["docs"]["commands"] and re.fullmatch(lang["docs"]["commands"]["id"], each.split(":")[0]) is not None or re.fullmatch(mainlang["docs"]["commands"]["id"], each.split(":")[0]):
                         if each.split(":")[1].isdigit():
                             param.update({"id": int(each.split(":")[1])})
                         else:
-                            await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error"))))
+                            # await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
+                            await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
                             return
                     else:
-                        await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error"))))
+                        await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
                         return
                 for each in param:
                     if each != "id":
@@ -88,7 +89,7 @@ class Docs(discord.ext.commands.Cog):
                         param[each] = last
                 if len(query) > 0:
                     param.update({"query": " ".join(query)})
-                    embed = Docs.get_docs(self, param, lang)
+                    embed = self.get_docs(param, lang)
                     if embed is not None:
                         msg = await ctx.channel.send(embed=embed["embed"], content=(embed["msg"] if "msg" in embed else None))
                         self.bot.messages.update({msg.id: {"command": self, "user": ctx.author.id, "message": ctx.id, "type": embed["type"], "previous": list()}})
@@ -100,12 +101,13 @@ class Docs(discord.ext.commands.Cog):
                                     except (discord.errors.Forbidden, discord.errors.NotFound):
                                         break
                     else:
-                        await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["no-with-args"], color=self.bot.get_cog("Main").get_color("error"))))
+                        await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["no-with-args"], color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
+
                 else:
-                    await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-usage"].replace("%nl%", "\n"), color=self.bot.get_cog("Main").get_color("error"))))
+                    await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-usage"].replace("%nl%", "\n"), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
                     return
             else:
-                await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-usage"].replace("%nl%", "\n"), color=self.bot.get_cog("Main").get_color("error"))))
+                await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-usage"].replace("%nl%", "\n"), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
 
     def get_docs(self, param, lang):
         r = list()
@@ -244,14 +246,14 @@ class Docs(discord.ext.commands.Cog):
             desc.append("**{}:** [{}]({})".format(lang["docs"]["addon"], j[id]["addon"]["name"], j[id]["addon"]["link_to_addon"]))
             embed = discord.Embed(title="{} {} | {}: {} ({})".format(lang["docs"]["emote"], lang["docs"]["title"], lang["docs"]["info"], j[id]["title"], id + 1), description="\n".join(desc), color=self.bot.get_cog("Main").get_color("docs"))
             if ("description" in j[id]) and (j[id]["description"] != "") and (j[id]["description"] is not None):
-                for each in Docs.split_fields(self, j[id]["description"]):
+                for each in self.split_fields(j[id]["description"]):
                     embed.add_field(name=(lang["docs"]["code"]["description"] if "added1" not in locals() else "‎"), value=each, inline=False)
                     added1 = 1
-            for each in Docs.split_fields(self, j[id]["syntax_pattern"]):
+            for each in self.split_fields(j[id]["syntax_pattern"]):
                 embed.add_field(name=(lang["docs"]["code"]["patterns"] if "added2" not in locals() else "‎"), value="```vb\n{}\n```".format(each), inline=False)
                 added2 = 1
             if j[id]["syntax_type"] != "type":
-                e = Docs.gen_random(self, random.choice(j[id]["syntax_pattern"].split("\n")))
+                e = self.gen_random(random.choice(j[id]["syntax_pattern"].split("\n")))
                 if e is not None and j[id]["syntax_type"] == "event" and e[-1] != ":":
                     e = "{}:".format(e)
                 if ("examples" in j[id]) and (j[id]["examples"] != "") and (j[id]["examples"] is not None):
@@ -262,7 +264,7 @@ class Docs(discord.ext.commands.Cog):
                 elif e is not None:
                     ex = "{}\n# ^ {}".format(e, lang["docs"]["code"]["random-code"])
                 if "ex" in locals():
-                    for each in Docs.split_fields(self, ex):
+                    for each in self.split_fields(ex):
                         embed.add_field(name=(lang["docs"]["code"]["examples"] if "added3" not in locals() else "‎"), value="```vb\n{}\n```".format(each), inline=False)
                         added3 = 1
             if (j[id]["syntax_type"] == "event") and ("event_values" in j[id]) and (j[id]["event_values"] != "") and (j[id]["event_values"] is not None):
@@ -445,6 +447,8 @@ class Docs(discord.ext.commands.Cog):
                     pass
                 messages.pop(msg.id)
                 return
+            if messages[msg.id]["type"] == 0:
+                return
             param = {"type": list(), "addon": list(), "contains": list(), "!type": list(), "!addon": list(), "!contains": list()}
             for each in msg.embeds[0].description.split("\n"):
                 if each.startswith("**{}:** ".format(lang["docs"]["query"])):
@@ -525,7 +529,7 @@ class Docs(discord.ext.commands.Cog):
                 param = messages[msg.id]["previous"][-1]
                 messages[msg.id].update({"previous": messages[msg.id]["previous"][:-1]})
             if param != param_raw:
-                embed = Docs.get_docs(self, param, lang)
+                embed = self.get_docs(param, lang)
                 if embed is not None:
                     await msg.edit(embed=embed["embed"])
                     if embed["type"] != messages[msg.id]["type"]:
@@ -579,6 +583,14 @@ class Docs(discord.ext.commands.Cog):
                 return "{}({})".format(f[0], ", ".join(rlist))
         except re.error:
             return
+
+    async def send(self, embed, channel, message):
+        msg = await channel.send(embed=embed)
+        self.bot.messages.update({msg.id: {"command": self, "type": 0, "user": message.author.id, "message": message.id}})
+        try:
+            await msg.add_reaction("❌")
+        except (discord.errors.Forbidden, discord.errors.NotFound):
+            pass
 
 
 def setup(bot):
