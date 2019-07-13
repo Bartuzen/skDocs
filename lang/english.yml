@@ -153,7 +153,8 @@ downloads:
         addon: 'addon(s)?'
         skript: 's(k(r(i(p(t)?)?)?)?)?'
         aliases: 'al(iase(s)?)?'
-        paper: 'paper'
+        paper: 'paper(spigot)?'
+        spigot: 'spigot'
 info:
     command: '(i(nfo)?|about)'
     title: 'Info About skDocs'

@@ -88,7 +88,8 @@ downloads:
     commands:
         main: 'indir(me(ler)?)?'
         addon: 'addon(lar)?'
-        paper: 'paper'
+        paper: 'paper(spigot)?'
+        spigot: 'spigot'
 names:
     args:
         emote: '🔢'
