@@ -26,6 +26,4 @@ downloads:
         '1.10': https://github.com/tim740/skAliases/releases/tag/v1.9.8
         1.9: https://github.com/tim740/skAliases/releases/tag/v1.9.3
         1.8: https://drive.google.com/file/d/0B-hk5uuAupCAQ1FSdHdjUENYWXM/view
-    software:
-        Spigot: https://getbukkit.org/download/spigot
-        Paper: https://papermc.io/downloads
+    Spigot: https://mcmirror.io/downloads/Spigot

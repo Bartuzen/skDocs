@@ -14,7 +14,7 @@ class Download(discord.ext.commands.Cog):
         mainlang = self.bot.lang[self.bot.config["mainlang"]]
         addons = []
         if len(args) == 0:
-            down = ["skript", "addon", "aliases", "software"]
+            down = ["skript", "addon", "aliases", "paper", "spigot"]
         else:
             down = []
             for each in args:
@@ -27,17 +27,20 @@ class Download(discord.ext.commands.Cog):
                 elif "aliases" in lang["downloads"]["commands"] and re.fullmatch(lang["downloads"]["commands"]["aliases"], each.casefold()) is not None or re.fullmatch(mainlang["downloads"]["commands"]["aliases"], each.casefold()) is not None:
                     if "aliases" not in down:
                         down.append("aliases")
-                elif "software" in lang["downloads"]["commands"] and re.fullmatch(lang["downloads"]["commands"]["software"], each.casefold()) is not None or re.fullmatch(mainlang["downloads"]["commands"]["software"], each.casefold()) is not None:
-                    if "software" not in down:
-                        down.append("software")
+                elif "paper" in lang["downloads"]["commands"] and re.fullmatch(lang["downloads"]["commands"]["paper"], each.casefold()) is not None or re.fullmatch(mainlang["downloads"]["commands"]["paper"], each.casefold()) is not None:
+                    if "paper" not in down:
+                        down.append("paper")
+                elif "spigot" in lang["downloads"]["commands"] and re.fullmatch(lang["downloads"]["commands"]["spigot"], each.casefold()) is not None or re.fullmatch(mainlang["downloads"]["commands"]["spigot"], each.casefold()) is not None:
+                    if "spigot" not in down:
+                        down.append("spigot")
                 else:
                     ok = 0
                     for loop in self.bot.addonj:
-                        if ok == 0:
-                            if each.casefold() in loop.casefold():
-                                ok = 1
-                                if "{}||{}".format(loop, self.bot.addonj[loop]["url"]) not in addons:
-                                    addons.append("{}||{}".format(loop, self.bot.addonj[loop]["url"]))
+                        if each.casefold() in loop.casefold():
+                            ok = 1
+                            if "{}||{}".format(loop, self.bot.addonj[loop]["url"]) not in addons:
+                                addons.append("{}||{}".format(loop, self.bot.addonj[loop]["url"]))
+                                break
                     if ok == 0:
                         msg = await ctx.channel.send(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["downloads"]["unknown-file"].replace("%file%", each), color=self.bot.get_cog("Main").get_color("error"))))
                         self.bot.messages.update({msg.id: {"command": self, "user": ctx.author.id, "message": ctx.id}})
@@ -89,12 +92,17 @@ class Download(discord.ext.commands.Cog):
                     for each in self.bot.downs["downloads"]["aliases"]:
                         aliases.append("[Minecraft {}]({})".format(each, self.bot.downs["downloads"]["aliases"][each]))
                     embed.add_field(name="Aliases", value=" - ".join(aliases), inline=False)
-                if "software" in down:
-                    software = []
-                    for each in self.bot.downs["downloads"]["software"]:
-                        software.append("[{}]({})".format(each, self.bot.downs["downloads"]["software"][each]))
-                    embed.add_field(name=lang["downloads"]["software"], value=" - ".join(software), inline=False)
-                msg = await ctx.channel.send(embed=embed)
+                if "paper" in down:
+                    paper = []
+                    for each in self.bot.config["paper"]["versions"]:
+                        paper.append("[{}](https://papermc.io/api/v1/paper/{}/latest/download)".format(each, each))
+                    embed.add_field(name=lang["downloads"]["paper"], value=" - ".join(paper), inline=False)
+                if "spigot" in down:
+                    embed.add_field(name=lang["downloads"]["spigot"], value=self.bot.downs["downloads"]["Spigot"], inline=False)
+                try:
+                    msg = await ctx.channel.send(embed=embed)
+                except discord.errors.HTTPException:
+                    msg = await ctx.channel.send(embed=discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["downloads"]["too-long"], color=self.bot.get_cog("Main").get_color("error")))
             else:
                 msg = await ctx.channel.send(embed=discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["downloads"]["no-arg"], color=self.bot.get_cog("Main").get_color("error")))
         else:

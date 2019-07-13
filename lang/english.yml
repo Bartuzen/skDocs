@@ -142,7 +142,8 @@ downloads:
     title: 'Downloads'
     file-link: 'Download Link for %file%'
     addons: 'Addons'
-    software: 'Server Softwares'
+    paper: 'Paper'
+    spigot: 'Spigot'
     latest: 'Latest'
     too-long: 'Too many arguments.'
     no-arg: 'No available argument could be found.'
@@ -152,7 +153,7 @@ downloads:
         addon: 'addon(s)?'
         skript: 's(k(r(i(p(t)?)?)?)?)?'
         aliases: 'al(iase(s)?)?'
-        software: 'software'
+        paper: 'paper'
 info:
     command: '(i(nfo)?|about)'
     title: 'Info About skDocs'

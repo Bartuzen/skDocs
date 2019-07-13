@@ -79,7 +79,8 @@ downloads:
     title: 'İndirmeler'
     file-link: '%file% İçin İndirme Linki'
     addons: 'Addonlar'
-    software: 'Sunucu Yazılımları'
+    paper: 'Paper'
+    spigot: 'Spigot'
     latest: 'Son Sürüm'
     too-long: 'Çok fazla argüman var.'
     no-arg: 'Geçerli bir argüman bulunamadı.'
@@ -87,7 +88,7 @@ downloads:
     commands:
         main: 'indir(me(ler)?)?'
         addon: 'addon(lar)?'
-        software: '(yazılım|sunucu( )?yazılımı)'
+        paper: 'paper'
 names:
     args:
         emote: '🔢'
