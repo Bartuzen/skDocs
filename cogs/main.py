@@ -16,28 +16,30 @@ class Main(discord.ext.commands.Cog):
         else:
             lang = self.bot.lang[self.bot.config["mainlang"]]
         mainlang = self.bot.lang[self.bot.config["mainlang"]]
-        if msg.content.casefold().startswith("!sk ") or msg.content.startswith("{} ".format(self.bot.user.mention)):
-            if re.fullmatch(lang["docs"]["commands"]["main"], msg.content.split()[1].casefold()) is not None or re.fullmatch(mainlang["docs"]["commands"]["main"], msg.content.split()[1].casefold()) is not None:
+        msg = msg.content.casefold()
+        if msg.startswith("!sk ") or msg.startswith("{} ".format(self.bot.user.mention)):
+            cmd = msg.split()[1]
+            if re.fullmatch(lang["docs"]["commands"]["main"], cmd) is not None or re.fullmatch(mainlang["docs"]["commands"]["main"], cmd) is not None:
                 await self.bot.get_cog("Docs").docs(msg, " ".join(msg.content.split()[2:]))
-            elif re.fullmatch(lang["downloads"]["commands"]["main"], msg.content.split()[1].casefold()) is not None or re.fullmatch(mainlang["downloads"]["commands"]["main"], msg.content.split()[1].casefold()) is not None:
+            elif re.fullmatch(lang["downloads"]["commands"]["main"], cmd) is not None or re.fullmatch(mainlang["downloads"]["commands"]["main"], cmd) is not None:
                 await self.bot.get_cog("Download").download(msg, msg.content.split()[2:])
-            elif re.fullmatch(lang["names"]["command"], msg.content.split()[1].casefold()) is not None or re.fullmatch(mainlang["names"]["command"], msg.content.split()[1].casefold()) is not None:
+            elif re.fullmatch(lang["names"]["command"], cmd) is not None or re.fullmatch(mainlang["names"]["command"], cmd) is not None:
                 await self.bot.get_cog("Names").names(msg, " ".join(msg.content.split()[2:]))
-            elif re.fullmatch(lang["help"]["command"], msg.content.split()[1].casefold()) is not None or re.fullmatch(mainlang["help"]["command"], msg.content.split()[1].casefold()) is not None:
+            elif re.fullmatch(lang["help"]["command"], cmd) is not None or re.fullmatch(mainlang["help"]["command"], cmd) is not None:
                 await self.bot.get_cog("Help").help(msg)
-            elif re.fullmatch(lang["info"]["command"], msg.content.split()[1].casefold()) is not None or re.fullmatch(mainlang["info"]["command"], msg.content.split()[1].casefold()) is not None:
+            elif re.fullmatch(lang["info"]["command"], cmd) is not None or re.fullmatch(mainlang["info"]["command"], cmd) is not None:
                 await self.bot.get_cog("Info").info(msg)
-            elif msg.content.split()[1].casefold() == "yamlparse":
+            elif cmd == "yamlparse":
                 await self.bot.get_cog("Parsing").yamlparse(msg, " ".join(msg.content.split()[2:]))
-            elif msg.content.split()[1].casefold() == "jsonparse":
+            elif cmd == "jsonparse":
                 await self.bot.get_cog("Parsing").jsonparse(msg, " ".join(msg.content.split()[2:]))
-            elif msg.content.split()[1].casefold() == "jsonbeautify":
+            elif cmd == "jsonbeautify":
                 await self.bot.get_cog("Parsing").jsonbeautify(msg, " ".join(msg.content.split()[2:]))
-            elif msg.content.split()[1].casefold() == "lang" or msg.content.split()[1].casefold() == "language":
+            elif cmd == "lang" or cmd == "language":
                 await self.bot.get_cog("Lang").lang(msg, " ".join(msg.content.split()[2:]))
-            elif msg.content.split()[1].casefold() == "eval":
+            elif cmd == "eval":
                 await self.bot.get_cog("Admin").eval(msg, msg.content[len(msg.content.split()[0]) + 6:])
-            elif (msg.content.split()[1].casefold() == "reload") or (msg.content.split()[1].casefold() == "rel") or (msg.content.split()[1].casefold() == "rl"):
+            elif (cmd == "reload") or (cmd == "rel") or (cmd == "rl"):
                 await self.bot.get_cog("Admin").reload(msg)
 
     def get_color(self, color):
