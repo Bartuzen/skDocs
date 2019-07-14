@@ -27,3 +27,11 @@ downloads:
         1.9: https://github.com/tim740/skAliases/releases/tag/v1.9.3
         1.8: https://drive.google.com/file/d/0B-hk5uuAupCAQ1FSdHdjUENYWXM/view
     Spigot: https://mcmirror.io/downloads/Spigot
+    Paper:
+        - '1.14.3'
+        - '1.13.2'
+        - '1.12.2'
+        - '1.11.2'
+        - '1.10.2'
+        - '1.9.4'
+        - '1.8.8'

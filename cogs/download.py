@@ -94,7 +94,7 @@ class Download(discord.ext.commands.Cog):
                     embed.add_field(name="Aliases", value=" - ".join(aliases), inline=False)
                 if "paper" in down:
                     paper = []
-                    for each in self.bot.config["paper"]["versions"]:
+                    for each in self.bot.downs["downloads"]["Paper"]:
                         paper.append("[{}](https://papermc.io/api/v1/paper/{}/latest/download)".format(each, each))
                     embed.add_field(name=lang["downloads"]["paper"], value=" - ".join(paper), inline=False)
                 if "spigot" in down:
