@@ -141,6 +141,7 @@ downloads:
     emote: '⬇'
     title: 'Downloads'
     file-link: 'Download Link for %file%'
+    aliases-desc: 'These files are for Skript 2.3 version and below. You don''t need these files for Skript 2.3 and above.'
     addons: 'Addons'
     paper: 'Paper'
     spigot: 'Spigot'

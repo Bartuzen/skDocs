@@ -90,8 +90,8 @@ class Download(discord.ext.commands.Cog):
                 if "aliases" in down:
                     aliases = []
                     for each in self.bot.downs["downloads"]["aliases"]:
-                        aliases.append("[Minecraft {}]({})".format(each, self.bot.downs["downloads"]["aliases"][each]))
-                    embed.add_field(name="Aliases", value=" - ".join(aliases), inline=False)
+                        aliases.append("[{}]({})".format(each, self.bot.downs["downloads"]["aliases"][each]))
+                    embed.add_field(name="Aliases", value=lang["downloads"]["aliases-desc"] + "\n" + " - ".join(aliases), inline=False)
                 if "paper" in down:
                     paper = []
                     for each in self.bot.downs["downloads"]["Paper"]:

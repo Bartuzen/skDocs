@@ -78,6 +78,7 @@ downloads:
     emote: '⬇'
     title: 'İndirmeler'
     file-link: '%file% İçin İndirme Linki'
+    aliases-desc: 'Bu dosyalar Skript 2.3 sürümünün altındaki sürümler için geçerlidir. Skript 2.3 ve üstünde bu dosyalara gerek yoktur.'
     addons: 'Addonlar'
     paper: 'Paper'
     spigot: 'Spigot'
