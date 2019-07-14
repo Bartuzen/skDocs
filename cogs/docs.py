@@ -101,7 +101,6 @@ class Docs(discord.ext.commands.Cog):
                                         break
                     else:
                         await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["no-with-args"], color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
-
                 else:
                     await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-usage"].replace("%nl%", "\n"), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
                     return
@@ -133,7 +132,7 @@ class Docs(discord.ext.commands.Cog):
                                 addontext.append("[{}]({})".format(loop, self.bot.addonj[loop]["url"]))
                             break
             if len(addon) == 0:
-                return None
+                return
         if "!addon" in param and len(param["!addon"]) > 0:
             notaddon = list()
             notaddontext = list()
@@ -153,7 +152,7 @@ class Docs(discord.ext.commands.Cog):
                                 notaddontext.append("[{}]({})".format(loop, self.bot.addonj[loop]["url"]))
                             break
             if len(notaddon) == 0:
-                return None
+                return
         charsyntax = {"event": 0, "condition": 0, "effect": 0, "expression": 0, "type": 0, "function": 0}
         charid = {}
         for count in range(len(j)):
@@ -216,12 +215,50 @@ class Docs(discord.ext.commands.Cog):
                 if id == param["id"]:
                     sel_id = count
                     break
+        desc = [("**{}:** {}".format(lang["docs"]["query"], param["query"])) if param["query"] != "*" else ("**{}:** \\*{}\\*".format(lang["docs"]["query"], lang["docs"]["everything"]))]
+        cmd = [param["query"]]
+        if "type" in param and len(param["type"]) > 0:
+            types = []
+            for each in param["type"]:
+                types.append(lang["docs"]["types"][each])
+            desc.append("**{}:** {}".format(lang["docs"]["type"], " - ".join(types)))
+            cmd.append(mainlang["docs"]["commands"]["command-field"]["type"] + ":" + " -- ".join(param["type"]))
+        elif "!type" in param and len(param["!type"]) > 0:
+            types = []
+            for each in param["!type"]:
+                types.append(lang["docs"]["types"][each])
+            desc.append("**!{}:** {}".format(lang["docs"]["type"], " - ".join(types)))
+            cmd.append("!" + mainlang["docs"]["commands"]["command-field"]["type"] + ":" + " -- ".join(param["!type"]))
+        elif "char" in param:
+            desc.append("**{}:** {}".format(lang["docs"]["type"], lang["docs"]["types"][next(iter(syntax))]))
+        if "contains" in param and len(param["contains"]) > 0:
+            desc.append("**{}:** {}".format(lang["docs"]["contains"], " - ".join(param["contains"])))
+            cmd.append(mainlang["docs"]["commands"]["command-field"]["contains"] + ":" + " -- ".join(param["contains"]))
+        if "!contains" in param and len(param["!contains"]) > 0:
+            desc.append("**!{}:** {}".format(lang["docs"]["contains"], " - ".join(param["!contains"])))
+            cmd.append("!" + mainlang["docs"]["commands"]["command-field"]["contains"] + ":" + " -- ".join(param["!contains"]))
+        if "addon" in param and len(param["addon"]) > 0:
+            desc.append("**{}:** {}".format(lang["docs"]["addon"], " - ".join(addontext)))
+            cmd.append(mainlang["docs"]["commands"]["command-field"]["addon"] + ":" + " -- ".join(addon))
+        elif "!addon" in param and len(param["!addon"]) > 0:
+            desc.append("**!{}:** {}".format(lang["docs"]["addon"], " - ".join(notaddontext)))
+            cmd.append("!" + mainlang["docs"]["commands"]["command-field"]["addon"] + ":" + " -- ".join(notaddon))
+        if ("page" in param) and (param["page"] >= 1) and (len(syntax) == 1):
+            if param["page"] == 9999:
+                page = int((len(syntax[next(iter(syntax))]) - 1) / 10) + 1
+            else:
+                page = param["page"]
+        else:
+            page = 1
+        if len(syntax) == 1:
+            desc.append("**{}:** {}/{}".format(lang["docs"]["page"], page, int((len(syntax[next(iter(syntax))]) - 1) / 10) + 1))
         if len(syntax) == 0:
-            return None
+            embed = discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description="\n".join(desc) + "\n\n" + lang["docs"]["errors"]["no-with-args"], color=self.bot.get_cog("Main").get_color("error"))
+            return {"embed": embed, "emotes": ["❌"], "type": 0}
         count = 0
         if "char" in param:
             if param["char"] > len(syntax):
-                return None
+                return
             for each in ["event", "condition", "effect", "expression", "type", "function"]:
                 if each in syntax:
                     count += 1
@@ -237,7 +274,7 @@ class Docs(discord.ext.commands.Cog):
                 id = charid[next(iter(syntax))]
             else:
                 id = r[0]
-            desc = list()
+            desc = []
             if j[id]["syntax_type"] == "event":
                 if "event_cancellable" in j[id]:
                     if j[id]["event_cancellable"]:
@@ -281,7 +318,7 @@ class Docs(discord.ext.commands.Cog):
             if ("compatible_addon_version" in j[id]) and (j[id]["compatible_addon_version"] != "") and (j[id]["compatible_addon_version"] is not None):
                 embed.add_field(name=lang["docs"]["code"]["version"], value=j[id]["compatible_addon_version"])
             if ("required_plugins" in j[id]) and (j[id]["required_plugins"] is not None) and (len(j[id]["required_plugins"]) != 0):
-                plugins = list()
+                plugins = []
                 for each in j[id]["required_plugins"]:
                     plugins.append("[{}]({})".format(each["name"], each["link"]))
                 embed.add_field(name=lang["docs"]["code"]["required-plugins"], value=" - ".join(plugins))
@@ -291,7 +328,7 @@ class Docs(discord.ext.commands.Cog):
                 return {"embed": embed, "msg": lang["docs"]["only-one"], "emotes": ["❌"], "type": 3}
             return {"embed": embed, "emotes": ["❌"], "type": 3}
         if "id" in param:
-            return None
+            return
         if len(syntax) == 1:
             perpage = 10
         elif (len(syntax) == 2) or (len(syntax) == 3):
@@ -300,44 +337,6 @@ class Docs(discord.ext.commands.Cog):
             perpage = 3
         else:
             perpage = 2
-        desc = list()
-        desc.append(("**{}:** {}".format(lang["docs"]["query"], param["query"])) if param["query"] != "*" else ("**{}:** \\*{}\\*".format(lang["docs"]["query"], lang["docs"]["everything"])))
-        cmd = [param["query"]]
-        if "type" in param and len(param["type"]) > 0:
-            types = list()
-            for each in param["type"]:
-                types.append(lang["docs"]["types"][each])
-            desc.append("**{}:** {}".format(lang["docs"]["type"], " - ".join(types)))
-            cmd.append(mainlang["docs"]["commands"]["command-field"]["type"] + ":" + " -- ".join(param["type"]))
-        elif "!type" in param and len(param["!type"]) > 0:
-            types = list()
-            for each in param["!type"]:
-                types.append(lang["docs"]["types"][each])
-            desc.append("**!{}:** {}".format(lang["docs"]["type"], " - ".join(types)))
-            cmd.append("!" + mainlang["docs"]["commands"]["command-field"]["type"] + ":" + " -- ".join(param["!type"]))
-        elif "char" in param:
-            desc.append("**{}:** {}".format(lang["docs"]["type"], lang["docs"]["types"][next(iter(syntax))]))
-        if "contains" in param and len(param["contains"]) > 0:
-            desc.append("**{}:** {}".format(lang["docs"]["contains"], " - ".join(param["contains"])))
-            cmd.append(mainlang["docs"]["commands"]["command-field"]["contains"] + ":" + " -- ".join(param["contains"]))
-        if "!contains" in param and len(param["!contains"]) > 0:
-            desc.append("**!{}:** {}".format(lang["docs"]["contains"], " - ".join(param["!contains"])))
-            cmd.append("!" + mainlang["docs"]["commands"]["command-field"]["contains"] + ":" + " -- ".join(param["!contains"]))
-        if "addon" in param and len(param["addon"]) > 0:
-            desc.append("**{}:** {}".format(lang["docs"]["addon"], " - ".join(addontext)))
-            cmd.append(mainlang["docs"]["commands"]["command-field"]["addon"] + ":" + " -- ".join(addon))
-        elif "!addon" in param and len(param["!addon"]) > 0:
-            desc.append("**!{}:** {}".format(lang["docs"]["addon"], " - ".join(notaddontext)))
-            cmd.append("!" + mainlang["docs"]["commands"]["command-field"]["addon"] + ":" + " -- ".join(notaddon))
-        if ("page" in param) and (param["page"] >= 1) and (len(syntax) == 1):
-            if param["page"] == 9999:
-                page = int((len(syntax[next(iter(syntax))]) - 1) / 10) + 1
-            else:
-                page = param["page"]
-        else:
-            page = 1
-        if len(syntax) == 1:
-            desc.append("**{}:** {}/{}".format(lang["docs"]["page"], page, int((len(syntax[next(iter(syntax))]) - 1) / 10) + 1))
         embed = discord.Embed(title="{} {}".format(lang["docs"]["emote"], lang["docs"]["title"]), description="\n".join(desc), color=self.bot.get_cog("Main").get_color("docs"))
         count = 0
         for each in ["event", "condition", "effect", "expression", "type", "function"]:
@@ -389,7 +388,7 @@ class Docs(discord.ext.commands.Cog):
                         emotes.append("\U0001f51f")
                 return {"embed": embed, "emotes": emotes, "type": 2}
             else:
-                emotes = list()
+                emotes = []
                 emotes.append("❌")
                 for each in range(len(syntax)):
                     if each == 0:
@@ -406,11 +405,11 @@ class Docs(discord.ext.commands.Cog):
                         emotes.append("\U0001f1eb")
                 return {"embed": embed, "emotes": emotes, "type": 1}
         else:
-            return None
+            return
 
     def split_fields(self, text):
-        rlist = list()
-        ret = list()
+        rlist = []
+        ret = []
         for each in text.split("\n"):
             rlist.append(each)
             if len("\n".join(rlist)) + 10 > 1024:
@@ -454,7 +453,7 @@ class Docs(discord.ext.commands.Cog):
                 return
             if messages[msg.id]["type"] == 0:
                 return
-            param = {"type": list(), "addon": list(), "contains": list(), "!type": list(), "!addon": list(), "!contains": list()}
+            param = {"type": [], "addon": [], "contains": [], "!type": [], "!addon": [], "!contains": []}
             for each in msg.embeds[0].description.split("\n"):
                 if each.startswith("**{}:** ".format(lang["docs"]["query"])):
                     if each[len(lang["docs"]["query"]) + 6:] == "\\*{}\\*".format(lang["docs"]["everything"]):
@@ -563,7 +562,7 @@ class Docs(discord.ext.commands.Cog):
             syntax = syntax.replace("%*", "%").replace("%~", "%").replace("%^", "%").replace("%-", "%").replace("[<", "[").replace(">]", "]")
             if (f is None) or (":" not in syntax) or (syntax[-1] != ")") or (syntax[0] == "(") or (len(syntax.split(")")) != 2) or (len(syntax.split("(")) != 2):
                 c = 0
-                ret = list()
+                ret = []
                 for each in random.choice(sre_yield.AllStrings((syntax.replace("[", "(").replace("]", ")?")))).split("%"):
                     c += 1
                     if c % 2 == 0:
@@ -579,7 +578,7 @@ class Docs(discord.ext.commands.Cog):
                     x = x[:-1]
                 return x
             else:
-                rlist = list()
+                rlist = []
                 for each in f[1].split(", "):
                     if parse("{} = [[{}:{}]]", each.split(": ")[1]) is not None:
                         rlist.append("{{_{}}}".format(parse("{} = [[{}:{}]]", each.split(": ")[1])[1]))
