@@ -74,7 +74,6 @@ class Docs(discord.ext.commands.Cog):
                         if each.split(":")[1].isdigit():
                             param.update({"id": int(each.split(":")[1])})
                         else:
-                            # await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
                             await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-arg"].replace("%error%", each), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
                             return
                     else:
@@ -158,8 +157,14 @@ class Docs(discord.ext.commands.Cog):
         charsyntax = {"event": 0, "condition": 0, "effect": 0, "expression": 0, "type": 0, "function": 0}
         charid = {}
         for count in range(len(j)):
-            if not ((param["query"] == "*") or ((param["query"].casefold() in j[count]["title"].casefold()) or (("description" in j[count]) and (param["query"].casefold() in j[count]["description"].casefold())) or (param["query"].casefold() in j[count]["syntax_pattern"].casefold()))):
-                continue
+            if param["query"] != "*":
+                cont = 0
+                for each in param["query"].split(" "):
+                    if not ((each.casefold() in j[count]["title"].casefold()) or (("description" in j[count]) and (each.casefold() in j[count]["description"].casefold())) or (each.casefold() in j[count]["syntax_pattern"].casefold())):
+                        cont = 1
+                        break
+                if cont == 1:
+                    continue
             if "type" in param and len(param["type"]) > 0:
                 if j[count]["syntax_type"].casefold() not in param["type"]:
                     continue
