@@ -417,7 +417,6 @@ class Docs(discord.ext.commands.Cog):
         ret.append("\n".join(rlist))
         return ret
 
-
     @discord.ext.commands.Cog.listener()
     async def on_reaction_add(self, reaction, user):
         msg = reaction.message
