@@ -20,6 +20,9 @@ downloads:
         skBossBarAPI: https://github.com/Bartuzen/skBossBarAPI
         Sk-NBeeT: https://github.com/ShaneBeee/Sk-NBeeT/releases
         skript-nms: https://github.com/FurkannM/skript-nms/releases
+        skript-mirror:
+            other:
+                2.0.0-SNAPSHOT: https://circleci.com/gh/btk5h/skript-mirror/3#artifacts/containers/0
     aliases:
         1.12.2: https://github.com/tim740/skAliases/releases/tag/v2.0.8
         1.11.2: https://github.com/tim740/skAliases/releases/tag/v2.0.5

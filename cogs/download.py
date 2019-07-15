@@ -69,30 +69,40 @@ class Download(discord.ext.commands.Cog):
                     for each in self.bot.addonj:
                         if each.casefold() != "skript":
                             addon.append(f"[{each}]({self.bot.addonj[each]['url']})")
+                            if each in downs["downloads"]["addons"] and "other" in downs["downloads"]["addons"][each]:
+                                for extra in downs["downloads"]["addons"][each]["other"]:
+                                    addon[len(addon) - 1] = f"{addon[len(addon) - 1]}\n**^** [{extra}]({downs['downloads']['addons'][each]['other'][extra]})"
                     addon.sort()
                     perfield = int(len(addon) / 6) + (0 if (len(addon) / 6).is_integer() else 1)
                     add = []
                     count = 0
+                    name = 0
                     for each in addon:
                         count += 1
                         add.append(f"**{count}.** {each}")
                         if len(add) == perfield:
-                            embed.add_field(name=(lang["downloads"]["addons"] if "name" not in locals() else "‎"), value="\n".join(add))
+                            embed.add_field(name=(lang["downloads"]["addons"] if name == 0 else "‎"), value="\n".join(add))
                             add.clear()
                             added = 1
                             name = 1
                         else:
                             added = 0
                     if added == 0:
-                        embed.add_field(name=(lang["downloads"]["addons"] if "name" not in locals() else "‎"), value="\n".join(add))
+                        embed.add_field(name=(lang["downloads"]["addons"] if name == 0 else "‎"), value="\n".join(add))
                 elif len(addons) > 0:
                     for each in addons:
-                        embed.add_field(name=lang["downloads"]["file-link"].replace("%file%", each.split("||")[0]), value=each.split("||")[1], inline=False)
+                        file = each.split("||")[0]
+                        link = each.split("||")[1]
+                        if file in downs["downloads"]["addons"]:
+                            if "other" in downs["downloads"]["addons"][file]:
+                                for extra in downs["downloads"]["addons"][file]["other"]:
+                                    link = f"{link}\n\n**{extra}**\n{downs['downloads']['addons'][file]['other'][extra]}"
+                        embed.add_field(name=lang["downloads"]["file-link"].replace("%file%", file), value=link, inline=False)
                 if "aliases" in down:
                     aliases = []
                     for each in downs["downloads"]["aliases"]:
                         aliases.append(f"[{each}]({downs['downloads']['aliases'][each]})")
-                    embed.add_field(name="Aliases", value=lang["downloads"]["aliases-desc"] + "\n" + " - ".join(aliases), inline=False)
+                    embed.add_field(name="Alises", value=lang["downloads"]["aliases-desc"] + "\n" + " - ".join(aliases), inline=False)
                 if "paper" in down:
                     paper = []
                     for each in downs["downloads"]["Paper"]:

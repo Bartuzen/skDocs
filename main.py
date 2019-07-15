@@ -78,7 +78,8 @@ with open("downloads.yml", "r", encoding="utf-8-sig") as stream:
 if "addons" in addons["downloads"]:
     for each in addons["downloads"]["addons"]:
         if each in bot.addonj:
-            bot.addonj.update({each: {"url": addons["downloads"]["addons"][each], "skripthub": True}})
+            if type(addons["downloads"]["addons"][each]) == str:
+                bot.addonj.update({each: {"url": addons["downloads"]["addons"][each], "skripthub": True}})
         else:
             bot.addonj.update({each: {"url": addons["downloads"]["addons"][each], "skripthub": False}})
 print("Creating syntax list...")
