@@ -247,7 +247,7 @@ class Docs(discord.ext.commands.Cog):
                 page = param["page"]
         else:
             page = 1
-        if len(syntax) == 1:
+        if len(syntax) == 1 or "char" in param:
             desc.append("**{}:** {}/{}".format(lang["docs"]["page"], page, int((len(syntax[next(iter(syntax))]) - 1) / 10) + 1))
         if len(syntax) == 0:
             embed = discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description="\n".join(desc) + "\n\n" + lang["docs"]["errors"]["no-with-args"], color=self.bot.get_cog("Main").get_color("error"))
@@ -585,14 +585,13 @@ class Docs(discord.ext.commands.Cog):
         except re.error:
             return
 
-
-async def send(self, embed, channel, message):
-    msg = await channel.send(embed=embed)
-    self.bot.messages.update({msg.id: {"command": self, "type": 0, "user": message.author.id, "message": message.id}})
-    try:
-        await msg.add_reaction("❌")
-    except (discord.errors.Forbidden, discord.errors.NotFound):
-        pass
+    async def send(self, embed, channel, message):
+        msg = await channel.send(embed=embed)
+        self.bot.messages.update({msg.id: {"command": self, "type": 0, "user": message.author.id, "message": message.id}})
+        try:
+            await msg.add_reaction("❌")
+        except (discord.errors.Forbidden, discord.errors.NotFound):
+            pass
 
 
 def setup(bot):
