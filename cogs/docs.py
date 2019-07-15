@@ -212,6 +212,17 @@ class Docs(discord.ext.commands.Cog):
                 if id == param["id"]:
                     sel_id = count
                     break
+        count = 0
+        if "char" in param:
+            if param["char"] > len(syntax):
+                return
+            for each in ["event", "condition", "effect", "expression", "type", "function"]:
+                if each in syntax:
+                    count += 1
+                    if param["char"] == count:
+                        syntax = {each: syntax[each]}
+                        param.update({"type": [each]})
+                        break
         desc = [("**{}:** {}".format(lang["docs"]["query"], param["query"])) if param["query"] != "*" else ("**{}:** \\*{}\\*".format(lang["docs"]["query"], lang["docs"]["everything"]))]
         cmd = [param["query"]]
         if "type" in param and len(param["type"]) > 0:
@@ -247,22 +258,11 @@ class Docs(discord.ext.commands.Cog):
                 page = param["page"]
         else:
             page = 1
-        if len(syntax) == 1 or "char" in param:
+        if len(syntax) == 1:
             desc.append("**{}:** {}/{}".format(lang["docs"]["page"], page, int((len(syntax[next(iter(syntax))]) - 1) / 10) + 1))
         if len(syntax) == 0:
             embed = discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description="\n".join(desc) + "\n\n" + lang["docs"]["errors"]["no-with-args"], color=self.bot.get_cog("Main").get_color("error"))
             return {"embed": embed, "emotes": ["❌"], "type": 0}
-        count = 0
-        if "char" in param:
-            if param["char"] > len(syntax):
-                return
-            for each in ["event", "condition", "effect", "expression", "type", "function"]:
-                if each in syntax:
-                    count += 1
-                    if param["char"] == count:
-                        syntax = {each: syntax[each]}
-                        param.update({"type": [each]})
-                        break
         if (id == 1) or ("sel_id" in locals()) or ("char" in param and len(syntax) == 1 and len(syntax[next(iter(syntax))]) == 1):
             old = id
             if "sel_id" in locals():
