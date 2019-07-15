@@ -102,7 +102,7 @@ class Download(discord.ext.commands.Cog):
                     aliases = []
                     for each in downs["downloads"]["aliases"]:
                         aliases.append(f"[{each}]({downs['downloads']['aliases'][each]})")
-                    embed.add_field(name="Alises", value=lang["downloads"]["aliases-desc"] + "\n" + " - ".join(aliases), inline=False)
+                    embed.add_field(name="Aliases", value=lang["downloads"]["aliases-desc"] + "\n" + " - ".join(aliases), inline=False)
                 if "paper" in down:
                     paper = []
                     for each in downs["downloads"]["Paper"]:
