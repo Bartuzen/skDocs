@@ -18,9 +18,9 @@ A Discord bot made to show documentation of [Skript](https://github.com/SkriptLa
 * Open a terminal in skDocs folder and run command `pip install -r requirements.txt`
 
 ### `4.` Edit Config File
-* Fill in the `token` and `skript-hub.token` with your bot token and [SkriptHub token](https://skripthub.net/dashboard/api).
-* To get a SkriptHub token:
-  1. Login to [SkriptHub](https://skripthub.net).
+* Fill in the `token` and `skripthub.token` with your bot token and [Skript Hub token](https://skripthub.net/dashboard/api).
+* To get a Skript Hub token:
+  1. Login to [Skript Hub](https://skripthub.net).
   2. Go to API section in Dashboard or click [here](https://skripthub.net/dashboard/api/).
   3. Copy `Your API Token` and paste it to `skript-hub.token` in your config file.
 
