@@ -49,6 +49,7 @@ docs:
         incorrect-usage: 'Wrong usage!%nl%To see usage, type: **!sk help**'
         no-page: '**%page%.** page could not be found.'
         no-with-args: 'No results could be found with specified arguments.'
+        unknown-addon: 'Can''t find **%addon%** addon.\n\n**Available Addons:** %addons%'
     commands:
         main: '(skript)?doc(s|umentation)?'
         id: 'id'

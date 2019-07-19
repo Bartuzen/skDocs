@@ -49,6 +49,7 @@ docs:
         incorrect-usage: 'Hatalı kullanım!%nl%Kullanımı görmek için: **!sk yardım**'
         no-page: '**%page%.** sayfa bulunamadı.'
         no-with-args: 'Belirtilen argümanlarla hiçbir sonuç bulunamadı.'
+        unknown-addon: '**%addon%** addonu bulunamadı.\n\n**Mevcut Addonlar:** %addons%'
     commands:
         main: '(skript)?doküman(tasyon(u)?|ları)'
         type: '(skript|syntax)?(tür(ü)?|tip(i)?)'

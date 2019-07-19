@@ -112,6 +112,7 @@ class Docs(discord.ext.commands.Cog):
         id = 0
         if "addon" in param and len(param["addon"]) > 0:
             addon = []
+            addont = []
             addontext = []
             for each in param["addon"]:
                 if re.fullmatch("(s(k(r(i(p(t)?)?)?)?)?)", each.casefold()) is not None:
@@ -126,12 +127,19 @@ class Docs(discord.ext.commands.Cog):
                         if each.casefold() in loop.casefold():
                             if loop.casefold() not in addon:
                                 addon.append(loop.casefold())
+                                addont.append(each)
                                 addontext.append("[{}]({})".format(loop, self.bot.addonj[loop]["url"]))
                             break
-            if len(addon) == 0:
-                return
+            if len(addon) != len(param["addon"]):
+                for each in param["addon"]:
+                    if each not in addont:
+                        alladdons = list(self.bot.addonj)
+                        alladdons.sort()
+                        embed = discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["unknown-addon"].replace("\\n", "\n").replace("%addon%", each).replace("%addons%", ", ".join(alladdons)), color=self.bot.get_cog("Main").get_color("error"))
+                        return {"embed": embed, "emotes": ["❌"], "type": 0}
         if "!addon" in param and len(param["!addon"]) > 0:
             notaddon = []
+            notaddont = []
             notaddontext = []
             for each in param["!addon"]:
                 if re.fullmatch("(s(k(r(i(p(t)?)?)?)?)?)", each.casefold()) is not None:
@@ -146,10 +154,16 @@ class Docs(discord.ext.commands.Cog):
                         if each.casefold() in loop.casefold():
                             if loop.casefold() not in notaddon:
                                 notaddon.append(loop.casefold())
+                                notaddont.append(each)
                                 notaddontext.append("[{}]({})".format(loop, self.bot.addonj[loop]["url"]))
                             break
-            if len(notaddon) == 0:
-                return
+            if len(notaddon) != len(param["!addon"]):
+                for each in param["!addon"]:
+                    if each not in notaddont:
+                        alladdons = list(self.bot.addonj)
+                        alladdons.sort()
+                        embed = discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["unknown-addon"].replace("\\n", "\n").replace("%addon%", each).replace("%addons%", ", ".join(alladdons)), color=self.bot.get_cog("Main").get_color("error"))
+                        return {"embed": embed, "emotes": ["❌"], "type": 0}
         charsyntax = {"event": 0, "condition": 0, "effect": 0, "expression": 0, "type": 0, "function": 0}
         charid = {}
         for count in range(len(j)):
