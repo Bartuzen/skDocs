@@ -89,18 +89,20 @@ class Docs(discord.ext.commands.Cog):
                 if len(query) > 0:
                     param.update({"query": " ".join(query)})
                     embed = self.get_docs(param, lang)
-                    msg = await ctx.channel.send(embed=embed["embed"], content=(embed["msg"] if "msg" in embed else None))
-                    self.bot.messages.update({msg.id: {"command": self, "user": ctx.author.id, "message": ctx.id, "type": embed["type"], "previous": []}})
-                    if "emotes" in embed:
-                        for each in embed["emotes"]:
-                            if self.bot.messages[msg.id]["type"] == embed["type"]:
-                                try:
-                                    await msg.add_reaction(each)
-                                except (discord.errors.Forbidden, discord.errors.NotFound):
-                                    break
+                    if embed is not None and "error" not in embed:
+                        msg = await ctx.channel.send(embed=embed["embed"], content=(embed["msg"] if "msg" in embed else None))
+                        self.bot.messages.update({msg.id: {"command": self, "user": ctx.author.id, "message": ctx.id, "type": embed["type"], "previous": []}})
+                        if "emotes" in embed:
+                            for each in embed["emotes"]:
+                                if self.bot.messages[msg.id]["type"] == embed["type"]:
+                                    try:
+                                        await msg.add_reaction(each)
+                                    except (discord.errors.Forbidden, discord.errors.NotFound):
+                                        break
+                    else:
+                        await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description="\n".join(embed["param"]) + "\n\n" + lang["docs"]["errors"]["no-with-args"], color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
             else:
                 await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-usage"].replace("%nl%", "\n"), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
-                return
         else:
             await self.send(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description=lang["docs"]["errors"]["incorrect-usage"].replace("%nl%", "\n"), color=self.bot.get_cog("Main").get_color("error")), ctx.channel, ctx)
 
@@ -339,7 +341,8 @@ class Docs(discord.ext.commands.Cog):
                 return {"embed": embed, "msg": lang["docs"]["only-one"], "emotes": ["❌"], "type": 3}
             return {"embed": embed, "emotes": ["❌"], "type": 3}
         if "id" in param:
-            return
+            desc.append("**ID:** {}".format(param["id"]))
+            return {"error": "no-with-args", "param": desc}
         if len(syntax) == 1:
             perpage = 10
         elif (len(syntax) == 2) or (len(syntax) == 3):
@@ -545,27 +548,28 @@ class Docs(discord.ext.commands.Cog):
                 messages[msg.id].update({"previous": messages[msg.id]["previous"][:-1]})
             if param != param_raw:
                 embed = self.get_docs(param, lang)
-                if embed is not None:
-                    await msg.edit(embed=embed["embed"])
-                    if embed["type"] != messages[msg.id]["type"]:
-                        messages[msg.id].update({"type": embed["type"]})
+                if embed is None or "error" in embed:
+                    return
+                await msg.edit(embed=embed["embed"])
+                if embed["type"] != messages[msg.id]["type"]:
+                    messages[msg.id].update({"type": embed["type"]})
+                    try:
+                        await msg.clear_reactions()
+                    except (discord.errors.Forbidden, discord.errors.NotFound):
+                        pass
+                    if str(reaction) != "\U000021a9":
+                        messages[msg.id]["previous"].append(param_raw)
+                    if len(messages[msg.id]["previous"]) != 0:
                         try:
-                            await msg.clear_reactions()
+                            await msg.add_reaction("\U000021a9")
                         except (discord.errors.Forbidden, discord.errors.NotFound):
                             pass
-                        if str(reaction) != "\U000021a9":
-                            messages[msg.id]["previous"].append(param_raw)
-                        if len(messages[msg.id]["previous"]) != 0:
+                    for each in embed["emotes"]:
+                        if messages[msg.id]["type"] == embed["type"]:
                             try:
-                                await msg.add_reaction("\U000021a9")
+                                await msg.add_reaction(each)
                             except (discord.errors.Forbidden, discord.errors.NotFound):
-                                pass
-                        for each in embed["emotes"]:
-                            if messages[msg.id]["type"] == embed["type"]:
-                                try:
-                                    await msg.add_reaction(each)
-                                except (discord.errors.Forbidden, discord.errors.NotFound):
-                                    break
+                                break
 
     def gen_random(self, syntax):
         try:
