@@ -16,10 +16,9 @@ class Main(discord.ext.commands.Cog):
         else:
             lang = self.bot.lang[self.bot.config["mainlang"]]
         mainlang = self.bot.lang[self.bot.config["mainlang"]]
-        content = msg.content.casefold()
-        if content.startswith("!sk ") or content.startswith("{} ".format(self.bot.user.mention)):
-            cmd = content.split()[1]
-            args = content.split()[2:]
+        if msg.content.casefold().startswith("!sk ") or msg.content.casefold().startswith("{} ".format(self.bot.user.mention)):
+            cmd = msg.content.split()[1].casefold()
+            args = msg.content.split()[2:]
             if re.fullmatch(lang["docs"]["commands"]["main"], cmd) is not None or re.fullmatch(mainlang["docs"]["commands"]["main"], cmd) is not None:
                 await self.bot.get_cog("Docs").docs(msg, " ".join(args))
             elif re.fullmatch(lang["downloads"]["commands"]["main"], cmd) is not None or re.fullmatch(mainlang["downloads"]["commands"]["main"], cmd) is not None:
