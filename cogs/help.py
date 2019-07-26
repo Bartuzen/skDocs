@@ -21,9 +21,11 @@ class Help(discord.ext.commands.Cog):
             except discord.Forbidden:
                 send = False
         if "send" in locals():
-            await ctx.channel.send(lang["help"]["forbidden"].replace("%user%", ctx.author.mention))
+            await ctx.channel.send(embed=discord.Embed(description=lang["help"]["forbidden"].replace("%user%", ctx.author.mention),
+                                                       color=self.bot.get_cog("Main").get_color("help")))
         elif ctx.guild:
-            await ctx.channel.send(lang["help"]["sent-dm"].replace("%user%", ctx.author.mention))
+            await ctx.channel.send(embed=discord.Embed(description=lang["help"]["sent-dm"].replace("%user%", ctx.author.mention),
+                                                       color=self.bot.get_cog("Main").get_color("help")))
 
 
 def setup(bot):

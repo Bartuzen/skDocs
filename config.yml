@@ -20,4 +20,5 @@ embed-colors:
     downloads: '0, 255, 255'
     lang: '0, 255, 255'
     names: '0, 255, 255'
+    help: '0, 255, 255'
     parse-success: '0, 255, 0'
