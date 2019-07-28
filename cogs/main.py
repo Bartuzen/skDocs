@@ -38,7 +38,9 @@ class Main(discord.ext.commands.Cog):
             elif cmd == "lang" or cmd == "language":
                 await self.bot.get_cog("Lang").lang(msg, " ".join(args))
             elif cmd == "eval":
-                await self.bot.get_cog("Admin").eval(msg, " ".join(args))
+                lines = msg.content.split("\n")
+                lines[0] = " ".join(lines[0].split()[2:])
+                await self.bot.get_cog("Admin").eval(msg, "\n".join(lines))
             elif cmd == "reload" or cmd == "rel" or cmd == "rl":
                 await self.bot.get_cog("Admin").reload(msg)
 
