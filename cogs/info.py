@@ -21,7 +21,7 @@ class Info(discord.ext.commands.Cog):
         tram = str(psutil.virtual_memory().total / 1000000).split(".")
         tram[1] = tram[1][:2]
         embed.add_field(name=lang["info"]["ram"], value=".".join(ram) + " / " + ".".join(tram) + " MB")
-        embed.add_field(name=lang["info"]["uptime"], value=Info.uptime(self, lang))
+        embed.add_field(name=lang["info"]["uptime"], value=self.uptime(lang))
         embed.add_field(name=lang["info"]["guilds"], value="{} - [{}](https://discordapp.com/oauth2/authorize?client_id={}&scope=bot)".format(len(self.bot.guilds), lang["info"]["invite"], self.bot.user.id))
         embed.add_field(name=lang["info"]["version"]["python"], value=sys.version.split(" ")[0])
         embed.add_field(name=lang["info"]["version"]["discord.py"], value=discord.__version__)

@@ -56,7 +56,7 @@ class Names(discord.ext.commands.Cog):
                     embed.set_footer(text=file["footer"])
                 await ctx.channel.send(embed=embed)
             else:
-                await Names.names(self, ctx, "")
+                await self.names(ctx, "")
         else:
             embed = discord.Embed(title="{} {}".format(lang["names"]["args"]["emote"], lang["names"]["args"]["title"]), color=self.bot.get_cog("Main").get_color("names"))
             embed.add_field(name=lang["names"]["args"]["usage"]["name"], value=lang["names"]["args"]["usage"]["text"], inline=False)

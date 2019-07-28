@@ -71,7 +71,7 @@ class Admin(discord.ext.commands.Cog):
         if ctx.author.id in self.bot.config["admins"]:
             msg = await ctx.channel.send(embed=(discord.Embed(title="✅ {}".format(lang["reload"]["reloading"]["title"]), description=lang["reload"]["reloading"]["desc"], color=self.bot.get_cog("Main").get_color("reload"))))
             try:
-                Admin.rel(self)
+                self.rel()
             except Exception as e:
                 await msg.edit(embed=(discord.Embed(title="❌ {}".format(lang["errors"]["title"]), description="{}\n```py\n{}\n```".format(lang["reload"]["reloaded"]["error"], e), color=self.bot.get_cog("Main").get_color("error"))))
             else:
