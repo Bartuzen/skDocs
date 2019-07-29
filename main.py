@@ -1,4 +1,4 @@
-﻿import os
+import os
 import requests
 import json
 import discord
@@ -137,13 +137,14 @@ for each in bot.guilds:
 with open("guilds.yml", "w") as f:
     yaml.dump(bot.guildLangs, stream=f)
 
+    @bot.event
+    async def on_ready():
+        await bot.change_presence(activity=discord.Game(bot.config["status"]))
+        bot.start = datetime.utcnow()
+        print("skDocs has been loaded successfully!")
+        await console()
 
-@bot.event
-async def on_ready():
-    await bot.change_presence(activity=discord.Game(bot.config["status"]))
-    bot.start = datetime.utcnow()
-    print("skDocs has been loaded successfully!")
-    await console()
+    bot.run(bot.config["token"])
 
 
-bot.run(bot.config["token"])
+start()
