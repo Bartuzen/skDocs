@@ -1,5 +1,6 @@
 ﻿import os
 import sys
+import math
 import psutil
 import discord
 from datetime import datetime
@@ -16,11 +17,9 @@ class Info(discord.ext.commands.Cog):
             lang = self.bot.lang[self.bot.config["mainlang"]]
         embed = discord.Embed(title="🛠️ {}".format(lang["info"]["title"]), color=self.bot.get_cog("Main").get_color("info"))
         embed.set_thumbnail(url=self.bot.user.avatar_url)
-        ram = str(psutil.Process(pid=os.getpid()).memory_info().vms / 1000000).split(".")
-        ram[1] = ram[1][:2]
-        tram = str(psutil.virtual_memory().total / 1000000).split(".")
-        tram[1] = tram[1][:2]
-        embed.add_field(name=lang["info"]["ram"], value=".".join(ram) + " / " + ".".join(tram) + " MB")
+        used_ram = psutil.Process(pid=os.getpid()).memory_info().rss / (1024 * 1024)
+        total_ram = psutil.virtual_memory().total / (1024 * 1024)
+        embed.add_field(name=lang["info"]["ram"], value=f"{math.floor(used_ram)} / {math.floor(total_ram)} MB")
         embed.add_field(name=lang["info"]["uptime"], value=self.uptime(lang))
         embed.add_field(name=lang["info"]["guilds"], value="{} - [{}](https://discordapp.com/oauth2/authorize?client_id={}&scope=bot)".format(len(self.bot.guilds), lang["info"]["invite"], self.bot.user.id))
         embed.add_field(name=lang["info"]["version"]["python"], value=sys.version.split(" ")[0])
