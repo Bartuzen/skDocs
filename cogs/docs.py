@@ -578,20 +578,24 @@ class Docs(discord.ext.commands.Cog):
             if (f is None) or (":" not in syntax) or (syntax[-1] != ")") or (syntax[0] == "(") or (len(syntax.split(")")) != 2) or (len(syntax.split("(")) != 2):
                 c = 0
                 ret = []
-                for each in random.choice(sre_yield.AllStrings((syntax.replace("[", "(").replace("]", ")?")))).split("%"):
-                    c += 1
-                    if c % 2 == 0:
-                        ret.append("{{_{}{}}}".format(random.choice(each.split("/")), "" if each[-1] != "s" else "::*"))
-                    else:
-                        ret.append(each)
-                x = "".join(ret)
-                while "  " in x:
-                    x = x.replace("  ", " ")
-                while x[0] == " ":
-                    x = x[1:]
-                while x[-1] == " ":
-                    x = x[:-1]
-                return x
+                try:
+                    syntax = syntax.replace("[", "(").replace("]", ")?").replace("<.+>", "anything").replace(".+", "anything")
+                    for each in random.choice(sre_yield.AllStrings(syntax)).split("%"):
+                        c += 1
+                        if c % 2 == 0:
+                            ret.append("{{_{}{}}}".format(random.choice(each.split("/")), "" if each[-1] != "s" else "::*"))
+                        else:
+                            ret.append(each)
+                    x = "".join(ret)
+                    while "  " in x:
+                        x = x.replace("  ", " ")
+                    while x[0] == " ":
+                        x = x[1:]
+                    while x[-1] == " ":
+                        x = x[:-1]
+                    return x
+                except:
+                    return
             else:
                 rlist = []
                 for each in f[1].split(", "):
