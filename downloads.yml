@@ -1,7 +1,7 @@
 downloads:
     Skript:
         latest: https://github.com/SkriptLang/Skript/releases
-        2.4-beta3_(1.9-1.14): https://github.com/SkriptLang/Skript/releases/tag/2.4-beta3
+        2.4-beta5_(1.9-1.14): https://github.com/SkriptLang/Skript/releases/tag/2.4-beta5
         2.3.7_(1.9-1.13): https://github.com/SkriptLang/Skript/releases/tag/2.3.7
         dev36_(1.8-1.12): https://github.com/SkriptLang/Skript/releases/tag/dev36
     addons:
