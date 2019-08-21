@@ -325,7 +325,9 @@ class Docs(discord.ext.commands.Cog):
             if (j[id]["syntax_type"] == "event") and ("event_values" in j[id]) and (j[id]["event_values"] != "") and (j[id]["event_values"] is not None):
                 embed.add_field(name=lang["docs"]["code"]["event-values"], value="```vb\n{}\n```".format("\n".join(j[id]["event_values"].split(", "))), inline=False)
             elif (j[id]["syntax_type"] == "type") and ("type_usage" in j[id]) and (j[id]["type_usage"] != "") and (j[id]["type_usage"] is not None):
-                embed.add_field(name=lang["docs"]["code"]["type-usage"], value="```vb\n{}\n```".format(j[id]["type_usage"])[:1016], inline=False)
+                for each in self.split_fields(j[id]["type_usage"], ", "):
+                    embed.add_field(name=lang["docs"]["code"]["type-usage"] if "added4" not in locals() else "‎", value="```vb\n{}\n```".format(each), inline=False)
+                    added4 = 1
             elif (j[id]["syntax_type"] == "expression") and ("return_type" in j[id]) and (j[id]["return_type"] != "") and (j[id]["return_type"] is not None):
                 embed.add_field(name=lang["docs"]["code"]["return-type"], value=j[id]["return_type"])
             if ("compatible_addon_version" in j[id]) and (j[id]["compatible_addon_version"] != "") and (j[id]["compatible_addon_version"] is not None):
@@ -421,17 +423,17 @@ class Docs(discord.ext.commands.Cog):
         else:
             return
 
-    def split_fields(self, text):
+    def split_fields(self, text, split="\n"):
         rlist = []
         ret = []
-        for each in text.split("\n"):
+        for each in text.split(split):
             rlist.append(each)
-            if len("\n".join(rlist)) + 10 > 1024:
+            if len(split.join(rlist)) + 10 > 1024:
                 if len(rlist[-1]) > 1014:
                     return [text[i:i + 1014] for i in range(0, len(text), 1014)]
-                ret.append("\n".join(rlist[:-1]))
+                ret.append(split.join(rlist[:-1]))
                 rlist = [each]
-        ret.append("\n".join(rlist))
+        ret.append(split.join(rlist))
         return ret
 
     @discord.ext.commands.Cog.listener()
