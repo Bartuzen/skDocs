@@ -19,7 +19,6 @@ downloads:
         SkWaze: https://github.com/Weefle/SkWaze/releases
         skBossBarAPI: https://github.com/Bartuzen/skBossBarAPI
         Sk-NBeeT: https://github.com/ShaneBeee/Sk-NBeeT/releases
-        skript-nms: https://github.com/FurkannM/skript-nms/releases
         skript-mirror:
             other:
                 2.0.0-SNAPSHOT: https://circleci.com/gh/btk5h/skript-mirror/3#artifacts/containers/0
